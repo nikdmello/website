@@ -23,12 +23,12 @@ const experiences = [
     period: 'Mar 2023 – Present',
     icon: <Shield className="w-6 h-6" />,
     highlights: [
-      'Built backend infrastructure for TownSq (HOA payment platform) serving 8M+ residents across thousands of communities',
-      'Architected event-driven data synchronization system processing 10K+ records/hour across 6 entity types (Service Requests, Work Orders, Violations)',
-      'Engineered CI/CD pipeline optimization implementing build artifact reuse, integrating SonarCloud quality gates and structured logging with correlation IDs',
-      'Automated MongoDB operations at scale through reusable JavaScript scripts for bulk user management across HOA communities, eliminating 90% of manual processes'
+      'Built full-stack database schema deployment platform using Angular, NestJS, and AWS DynamoDB, implementing scalable API services and intelligent deployment workflows that automated DACPAC distribution across multi-environment infrastructure',
+      'Architected event-driven data synchronization system using AWS serverless stack (Lambda, EventBridge, DynamoDB, SQS) with .NET 8 API, processing 10K+ records/hour across 6 entity types and reducing manual resync operations by 70%',
+      'Engineered CI/CD pipeline optimization by implementing build artifact reuse in Bitbucket, reducing deployment time by 50% while integrating SonarCloud quality gates and structured logging with correlation IDs',
+      'Designed cloud governance pipeline mapping AWS CLI resource discovery to Port.io entities, enabling automated compliance audits and improving infrastructure visibility across 20+ cloud resources'
     ],
-    metrics: 'TownSq app serving 8M+ residents, 70% reduction in manual operations, 50% faster deployments'
+    metrics: '99.9% cost reduction vs Octopus Deploy, 70% reduction in manual operations, 50% faster deployments'
   },
   {
     title: 'BI Developer Co-op',

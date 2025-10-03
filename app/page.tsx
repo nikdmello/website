@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react'
 import Hero from '@/components/Hero'
+import Achievements from '@/components/Achievements'
 import Experience from '@/components/Experience'
 import Projects from '@/components/Projects'
 import Skills from '@/components/Skills'
@@ -17,8 +18,9 @@ export default function Home() {
   return (
     <main id="main-content" className="min-h-screen bg-dark-bg text-white">
       <Hero />
-      <Experience />
       <Projects />
+      <Experience />
+      <Achievements />
       <Skills />
       <Contact />
       <Footer />

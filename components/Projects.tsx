@@ -45,21 +45,21 @@ const projects = [
     gradient: 'from-cyber-purple to-purple-600'
   },
   {
-    title: 'MongoDB Automation Platform',
-    subtitle: 'Database Operations at Enterprise Scale',
-    description: 'Reusable JavaScript automation scripts for bulk user management across thousands of HOA communities. Eliminated 90% of manual processes and achieved near-zero operational errors.',
+    title: 'Database Schema Deployer',
+    subtitle: 'Full-Stack Deployment Platform',
+    description: 'Full-stack platform automating DACPAC deployments across multiple environments. Angular 20 frontend with NestJS backend, featuring intelligent client selection and AWS orchestration.',
     icon: <Database className="w-8 h-8" />,
-    tech: ['MongoDB', 'JavaScript', 'Bulk Operations', 'Automation Scripts', 'Error Reduction'],
+    tech: ['Angular 20', 'NestJS', 'DynamoDB', 'CodeBuild', 'Step Functions', 'TypeScript'],
     metrics: [
-      '90% reduction in manual processes',
-      'Thousands of HOA communities served',
-      'Near-zero error rate achieved'
+      '99.9% cost reduction ($140K+ to ~$100/year)',
+      'Multi-environment support (QA/UAT/Prod)',
+      'Eliminated manual deployment errors'
     ],
     highlights: [
-      'Reusable script architecture',
-      'Bulk user management systems',
-      'Community-wide data operations',
-      'Automated validation and rollback'
+      'Version-aware client filtering',
+      'Multi-step deployment wizard',
+      'AWS workflow orchestration',
+      'Intelligent redundancy prevention'
     ],
     status: 'Production @ Associa',
     gradient: 'from-green-400 to-emerald-600'
@@ -101,7 +101,7 @@ export default function Projects() {
             Technical Deep Dive
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Production systems and research projects solving real coordination problems
+            Production systems and research projects
           </p>
         </motion.div>
 

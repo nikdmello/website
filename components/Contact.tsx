@@ -108,7 +108,7 @@ export default function Contact() {
               
               <div className="space-y-6">
                 <div className="p-4 rounded-lg bg-gradient-to-r from-cyber-blue/10 to-cyber-purple/10 border border-cyber-blue/30">
-                  <h4 className="text-cyber-blue font-semibold mb-3">VS Code Core Contributor</h4>
+                  <h4 className="text-cyber-blue font-semibold mb-3">Open Source Contributor</h4>
                   <p className="text-gray-300 text-sm mb-2">Fixed critical screencast mode bug affecting millions of developers</p>
                   <a href="https://github.com/microsoft/vscode/pull/176149" target="_blank" rel="noopener noreferrer" className="text-cyber-blue hover:text-white text-sm transition-colors">View Merged PR →</a>
                 </div>
