@@ -1,5 +1,3 @@
-# Portfolio
-
 Personal website built with Next.js and TypeScript.
 
 ## Tech Stack
