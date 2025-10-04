@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Calendar, TrendingUp, Zap, Shield } from 'lucide-react'
+import { Calendar, TrendingUp, Zap, Shield, Users, GraduationCap } from 'lucide-react'
 import { useIsMobile } from '@/hooks/useIsMobile'
 
 const experiences = [
@@ -29,7 +29,17 @@ const experiences = [
     metrics: '99.9% cost reduction, 70% fewer manual operations, 50% faster deployments'
   },
   {
-    title: 'BI Developer Co-op',
+    title: 'DevOps Engineer',
+    company: 'Panagora',
+    period: 'Sep 2022 – Mar 2023',
+    icon: <Users className="w-6 h-6" />,
+    highlights: [
+      'Implemented Jenkins CI/CD pipeline automating deployment workflows, eliminating 200+ hours of manual work and reducing deployment errors'
+    ],
+    metrics: '80% reduction in deployment time, improved release reliability'
+  },
+  {
+    title: 'BI Developer',
     company: 'ASICS Digital',
     period: 'Jan 2022 – Jul 2022',
     icon: <TrendingUp className="w-6 h-6" />,
@@ -37,6 +47,16 @@ const experiences = [
       'Analyzed e-commerce traffic patterns driving 10% revenue increase through data-driven optimization strategies'
     ],
     metrics: '10% revenue increase through data-driven optimization'
+  },
+  {
+    title: 'Teaching Assistant',
+    company: 'Northeastern University',
+    period: 'Sep 2021 – Dec 2021',
+    icon: <GraduationCap className="w-6 h-6" />,
+    highlights: [
+      'Provided 1-on-1 sessions and peer mentoring in Foundations of Data Science, helping with statistical concepts, programming challenges, and career development'
+    ],
+    metrics: 'Mentored 200+ students'
   }
 ]
 
