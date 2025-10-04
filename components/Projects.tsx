@@ -8,82 +8,35 @@ const projects = [
   {
     title: 'Swift Protocol',
     subtitle: 'Autonomous Agent Payment Infrastructure',
-    description: 'Payment infrastructure enabling AI agents to transact autonomously. Built on Base L2 with cryptographic guarantees for identity verification and streaming payments.',
+    description: 'Payment infrastructure enabling AI agents to transact autonomously on Base L2 with cryptographic identity verification and streaming payments.',
     icon: <Bot className="w-8 h-8" />,
     tech: ['Solidity', 'Hardhat', 'TypeScript', 'Next.js 14', 'Ethers.js v6', 'Base L2'],
-    metrics: [
-      '100% reliability across 1,000+ test transactions',
-      'Sub-second execution times on Base L2',
-      'Zero human intervention after setup'
-    ],
-    highlights: [
-      'AgentRegistry for identity verification',
-      'AgentMessenger for coordination',
-      'StreamManager for real-time payments',
-      'TypeScript SDK + headless CLI'
-    ],
+    metrics: ['100% reliability across 1,000+ test transactions', 'Zero human intervention after setup'],
+    highlights: ['AgentRegistry for identity verification', 'StreamManager for real-time payments', 'TypeScript SDK + headless CLI'],
     status: 'Live on Base Testnet',
     gradient: 'from-cyber-blue to-blue-600'
   },
   {
-    title: 'Event-Driven Sync System',
-    subtitle: 'AWS Serverless Microservice',
-    description: 'Event-driven microservice with API Lambda for job creation and Worker Lambda for processing. Synchronizes 6 entity types (Service Requests, Work Orders, Violations) between property management systems, eliminating synchronous timeouts.',
-    icon: <Cloud className="w-8 h-8" />,
-    tech: ['C# .NET 8', 'AWS Lambda', 'EventBridge', 'DynamoDB', 'SQS', 'CloudWatch'],
-    metrics: [
-      '70% reduction in manual operations',
-      '6 entity types processed asynchronously',
-      'Eliminated API timeout issues'
-    ],
-    highlights: [
-      'EventBridge decoupling over direct Lambda invoke',
-      'Strategy pattern for 6 entity types in single codebase',
-      'DynamoDB job tracking with status visibility',
-      'Correlation IDs for end-to-end tracing'
-    ],
-    status: 'Production @ Associa',
-    gradient: 'from-cyber-purple to-purple-600'
-  },
-  {
     title: 'Database Schema Deployer',
     subtitle: 'Full-Stack Deployment Platform',
-    description: 'Full-stack platform automating DACPAC deployments across multiple environments. Angular 20 frontend with NestJS backend, featuring intelligent client selection and AWS orchestration.',
+    description: 'Full-stack platform automating DACPAC deployments across multiple environments with Angular frontend, NestJS backend, and AWS orchestration.',
     icon: <Database className="w-8 h-8" />,
     tech: ['Angular 20', 'NestJS', 'DynamoDB', 'CodeBuild', 'Step Functions', 'TypeScript'],
-    metrics: [
-      '99.9% cost reduction ($140K+ to ~$100/year)',
-      'Multi-environment support (QA/UAT/Prod)',
-      'Eliminated manual deployment errors'
-    ],
-    highlights: [
-      'Version-aware client filtering',
-      'Multi-step deployment wizard',
-      'AWS workflow orchestration',
-      'Intelligent redundancy prevention'
-    ],
+    metrics: ['99.9% cost reduction ($140K+ to ~$100/year)', 'Multi-environment support (QA/UAT/Prod)'],
+    highlights: ['Version-aware client filtering', 'AWS workflow orchestration', 'Intelligent redundancy prevention'],
     status: 'Production @ Associa',
     gradient: 'from-green-400 to-emerald-600'
   },
   {
-    title: 'CI/CD & Cloud Governance',
-    subtitle: 'DevOps Infrastructure Platform',
-    description: 'Engineered CI/CD pipeline optimization with build artifact reuse in Bitbucket, reducing deployment time by 50%. Designed cloud governance pipeline mapping AWS CLI resource discovery to Port.io entities.',
-    icon: <Cpu className="w-8 h-8" />,
-    tech: ['Bitbucket Pipelines', 'SonarCloud', 'AWS CLI', 'Port.io', 'Build Artifacts', 'CI/CD'],
-    metrics: [
-      '50% faster deployment times',
-      '20+ cloud resources monitored',
-      'Automated compliance audits'
-    ],
-    highlights: [
-      'Build artifact reuse implementation',
-      'SonarCloud quality gate integration',
-      'Structured logging with correlation tracking',
-      'Real-time infrastructure visibility'
-    ],
+    title: 'Event-Driven Sync System',
+    subtitle: 'AWS Serverless Microservice',
+    description: 'Event-driven microservice synchronizing 6 entity types between property management systems using AWS Lambda, EventBridge, and DynamoDB.',
+    icon: <Cloud className="w-8 h-8" />,
+    tech: ['C# .NET 8', 'AWS Lambda', 'EventBridge', 'DynamoDB', 'SQS', 'CloudWatch'],
+    metrics: ['70% reduction in manual operations', 'Eliminated API timeout issues'],
+    highlights: ['EventBridge decoupling architecture', 'Strategy pattern for 6 entity types', 'Correlation IDs for tracing'],
     status: 'Production @ Associa',
-    gradient: 'from-orange-400 to-red-600'
+    gradient: 'from-cyber-purple to-purple-600'
   }
 ]
 
@@ -91,7 +44,7 @@ export default function Projects() {
   const isMobile = useIsMobile()
   
   return (
-    <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
+    <section className="py-20">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -108,7 +61,7 @@ export default function Projects() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8" style={{ minHeight: 'auto' }}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
           {projects.map((project, index) => {
             const Component = isMobile ? 'div' : motion.div
             const props = isMobile ? {} : {

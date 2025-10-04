@@ -11,12 +11,10 @@ const experiences = [
     period: 'Apr 2025 – Present',
     icon: <Zap className="w-6 h-6" />,
     highlights: [
-      'Architected autonomous agent payment protocol on Base L2 enabling AI agents to register identities, exchange messages, and stream ETH payments with escrow security',
-      'Developed smart contract suite with AgentRegistry for identity verification, AgentMessenger for coordination, and StreamManager for real-time payment streaming',
-      'Built end-to-end autonomous system from smart contracts to Next.js frontend, demonstrating proven agent-to-agent payments with zero human intervention after setup',
-      'Tech Stack: Solidity, Hardhat, Ethers.js v6, Node.js, TypeScript, Next.js 14, RainbowKit v2, Wagmi v2'
+      'Architected autonomous agent payment protocol on Base L2 enabling AI agents to register identities and stream ETH payments with escrow security',
+      'Built end-to-end system from Solidity smart contracts to Next.js frontend with 100% transaction reliability across 1,000+ test transactions'
     ],
-    metrics: '100% transaction reliability across 1,000+ test transactions on Base L2'
+    metrics: '100% transaction reliability, zero human intervention after setup'
   },
   {
     title: 'Software Developer',
@@ -24,12 +22,11 @@ const experiences = [
     period: 'Mar 2023 – Present',
     icon: <Shield className="w-6 h-6" />,
     highlights: [
-      'Built full-stack database schema deployment platform using Angular, NestJS, and AWS DynamoDB, implementing scalable API services and intelligent deployment workflows that automated DACPAC distribution across multi-environment infrastructure',
-      'Architected event-driven data synchronization system using AWS serverless stack (Lambda, EventBridge, DynamoDB, SQS) with .NET 8 API, processing 10K+ records/hour across 6 entity types and reducing manual resync operations by 70%',
-      'Engineered CI/CD pipeline optimization by implementing build artifact reuse in Bitbucket, reducing deployment time by 50% while integrating SonarCloud quality gates and structured logging with correlation IDs',
-      'Designed cloud governance pipeline mapping AWS CLI resource discovery to Port.io entities, enabling automated compliance audits and improving infrastructure visibility across 20+ cloud resources'
+      'Built full-stack database deployment platform (Angular, NestJS, AWS) achieving 99.9% cost reduction vs Octopus Deploy ($140K+ to ~$100/year)',
+      'Architected event-driven sync system using AWS serverless stack processing 10K+ records/hour, reducing manual operations by 70%',
+      'Engineered CI/CD pipeline optimization with build artifact reuse, reducing deployment time by 50%'
     ],
-    metrics: '99.9% cost reduction vs Octopus Deploy, 70% reduction in manual operations, 50% faster deployments'
+    metrics: '99.9% cost reduction, 70% fewer manual operations, 50% faster deployments'
   },
   {
     title: 'BI Developer Co-op',
@@ -37,33 +34,9 @@ const experiences = [
     period: 'Jan 2022 – Jul 2022',
     icon: <TrendingUp className="w-6 h-6" />,
     highlights: [
-      'Analyzed blog-driven e-commerce traffic identifying optimization opportunities that drove 10% revenue increase',
-      'Automated consumer behavior reporting from BigQuery/SQL data pipelines, enabling data-driven marketing and merchandising decisions'
+      'Analyzed e-commerce traffic patterns driving 10% revenue increase through data-driven optimization strategies'
     ],
     metrics: '10% revenue increase through data-driven optimization'
-  },
-  {
-    title: 'DevOps Engineer Co-op',
-    company: 'PanAgora Asset Management',
-    period: 'Feb 2021 – Jul 2021',
-    icon: <Shield className="w-6 h-6" />,
-    highlights: [
-      'Implemented Jenkins CI/CD pipeline automating deployment workflows, eliminating 200+ hours of manual work and reducing deployment errors',
-      'Developed PowerShell automation scripts for remote VM deployments, accelerating update workflows across distributed infrastructure'
-    ],
-    metrics: 'Eliminated 200+ hours of manual work, reduced deployment errors'
-  },
-  {
-    title: 'Teaching Assistant',
-    company: 'Northeastern University',
-    period: 'Jan 2021 – Apr 2021',
-    icon: <Users className="w-6 h-6" />,
-    highlights: [
-      'Foundations of Data Science course with 200+ students',
-      'Conducted 1-on-1 meetings to reinforce complex statistical concepts',
-      'Guided students through data analysis assignments and programming challenges'
-    ],
-    metrics: 'Improved student performance through 1-on-1 support'
   }
 ]
 
@@ -71,7 +44,7 @@ export default function Experience() {
   const isMobile = useIsMobile()
   
   return (
-    <section className="py-20 bg-gradient-to-b from-black to-gray-900">
+    <section className="py-20">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -81,10 +54,10 @@ export default function Experience() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
-            Production Impact
+            Experience
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Building systems that work reliably at scale
+            Building production systems at scale
           </p>
         </motion.div>
 

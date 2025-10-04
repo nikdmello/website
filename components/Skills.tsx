@@ -43,18 +43,13 @@ const skillCategories = [
   }
 ]
 
-const achievements = [
-  { metric: '70%', description: 'Reduction in manual operations' },
-  { metric: '50%', description: 'Faster deployment times' },
-  { metric: '90%', description: 'Elimination of manual processes' },
-  { metric: '100%', description: 'Transaction reliability on testnet' }
-]
+
 
 export default function Skills() {
   const isMobile = useIsMobile()
   
   return (
-    <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
+    <section className="py-20">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -72,7 +67,7 @@ export default function Skills() {
         </motion.div>
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skillCategories.map((category, index) => {
             const Component = isMobile ? 'div' : motion.div
             const props = isMobile ? {} : {
@@ -109,33 +104,7 @@ export default function Skills() {
           })}
         </div>
 
-        {/* Achievements */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="cyber-border rounded-xl p-8 bg-gradient-to-r from-card-bg to-gray-800 rainbow-glow"
-        >
-          <h3 className="text-2xl font-bold text-white mb-8 text-center">Results</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {achievements.map((achievement, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="text-center"
-              >
-                <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">
-                  {achievement.metric}
-                </div>
-                <p className="text-gray-300 text-sm">{achievement.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+
       </div>
     </section>
   )

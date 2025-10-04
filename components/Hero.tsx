@@ -5,23 +5,8 @@ import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react'
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Animated background grid */}
-      <div className="absolute inset-0 bg-gradient-to-br from-dark-bg via-gray-900 to-black">
-        <motion.div 
-          className="absolute inset-0 bg-[linear-gradient(rgba(0,245,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,245,255,0.03)_1px,transparent_1px)] bg-[size:50px_50px]"
-          animate={{
-            backgroundPosition: ['0px 0px', '50px 50px'],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: 'linear'
-          }}
-        />
-      </div>
-      
-      <div className="container mx-auto px-6 z-10">
+    <section className="min-h-screen flex items-center justify-center relative">
+      <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}

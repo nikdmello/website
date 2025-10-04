@@ -5,12 +5,8 @@ import { Mail, Linkedin, Github, MapPin } from 'lucide-react'
 
 export default function Contact() {
   return (
-    <section className="py-20 bg-gradient-to-b from-black to-gray-900 relative overflow-hidden">
-      {/* Background effects */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(139,92,246,0.1),transparent_50%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(0,245,255,0.1),transparent_50%)]" />
-      
-      <div className="container mx-auto px-6 relative z-10">
+    <section className="py-20 relative overflow-hidden">
+      <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
