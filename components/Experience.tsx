@@ -29,7 +29,7 @@ const experiences = [
   },
   {
     title: 'DevOps Engineer',
-    company: 'Panagora',
+    company: 'PanAgora Asset Management',
     period: 'Sep 2022 – Mar 2023',
     icon: <Users className="w-6 h-6" />,
     highlights: [
