@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Calendar, TrendingUp, Zap, Shield, Users } from 'lucide-react'
+import { Calendar, TrendingUp, Zap, Shield } from 'lucide-react'
 import { useIsMobile } from '@/hooks/useIsMobile'
 
 const experiences = [
