@@ -80,13 +80,18 @@ export default function Hero() {
         </motion.div>
       </div>
       
-      <motion.div 
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ repeat: Infinity, duration: 2 }}
+      <button 
+        onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+        className="absolute bottom-8 left-1/2 w-6 h-6 -ml-3 cursor-pointer hover:text-white transition-colors"
+        aria-label="Scroll to projects section"
       >
-        <ArrowDown className="w-6 h-6 text-cyber-blue" />
-      </motion.div>
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ repeat: Infinity, duration: 2 }}
+        >
+          <ArrowDown className="w-6 h-6 text-cyber-blue hover:text-white transition-colors" />
+        </motion.div>
+      </button>
     </section>
   )
 }
