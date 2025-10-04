@@ -3,11 +3,13 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowDown, Github, Linkedin, Mail, ChevronLeft, ChevronRight } from 'lucide-react'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { flushSync } from 'react-dom'
 
 export default function Hero() {
   const [currentLogo, setCurrentLogo] = useState(0)
   const [direction, setDirection] = useState(1)
+  const [isMobile, setIsMobile] = useState(false)
   const companies = [
     { src: "/logos/associa_logo.jpeg", name: "Associa" },
     { src: "/logos/panagora_asset_management_logo.jpeg", name: "PanAgora Asset Management" },
@@ -15,12 +17,17 @@ export default function Hero() {
     { src: "/logos/northeastern_university_logo.jpeg", name: "Northeastern University" }
   ]
 
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768)
+  }, [])
+
   const nextLogo = () => {
-    setDirection(1)
+    flushSync(() => setDirection(1))
     setCurrentLogo((prev) => (prev + 1) % companies.length)
   }
+  
   const prevLogo = () => {
-    setDirection(-1)
+    flushSync(() => setDirection(-1))
     setCurrentLogo((prev) => (prev - 1 + companies.length) % companies.length)
   }
 
@@ -78,14 +85,13 @@ export default function Hero() {
               
               <div className="flex flex-col items-center gap-4 w-40 md:w-48">
                 <div className="h-24 md:h-28 w-full flex items-center justify-center relative overflow-hidden">
-                  <AnimatePresence mode="wait" custom={direction}>
+                  <AnimatePresence mode="wait">
                     <motion.div
                       key={currentLogo}
-                      custom={direction}
-                      initial={(custom) => ({ x: custom > 0 ? 250 : -250 })}
-                      animate={{ x: 0 }}
-                      exit={(custom) => ({ x: custom > 0 ? -250 : 250 })}
-                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      initial={{ x: direction > 0 ? 300 : -300, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      exit={{ x: direction > 0 ? -300 : 300, opacity: 0 }}
+                      transition={{ duration: isMobile ? 0.3 : 0.2, ease: "easeInOut" }}
                       className="absolute inset-0 flex items-center justify-center"
                     >
                       <Image 
