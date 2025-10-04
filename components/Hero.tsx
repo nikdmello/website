@@ -43,8 +43,8 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            Building <span className="text-cyber-blue font-semibold">Swift Protocol</span> — 
-            the Stripe for AI agents
+            Software Engineer<br />
+            <span className="text-lg text-gray-400">Building reliable systems at scale</span>
           </motion.p>
           
           <motion.div 
@@ -54,12 +54,8 @@ export default function Hero() {
             transition={{ delay: 0.6, duration: 0.8 }}
           >
             <div className="cyber-border rounded-lg p-4 bg-card-bg rainbow-glow">
-              <p className="text-sm text-gray-400 mb-1">Production Impact</p>
-              <p className="text-cyber-blue font-semibold">TownSq app serving 8M+ residents</p>
-            </div>
-            <div className="cyber-border rounded-lg p-4 bg-card-bg rainbow-glow">
-              <p className="text-sm text-gray-400 mb-1">Research Innovation</p>
-              <p className="text-cyber-purple font-semibold">Swift Protocol: 100% reliability on Base testnet</p>
+              <p className="text-sm text-gray-400 mb-1">Experience</p>
+              <p className="text-cyber-blue font-semibold text-sm">Production infrastructure • Blockchain • Full-stack development</p>
             </div>
           </motion.div>
           
