@@ -2,10 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Trophy, Code, Play } from 'lucide-react'
-import { useIsMobile } from '@/hooks/useIsMobile'
-
 export default function Achievements() {
-  const isMobile = useIsMobile()
   
   return (
     <section className="py-16">
