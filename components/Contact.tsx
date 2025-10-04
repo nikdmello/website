@@ -43,8 +43,8 @@ export default function Contact() {
                   href="mailto:nik.dmello@gmail.com"
                   className="flex items-center gap-4 p-4 rounded-lg bg-gray-800 hover:bg-cyber-blue/20 transition-colors group"
                 >
-                  <div className="p-2 rounded-full bg-cyber-blue/20 text-cyber-blue group-hover:bg-cyber-blue group-hover:text-white transition-colors">
-                    <Mail className="w-5 h-5" />
+                  <div className="p-2 rounded-full bg-cyber-blue/20 text-cyber-blue group-hover:bg-cyber-blue group-hover:text-white transition-colors flex-shrink-0">
+                    <Mail className="w-4 h-4" />
                   </div>
                   <div>
                     <p className="text-white font-semibold">Email</p>
@@ -58,12 +58,12 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 p-4 rounded-lg bg-gray-800 hover:bg-cyber-blue/20 transition-colors group"
                 >
-                  <div className="p-2 rounded-full bg-cyber-blue/20 text-cyber-blue group-hover:bg-cyber-blue group-hover:text-white transition-colors">
-                    <Linkedin className="w-5 h-5" />
+                  <div className="p-2 rounded-full bg-cyber-blue/20 text-cyber-blue group-hover:bg-cyber-blue group-hover:text-white transition-colors flex-shrink-0">
+                    <Linkedin className="w-4 h-4" />
                   </div>
-                  <div>
+                  <div className="min-w-0 flex-1">
                     <p className="text-white font-semibold">LinkedIn</p>
-                    <p className="text-gray-300">linkedin.com/in/nikdmello</p>
+                    <p className="text-gray-300 text-sm">linkedin.com/in/nikdmello</p>
                   </div>
                 </a>
 
@@ -73,8 +73,8 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 p-4 rounded-lg bg-gray-800 hover:bg-cyber-blue/20 transition-colors group"
                 >
-                  <div className="p-2 rounded-full bg-cyber-blue/20 text-cyber-blue group-hover:bg-cyber-blue group-hover:text-white transition-colors">
-                    <Github className="w-5 h-5" />
+                  <div className="p-2 rounded-full bg-cyber-blue/20 text-cyber-blue group-hover:bg-cyber-blue group-hover:text-white transition-colors flex-shrink-0">
+                    <Github className="w-4 h-4" />
                   </div>
                   <div>
                     <p className="text-white font-semibold">GitHub</p>

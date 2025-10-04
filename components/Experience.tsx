@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Calendar, TrendingUp, Zap, Shield, Users } from 'lucide-react'
+import { useIsMobile } from '@/hooks/useIsMobile'
 
 const experiences = [
   {
@@ -67,6 +68,8 @@ const experiences = [
 ]
 
 export default function Experience() {
+  const isMobile = useIsMobile()
+  
   return (
     <section className="py-20 bg-gradient-to-b from-black to-gray-900">
       <div className="container mx-auto px-6">
@@ -86,13 +89,19 @@ export default function Experience() {
         </motion.div>
 
         <div className="space-y-8">
-          {experiences.map((exp, index) => (
-            <motion.div
+          {experiences.map((exp, index) => {
+            const Component = isMobile ? 'div' : motion.div
+            const props = isMobile ? {} : {
+              initial: { opacity: 0 },
+              whileInView: { opacity: 1 },
+              transition: { duration: 0.3, ease: "easeOut" },
+              viewport: { once: true, amount: 0.1 }
+            }
+            
+            return (
+            <Component
               key={index}
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              viewport={{ once: true }}
+              {...props}
               className="cyber-border rounded-xl p-8 bg-card-bg hover:glow-effect transition-all duration-300 rainbow-glow"
             >
               <div className="flex flex-col lg:flex-row lg:items-start gap-6">
@@ -126,8 +135,9 @@ export default function Experience() {
                   </ul>
                 </div>
               </div>
-            </motion.div>
-          ))}
+            </Component>
+            )
+          })}
         </div>
       </div>
     </section>

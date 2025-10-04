@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Code, Database, Cloud, Cpu, Zap, Shield } from 'lucide-react'
+import { useIsMobile } from '@/hooks/useIsMobile'
 
 const skillCategories = [
   {
@@ -50,6 +51,8 @@ const achievements = [
 ]
 
 export default function Skills() {
+  const isMobile = useIsMobile()
+  
   return (
     <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
       <div className="container mx-auto px-6">
@@ -70,15 +73,21 @@ export default function Skills() {
 
         {/* Skills Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {skillCategories.map((category, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="cyber-border rounded-xl p-6 bg-card-bg hover:glow-effect transition-all duration-300 rainbow-glow"
-            >
+          {skillCategories.map((category, index) => {
+            const Component = isMobile ? 'div' : motion.div
+            const props = isMobile ? {} : {
+              initial: { opacity: 0, y: 30 },
+              whileInView: { opacity: 1, y: 0 },
+              transition: { duration: 0.6, delay: index * 0.1 },
+              viewport: { once: true }
+            }
+            
+            return (
+              <Component
+                key={index}
+                {...props}
+                className="cyber-border rounded-xl p-6 bg-card-bg hover:glow-effect transition-all duration-300 rainbow-glow"
+              >
               <div className="flex items-center gap-3 mb-4">
                 <div className={`p-2 rounded-lg bg-gradient-to-r ${category.gradient} text-white`}>
                   {category.icon}
@@ -95,8 +104,9 @@ export default function Skills() {
                   </span>
                 ))}
               </div>
-            </motion.div>
-          ))}
+              </Component>
+            )
+          })}
         </div>
 
         {/* Achievements */}

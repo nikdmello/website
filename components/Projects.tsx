@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Cpu, Database, Cloud, Bot } from 'lucide-react'
+import { useIsMobile } from '@/hooks/useIsMobile'
 
 const projects = [
   {
@@ -87,6 +88,8 @@ const projects = [
 ]
 
 export default function Projects() {
+  const isMobile = useIsMobile()
+  
   return (
     <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
       <div className="container mx-auto px-6">
@@ -105,14 +108,20 @@ export default function Projects() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <motion.div
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8" style={{ minHeight: 'auto' }}>
+          {projects.map((project, index) => {
+            const Component = isMobile ? 'div' : motion.div
+            const props = isMobile ? {} : {
+              initial: { opacity: 0 },
+              whileInView: { opacity: 1 },
+              transition: { duration: 0.3, ease: "easeOut" },
+              viewport: { once: true, amount: 0.1 }
+            }
+            
+            return (
+            <Component
               key={index}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              viewport={{ once: true }}
+              {...props}
               className="cyber-border rounded-xl p-8 bg-card-bg hover:glow-effect transition-all duration-300 group rainbow-glow"
             >
               <div className="flex items-start gap-4 mb-6">
@@ -167,8 +176,9 @@ export default function Projects() {
                   </div>
                 </div>
               </div>
-            </motion.div>
-          ))}
+            </Component>
+            )
+          })}
         </div>
       </div>
     </section>
