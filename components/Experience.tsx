@@ -11,8 +11,7 @@ const experiences = [
     period: 'Apr 2025 – Present',
     icon: <Zap className="w-6 h-6" />,
     highlights: [
-      'Architected autonomous agent payment protocol on Base L2 enabling AI agents to register identities and stream ETH payments with escrow security',
-      'Built end-to-end system from Solidity smart contracts to Next.js frontend with 100% transaction reliability across 1,000+ test transactions'
+      'Architected autonomous agent payment protocol on Base L2 with Solidity smart contracts and Next.js frontend achieving 100% transaction reliability across 1,000+ test transactions'
     ],
     metrics: '100% transaction reliability, zero human intervention after setup'
   },
@@ -34,7 +33,7 @@ const experiences = [
     period: 'Sep 2022 – Mar 2023',
     icon: <Users className="w-6 h-6" />,
     highlights: [
-      'Implemented Jenkins CI/CD pipeline automating deployment workflows, eliminating 200+ hours of manual work and reducing deployment errors'
+      'Implemented Jenkins CI/CD pipeline automating deployment workflows and reducing deployment errors'
     ],
     metrics: '80% reduction in deployment time, improved release reliability'
   },
@@ -44,7 +43,7 @@ const experiences = [
     period: 'Jan 2022 – Jul 2022',
     icon: <TrendingUp className="w-6 h-6" />,
     highlights: [
-      'Analyzed e-commerce traffic patterns driving 10% revenue increase through data-driven optimization strategies'
+      'Analyzed e-commerce traffic patterns driving revenue optimization through data-driven strategies'
     ],
     metrics: '10% revenue increase through data-driven optimization'
   },
@@ -54,7 +53,7 @@ const experiences = [
     period: 'Sep 2021 – Dec 2021',
     icon: <GraduationCap className="w-6 h-6" />,
     highlights: [
-      'Provided 1-on-1 sessions and peer mentoring in Foundations of Data Science, helping with statistical concepts, programming challenges, and career development'
+      'Provided 1-on-1 sessions and peer mentoring in Foundations of Data Science covering statistical concepts and programming challenges'
     ],
     metrics: 'Mentored 200+ students'
   }
