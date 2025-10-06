@@ -17,7 +17,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main id="main-content" className="min-h-screen text-white relative overflow-hidden">
+    <main id="main-content" tabIndex={-1} className="min-h-screen text-white relative overflow-hidden outline-none">
       {/* Global animated background */}
       <div className="fixed inset-0 bg-gradient-to-br from-dark-bg via-gray-900 to-black">
         <motion.div 

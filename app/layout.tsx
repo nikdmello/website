@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { JetBrains_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import SkipLink from '@/components/SkipLink'
 import './globals.css'
 
 const jetbrainsMono = JetBrains_Mono({ 
@@ -77,9 +78,7 @@ export default function RootLayout({
         />
       </head>
       <body className={jetbrainsMono.className} suppressHydrationWarning>
-        <a href="#main-content" className="skip-to-content">
-          Skip to main content
-        </a>
+        <SkipLink />
         {children}
         <Analytics />
       </body>
