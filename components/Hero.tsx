@@ -34,7 +34,10 @@ export default function Hero() {
 
     const animate = (currentTime: number) => {
       if (!startTime) startTime = currentTime
-      if (!totalWidth) return requestAnimationFrame(animate)
+      if (!totalWidth) {
+        animationId = requestAnimationFrame(animate)
+        return
+      }
       
       const elapsed = currentTime - startTime
       const progress = (elapsed % duration) / duration
