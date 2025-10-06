@@ -3,14 +3,59 @@
 import { motion } from 'framer-motion'
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react'
 import Image from 'next/image'
+import { useEffect, useRef } from 'react'
+import Highlight from './Highlight'
 
 export default function Hero() {
+  const marqueeRef = useRef<HTMLDivElement>(null)
+  
   const companies = [
     { src: "/logos/associa_logo.jpeg", name: "Associa" },
     { src: "/logos/panagora_asset_management_logo.jpeg", name: "PanAgora Asset Management" },
     { src: "/logos/asics_digital_logo.jpeg", name: "ASICS Digital" },
     { src: "/logos/northeastern_university_logo.jpeg", name: "Northeastern University" }
   ]
+
+  useEffect(() => {
+    const marquee = marqueeRef.current
+    if (!marquee) return
+
+    let animationId: number
+    let startTime: number
+    let totalWidth: number
+    const duration = 16000 // 16 seconds, slower
+
+    const updateWidth = () => {
+      // Wait a bit more for mobile layout
+      setTimeout(() => {
+        totalWidth = marquee.scrollWidth / 4
+      }, 100)
+    }
+
+    const animate = (currentTime: number) => {
+      if (!startTime) startTime = currentTime
+      if (!totalWidth) return requestAnimationFrame(animate)
+      
+      const elapsed = currentTime - startTime
+      const progress = (elapsed % duration) / duration
+      const translateX = -progress * totalWidth
+      
+      marquee.style.transform = `translate3d(${translateX}px, 0, 0)`
+      animationId = requestAnimationFrame(animate)
+    }
+    
+    // Delay start for mobile
+    setTimeout(() => {
+      updateWidth()
+      setTimeout(() => {
+        animationId = requestAnimationFrame(animate)
+      }, 200)
+    }, 800)
+    
+    return () => {
+      cancelAnimationFrame(animationId)
+    }
+  }, [])
 
   return (
     <section className="min-h-screen flex items-center justify-center relative">
@@ -45,7 +90,7 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.8 }}
           >
-            4+ Years Experience
+            <Highlight>4+ Years Experience</Highlight> • <Highlight>8M+ Users Served</Highlight>
           </motion.p>
           
           <motion.div 
@@ -56,7 +101,7 @@ export default function Hero() {
           >
             <p className="text-sm text-gray-400 mb-8 font-medium">Trusted by</p>
             <div className="relative w-full overflow-hidden h-32" style={{maskImage: 'linear-gradient(to right, transparent, white 30%, white 70%, transparent)'}}>
-              <div className="flex animate-marquee md:animate-marquee-slow items-center">
+              <div ref={marqueeRef} className="flex items-center">
                 {[...companies, ...companies, ...companies, ...companies].map((company, index) => (
                   <div key={index} className="flex-shrink-0">
                     <Image 

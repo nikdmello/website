@@ -3,6 +3,31 @@
 import { motion } from 'framer-motion'
 import { Calendar, TrendingUp, Zap, Shield, Users, GraduationCap } from 'lucide-react'
 import { useIsMobile } from '@/hooks/useIsMobile'
+import Highlight from './Highlight'
+
+const renderHighlightedText = (text: string) => {
+  const parts = text.split(/(<Highlight[^>]*>[^<]+<\/Highlight>)/g)
+  return parts.map((part, index) => {
+    const match = part.match(/<Highlight[^>]*>([^<]+)<\/Highlight>/)
+    if (match) {
+      const [, content] = match
+      return <Highlight key={index}>{content}</Highlight>
+    }
+    return part
+  })
+}
+
+const renderWhiteHighlightedText = (text: string) => {
+  const parts = text.split(/(<Highlight[^>]*>[^<]+<\/Highlight>)/g)
+  return parts.map((part, index) => {
+    const match = part.match(/<Highlight[^>]*>([^<]+)<\/Highlight>/)
+    if (match) {
+      const [, content] = match
+      return <span key={index} className="font-medium text-white">{content}</span>
+    }
+    return part
+  })
+}
 
 const experiences = [
   {
@@ -11,9 +36,9 @@ const experiences = [
     period: 'Apr 2025 – Present',
     icon: <Zap className="w-6 h-6" />,
     highlights: [
-      'Architected autonomous agent payment protocol on Base L2 with Solidity smart contracts and Next.js frontend achieving 100% transaction reliability across 1,000+ test transactions'
+      'Architected autonomous agent payment protocol on Base L2 with Solidity smart contracts and Next.js frontend achieving <Highlight>100% transaction reliability</Highlight> across <Highlight>1,000+ test transactions</Highlight>'
     ],
-    metrics: '100% transaction reliability, zero human intervention after setup'
+    metrics: '<Highlight>100% transaction reliability</Highlight>, <Highlight>zero human intervention</Highlight> after setup'
   },
   {
     title: 'Software Developer',
@@ -21,11 +46,11 @@ const experiences = [
     period: 'Mar 2023 – Present',
     icon: <Shield className="w-6 h-6" />,
     highlights: [
-      'Built full-stack database deployment platform (Angular, NestJS, AWS) achieving 99.9% cost reduction vs Octopus Deploy ($140K+ to ~$100/year)',
-      'Architected event-driven sync system using AWS serverless stack processing 10K+ records/hour, reducing manual operations by 70%',
-      'Engineered CI/CD pipeline optimization with build artifact reuse, reducing deployment time by 50%'
+      'Built full-stack database deployment platform (Angular, NestJS, AWS) achieving <Highlight>99.9% cost reduction</Highlight> vs Octopus Deploy (<Highlight>$140K+ to ~$100/year</Highlight>)',
+      'Architected event-driven sync system using AWS serverless stack processing <Highlight>10K+ records/hour</Highlight>, reducing manual operations by <Highlight>70%</Highlight>',
+      'Engineered CI/CD pipeline optimization with build artifact reuse, reducing deployment time by <Highlight>50%</Highlight>'
     ],
-    metrics: '99.9% cost reduction, 70% fewer manual operations, 50% faster deployments'
+    metrics: '<Highlight>99.9% cost reduction</Highlight>, <Highlight>70% fewer manual operations</Highlight>, <Highlight>50% faster deployments</Highlight>'
   },
   {
     title: 'DevOps Engineer',
@@ -55,7 +80,7 @@ const experiences = [
     highlights: [
       'Provided 1-on-1 sessions and peer mentoring in Foundations of Data Science covering statistical concepts and programming challenges'
     ],
-    metrics: 'Mentored 200+ students'
+    metrics: 'Mentored <Highlight>200+ students</Highlight>'
   }
 ]
 
@@ -114,14 +139,14 @@ export default function Experience() {
                 <div className="flex-1">
                   <div className="mb-4 p-3 bg-cyber-blue/10 rounded-lg border border-cyber-blue/30">
                     <p className="text-cyber-blue font-semibold text-sm">Key Metrics</p>
-                    <p className="text-white">{exp.metrics}</p>
+                    <p className="text-white">{renderWhiteHighlightedText(exp.metrics)}</p>
                   </div>
                   
                   <ul className="space-y-3">
                     {exp.highlights.map((highlight, i) => (
                       <li key={i} className="flex items-start gap-3 text-gray-300">
                         <div className="w-2 h-2 bg-cyber-blue rounded-full mt-2 flex-shrink-0" />
-                        <span>{highlight}</span>
+                        <span>{renderHighlightedText(highlight)}</span>
                       </li>
                     ))}
                   </ul>

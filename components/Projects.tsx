@@ -3,6 +3,19 @@
 import { motion } from 'framer-motion'
 import { Database, Cloud, Bot } from 'lucide-react'
 import { useIsMobile } from '@/hooks/useIsMobile'
+import Highlight from './Highlight'
+
+const renderHighlightedText = (text: string) => {
+  const parts = text.split(/(<Highlight[^>]*>[^<]+<\/Highlight>)/g)
+  return parts.map((part, index) => {
+    const match = part.match(/<Highlight[^>]*>([^<]+)<\/Highlight>/)
+    if (match) {
+      const [, content] = match
+      return <Highlight key={index}>{content}</Highlight>
+    }
+    return part
+  })
+}
 
 const projects = [
   {
@@ -11,7 +24,7 @@ const projects = [
     description: 'Payment infrastructure enabling AI agents to transact autonomously on Base L2 with cryptographic identity verification and streaming payments.',
     icon: <Bot className="w-8 h-8" />,
     tech: ['Solidity', 'Hardhat', 'TypeScript', 'Next.js 14', 'Ethers.js v6', 'Base L2'],
-    metrics: ['100% reliability across 1,000+ test transactions', 'Zero human intervention after setup'],
+    metrics: ['<Highlight>100% reliability</Highlight> across <Highlight>1,000+ test transactions</Highlight>', '<Highlight>Zero human intervention</Highlight> after setup'],
     highlights: ['AgentRegistry for identity verification', 'StreamManager for real-time payments', 'TypeScript SDK + headless CLI'],
     status: 'Live on Base Testnet',
     gradient: 'from-cyber-blue to-blue-600'
@@ -22,7 +35,7 @@ const projects = [
     description: 'Full-stack platform automating DACPAC deployments across multiple environments with Angular frontend, NestJS backend, and AWS orchestration.',
     icon: <Database className="w-8 h-8" />,
     tech: ['Angular 20', 'NestJS', 'DynamoDB', 'CodeBuild', 'Step Functions', 'TypeScript'],
-    metrics: ['99.9% cost reduction ($140K+ to ~$100/year)', 'Multi-environment support (QA/UAT/Prod)'],
+    metrics: ['<Highlight>99.9% cost reduction</Highlight> (<Highlight>$140K+ to ~$100/year</Highlight>)', 'Multi-environment support (QA/UAT/Prod)'],
     highlights: ['Version-aware client filtering', 'AWS workflow orchestration', 'Intelligent redundancy prevention'],
     status: 'Production @ Associa',
     gradient: 'from-green-400 to-emerald-600'
@@ -33,7 +46,7 @@ const projects = [
     description: 'Event-driven microservice synchronizing 6 entity types between property management systems using AWS Lambda, EventBridge, and DynamoDB.',
     icon: <Cloud className="w-8 h-8" />,
     tech: ['C# .NET 8', 'AWS Lambda', 'EventBridge', 'DynamoDB', 'SQS', 'CloudWatch'],
-    metrics: ['70% reduction in manual operations', 'Eliminated API timeout issues'],
+    metrics: ['<Highlight>70% reduction in manual operations</Highlight>', 'Eliminated API timeout issues'],
     highlights: ['EventBridge decoupling architecture', 'Strategy pattern for 6 entity types', 'Correlation IDs for tracing'],
     status: 'Production @ Associa',
     gradient: 'from-cyber-purple to-purple-600'
@@ -90,7 +103,7 @@ export default function Projects() {
                 </div>
               </div>
 
-              <p className="text-gray-300 mb-6 leading-relaxed">{project.description}</p>
+              <p className="text-gray-300 mb-6 leading-relaxed">{renderHighlightedText(project.description)}</p>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
                 <div>
@@ -99,7 +112,7 @@ export default function Projects() {
                     {project.metrics.map((metric, i) => (
                       <li key={i} className="flex items-center gap-2 text-sm text-gray-300">
                         <div className="w-1.5 h-1.5 bg-cyber-blue rounded-full" />
-                        {metric}
+                        <span>{renderHighlightedText(metric)}</span>
                       </li>
                     ))}
                   </ul>
