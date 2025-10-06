@@ -1,35 +1,16 @@
 'use client'
 
-import { motion, AnimatePresence } from 'framer-motion'
-import { ArrowDown, Github, Linkedin, Mail, ChevronLeft, ChevronRight } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react'
 import Image from 'next/image'
-import { useState, useEffect } from 'react'
-import { flushSync } from 'react-dom'
 
 export default function Hero() {
-  const [currentLogo, setCurrentLogo] = useState(0)
-  const [direction, setDirection] = useState(1)
-  const [isMobile, setIsMobile] = useState(false)
   const companies = [
     { src: "/logos/associa_logo.jpeg", name: "Associa" },
     { src: "/logos/panagora_asset_management_logo.jpeg", name: "PanAgora Asset Management" },
     { src: "/logos/asics_digital_logo.jpeg", name: "ASICS Digital" },
     { src: "/logos/northeastern_university_logo.jpeg", name: "Northeastern University" }
   ]
-
-  useEffect(() => {
-    setIsMobile(window.innerWidth < 768)
-  }, [])
-
-  const nextLogo = () => {
-    flushSync(() => setDirection(1))
-    setCurrentLogo((prev) => (prev + 1) % companies.length)
-  }
-  
-  const prevLogo = () => {
-    flushSync(() => setDirection(-1))
-    setCurrentLogo((prev) => (prev - 1 + companies.length) % companies.length)
-  }
 
   return (
     <section className="min-h-screen flex items-center justify-center relative">
@@ -64,7 +45,7 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.8 }}
           >
-            4+ Years Experience • 4 Companies • Production Systems
+            4+ Years Experience
           </motion.p>
           
           <motion.div 
@@ -73,51 +54,21 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.8 }}
           >
-            <p className="text-sm text-gray-400 mb-6">Places I've Worked</p>
-            <div className="flex items-center justify-center gap-3 md:gap-4">
-              <button 
-                onClick={prevLogo}
-                className="p-2 rounded-full bg-card-bg hover:bg-cyber-blue/20 transition-colors"
-                aria-label="Previous company"
-              >
-                <ChevronLeft className="w-4 h-4 text-cyber-blue" />
-              </button>
-              
-              <div className="flex flex-col items-center gap-4 w-40 md:w-48">
-                <div className="h-24 md:h-28 w-full flex items-center justify-center relative overflow-hidden">
-                  <AnimatePresence mode="wait">
-                    <motion.div
-                      key={currentLogo}
-                      initial={{ x: direction > 0 ? 300 : -300, opacity: 0 }}
-                      animate={{ x: 0, opacity: 1 }}
-                      exit={{ x: direction > 0 ? -300 : 300, opacity: 0 }}
-                      transition={{ duration: isMobile ? 0.3 : 0.2, ease: "easeInOut" }}
-                      className="absolute inset-0 flex items-center justify-center"
-                    >
-                      <Image 
-                        src={companies[currentLogo].src} 
-                        alt={companies[currentLogo].name} 
-                        width={280} 
-                        height={96} 
-                        className="h-24 md:h-28 w-auto opacity-80 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300" 
-                      />
-                    </motion.div>
-                  </AnimatePresence>
-                </div>
-                <div className="h-8 flex items-center justify-center">
-                  <p className="text-xs text-gray-400 font-medium text-center px-2 leading-tight">
-                    {companies[currentLogo].name}
-                  </p>
-                </div>
+            <p className="text-sm text-gray-400 mb-8 font-medium">Trusted by</p>
+            <div className="relative w-full overflow-hidden h-32" style={{maskImage: 'linear-gradient(to right, transparent, white 30%, white 70%, transparent)'}}>
+              <div className="flex animate-marquee md:animate-marquee-slow items-center">
+                {[...companies, ...companies, ...companies, ...companies].map((company, index) => (
+                  <div key={index} className="flex-shrink-0">
+                    <Image 
+                      src={company.src} 
+                      alt={company.name} 
+                      width={400} 
+                      height={160} 
+                      className="h-32 w-auto opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-500" 
+                    />
+                  </div>
+                ))}
               </div>
-              
-              <button 
-                onClick={nextLogo}
-                className="p-2 rounded-full bg-card-bg hover:bg-cyber-blue/20 transition-colors"
-                aria-label="Next company"
-              >
-                <ChevronRight className="w-4 h-4 text-cyber-blue" />
-              </button>
             </div>
           </motion.div>
           

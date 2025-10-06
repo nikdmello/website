@@ -19,6 +19,8 @@ module.exports = {
       animation: {
         'glow': 'glow 2s ease-in-out infinite alternate',
         'float': 'float 6s ease-in-out infinite',
+        'marquee': 'marquee 6s linear infinite',
+        'marquee-slow': 'marquee 12s linear infinite',
       },
       keyframes: {
         glow: {
@@ -28,6 +30,10 @@ module.exports = {
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-20px)' }
+        },
+        marquee: {
+          '0%': { transform: 'translate3d(0, 0, 0)' },
+          '100%': { transform: 'translate3d(-25%, 0, 0)' }
         }
       }
     },
