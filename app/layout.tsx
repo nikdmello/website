@@ -12,7 +12,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://nikdmello.com'),
-  title: 'Nik D\'Mello - Infrastructure Engineer',
+  title: 'Nik D\'Mello - Portfolio',
   description: 'Architecting foundational infrastructure that enables AI agents to form autonomous economic networks. Production systems serving 8M+ residents with 70% efficiency gains.',
   keywords: ['AI agents', 'blockchain', 'infrastructure', 'software engineer', 'autonomous systems', 'Base L2', 'event-driven architecture'],
   authors: [{ name: 'Nik D\'Mello', url: 'https://nikdmello.com' }],
@@ -23,13 +23,13 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://nikdmello.com',
-    title: 'Nik D\'Mello - Infrastructure Engineer',
+    title: 'Nik D\'Mello - Portfolio',
     description: 'Architecting foundational infrastructure that enables AI agents to form autonomous economic networks.',
     siteName: 'Nik D\'Mello Portfolio',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Nik D\'Mello - Infrastructure Engineer',
+    title: 'Nik D\'Mello - Portfolio',
     description: 'Building production infrastructure for autonomous AI agent coordination',
     creator: '@nikdmello',
   },
