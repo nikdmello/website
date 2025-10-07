@@ -18,7 +18,7 @@ export default function Contact() {
             Get In Touch
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Let's connect and build the future of autonomous systems.
+            Let's connect
           </p>
         </motion.div>
 
@@ -32,7 +32,7 @@ export default function Contact() {
             className="space-y-8"
           >
             <div className="cyber-border rounded-xl p-8 bg-card-bg rainbow-glow">
-              <h3 className="text-2xl font-bold text-white mb-6">Get In Touch</h3>
+              <h3 className="text-2xl font-bold text-white mb-6">Contact</h3>
               
               <div className="space-y-6">
                 <a 
@@ -59,7 +59,7 @@ export default function Contact() {
                   </div>
                   <div className="min-w-0 flex-1">
                     <p className="text-white font-semibold">LinkedIn</p>
-                    <p className="text-gray-300 text-sm">linkedin.com/in/nikdmello</p>
+                    <p className="text-gray-300">linkedin.com/in/nikdmello</p>
                   </div>
                 </a>
 
