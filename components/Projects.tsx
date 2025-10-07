@@ -20,13 +20,13 @@ const renderHighlightedText = (text: string) => {
 const projects = [
   {
     title: 'Swift Protocol',
-    subtitle: 'AI Agent Payment System',
-    description: 'The problem: AI agents need to pay each other but can\'t use traditional banking. My solution: A blockchain payment system where AI agents can send money automatically, verify each other\'s identity, and stream payments in real-time.',
+    subtitle: 'Stripe for AI Agents',
+    description: 'The problem: AI agents need autonomous payment infrastructure but existing systems require human intervention and can\'t handle micro-transactions. My solution: Production payment infrastructure enabling agents to transact sub-cent payments with cryptographic identity verification.',
     icon: <Bot className="w-8 h-8" />,
-    tech: ['Solidity', 'Hardhat', 'TypeScript', 'Next.js 14', 'Ethers.js v6', 'Base L2'],
-    metrics: ['<Highlight>100% reliability</Highlight> across <Highlight>1,000+ test transactions</Highlight>', '<Highlight>Zero human intervention</Highlight> after setup'],
-    highlights: ['Identity verification system', 'Real-time payment streaming', 'Developer tools and SDK'],
-    status: 'Live on Base Testnet',
+    tech: ['Solidity ^0.8.20', 'Next.js 14', 'TypeScript', 'Base L2', 'Ethers.js v6', 'Hardhat'],
+    metrics: ['<Highlight>96% success rate</Highlight> processing <Highlight>50+ micro-transactions</Highlight>', '<Highlight>Sub-cent payments</Highlight> (0.000001 ETH minimum)', '<Highlight>20+ TPS</Highlight> targeting 1,000+ TPS'],
+    highlights: ['3 production smart contracts deployed', 'Autonomous agent economy demonstration', '100x cost reduction vs Ethereum mainnet'],
+    status: 'Production on Base L2',
     gradient: 'from-cyber-blue to-blue-600'
   },
   {
@@ -41,13 +41,13 @@ const projects = [
     gradient: 'from-green-400 to-emerald-600'
   },
   {
-    title: 'Event-Driven Sync System',
-    subtitle: 'Data Synchronization Service',
-    description: 'The problem: Property management data was getting out of sync between systems, causing manual work. My solution: An automated system that keeps 6 different data types synchronized across multiple systems in real-time.',
+    title: 'Message Pusher',
+    subtitle: 'Event-Driven Sync System',
+    description: 'The problem: Synchronous APIs were timing out on large datasets (1000+ records), causing manual intervention. My solution: Built an event-driven microservice that processes data asynchronously with job tracking and real-time status updates.',
     icon: <Cloud className="w-8 h-8" />,
-    tech: ['C# .NET 8', 'AWS Lambda', 'EventBridge', 'DynamoDB', 'SQS', 'CloudWatch'],
-    metrics: ['<Highlight>70% reduction in manual operations</Highlight>', 'Eliminated API timeout issues'],
-    highlights: ['Event-driven architecture', 'Handles 6 different data types', 'Full request tracing'],
+    tech: ['C# .NET 8', 'AWS Lambda', 'EventBridge', 'DynamoDB', 'SQS', 'CDK', 'CloudWatch'],
+    metrics: ['<Highlight>10K+ records/hour</Highlight> processing', '<Highlight>99.9% uptime</Highlight>', '<Highlight>70% less manual work</Highlight>'],
+    highlights: ['Strategy pattern for 6 entity types', 'Correlation IDs for tracing', 'Auto-scaling serverless architecture'],
     status: 'Production @ Associa',
     gradient: 'from-cyber-purple to-purple-600'
   }

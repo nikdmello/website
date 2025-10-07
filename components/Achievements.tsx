@@ -61,6 +61,7 @@ export default function Achievements() {
             <div className="flex items-center gap-4 mb-4">
               <Trophy className="w-6 h-6 text-yellow-400" />
               <h3 className="text-xl font-bold text-white">Cubs ARcade</h3>
+              <span className="px-3 py-1 bg-yellow-400/20 text-yellow-400 text-sm rounded-full">$500 Award</span>
             </div>
             
             {/* Mobile: Content first, then image below with upward fade */}
@@ -72,7 +73,6 @@ export default function Achievements() {
                     <p className="text-white font-semibold text-lg">Built AR app in 30 hours</p>
                     <p className="text-gray-300">JavaScript & A-Frame</p>
                   </div>
-                  <span className="ml-2 px-3 py-1 bg-yellow-400/20 text-yellow-400 text-sm rounded-full">$500 Award</span>
                 </div>
                 
                 <p className="text-gray-300 text-lg leading-relaxed text-center">
@@ -120,7 +120,7 @@ export default function Achievements() {
                       <p className="text-white font-semibold text-lg">Built AR app in 30 hours</p>
                       <p className="text-gray-300">JavaScript & A-Frame</p>
                     </div>
-                    <span className="ml-2 px-3 py-1 bg-yellow-400/20 text-yellow-400 text-sm rounded-full">$500 Award</span>
+
                   </div>
                   
                   <p className="text-gray-300 text-lg leading-relaxed text-center">

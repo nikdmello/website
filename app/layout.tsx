@@ -14,7 +14,7 @@ const kalam = Kalam({
 export const metadata: Metadata = {
   metadataBase: new URL('https://nikdmello.com'),
   title: 'Nik D\'Mello - Portfolio',
-  description: 'Architecting foundational infrastructure that enables AI agents to form autonomous economic networks. Production systems serving 8M+ residents with 70% efficiency gains.',
+  description: 'Software engineer building production systems at scale.',
   keywords: ['AI agents', 'blockchain', 'infrastructure', 'software engineer', 'autonomous systems', 'Base L2', 'event-driven architecture'],
   authors: [{ name: 'Nik D\'Mello', url: 'https://nikdmello.com' }],
   creator: 'Nik D\'Mello',
@@ -25,13 +25,13 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://nikdmello.com',
     title: 'Nik D\'Mello - Portfolio',
-    description: 'Architecting foundational infrastructure that enables AI agents to form autonomous economic networks.',
+    description: 'Software engineer building production systems at scale.',
     siteName: 'Nik D\'Mello Portfolio',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Nik D\'Mello - Portfolio',
-    description: 'Building production infrastructure for autonomous AI agent coordination',
+    description: 'Software engineer building production systems at scale',
     creator: '@nikdmello',
   },
 }
@@ -61,7 +61,7 @@ export default function RootLayout({
               "@type": "Person",
               "name": "Nik D'Mello",
               "jobTitle": "Software Engineer",
-              "description": "Infrastructure engineer building autonomous AI agent coordination systems",
+              "description": "Software engineer building production systems at scale",
               "url": "https://nikdmello.com",
               "sameAs": [
                 "https://linkedin.com/in/nikdmello",

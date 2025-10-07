@@ -104,14 +104,14 @@ export default function Contact() {
               
               <div className="space-y-6">
                 <div className="p-4 rounded-lg bg-gradient-to-r from-cyber-blue/10 to-cyber-purple/10 border border-cyber-blue/30">
-                  <h4 className="text-cyber-blue font-semibold mb-3">Open Source Contributor</h4>
-                  <p className="text-gray-300 text-sm mb-2">Fixed critical screencast mode bug affecting millions of developers</p>
-                  <a href="https://github.com/microsoft/vscode/pull/176149" target="_blank" rel="noopener noreferrer" className="text-cyber-blue hover:text-white text-sm transition-colors">View Merged PR →</a>
+                  <h4 className="text-cyber-blue font-semibold mb-3">VS Code Open Source Contributor</h4>
+                  <p className="text-gray-300 mb-2">Fixed critical screencast mode bug affecting millions of developers</p>
+                  <a href="https://github.com/microsoft/vscode/pull/176149" target="_blank" rel="noopener noreferrer" className="text-cyber-blue hover:text-white transition-colors">View Merged PR →</a>
                 </div>
 
                 <div className="p-4 rounded-lg bg-gradient-to-r from-cyber-purple/10 to-pink-500/10 border border-cyber-purple/30">
                   <h4 className="text-cyber-purple font-semibold mb-3">Teaching Assistant</h4>
-                  <p className="text-gray-300 text-sm">Foundations of Data Science (200+ students) • 1-on-1 mentoring • Python programming and data analysis</p>
+                  <p className="text-gray-300">Foundations of Data Science (200+ students) • 1-on-1 mentoring • Python programming and data analysis</p>
                 </div>
               </div>
             </div>

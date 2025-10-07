@@ -33,31 +33,34 @@ const experiences = [
   {
     title: 'Founder / Engineer',
     company: 'Swift Protocol',
-    period: 'Apr 2025 – Present',
+    period: 'Dec 2024 – Present',
     icon: <Zap className="w-6 h-6" />,
-    problem: 'AI agents need autonomous payment infrastructure to form economic networks without human intervention',
-    solution: 'Built cryptographic payment protocol on Base L2 with identity verification and streaming payments',
+    problem: 'AI agents need autonomous payment infrastructure but existing systems require human intervention and can\'t handle sub-cent transactions',
+    solution: 'Built "Stripe for AI agents" - production payment infrastructure with cryptographic identity and streaming payments on Base L2',
     highlights: [
-      'Designed autonomous payment infrastructure enabling AI agents to transact independently with <Highlight>100% reliability</Highlight> across <Highlight>1,000+ test transactions</Highlight>',
-      'Implemented cryptographic identity verification ensuring secure agent-to-agent payments with <Highlight>zero human oversight</Highlight> required'
+      'Achieved <Highlight>96% success rate</Highlight> processing <Highlight>50+ micro-transactions</Highlight> with sub-cent payments (0.000001 ETH minimum)',
+      'Built autonomous agent economy with <Highlight>zero human intervention</Highlight> - agents register, verify identity, and transact independently',
+      'Deployed <Highlight>3 production smart contracts</Highlight> on Base L2 with 100x cost reduction vs Ethereum mainnet',
+      'Targeting <Highlight>1,000+ TPS</Highlight> Stripe-level performance with current 20+ TPS throughput'
     ],
-    tech: ['Solidity', 'TypeScript', 'Next.js 14', 'Base L2', 'Ethers.js'],
-    metrics: '<Highlight>100% transaction success</Highlight>, <Highlight>zero manual intervention</Highlight>, <Highlight>1,000+ tests passed</Highlight>'
+    tech: ['Solidity ^0.8.20', 'Next.js 14', 'TypeScript', 'Base L2', 'Ethers.js v6', 'Hardhat'],
+    metrics: '<Highlight>96% success rate</Highlight>, <Highlight>sub-cent transactions</Highlight>, <Highlight>zero human intervention</Highlight>'
   },
   {
     title: 'Software Developer',
     company: 'Associa',
     period: 'Mar 2023 – Present',
     icon: <Shield className="w-6 h-6" />,
-    problem: 'Octopus Deploy was costing $140K+ annually while manual operations consumed 70% of team time',
-    solution: 'Built custom deployment platform with Angular frontend, NestJS backend, and AWS orchestration',
+    problem: 'Octopus Deploy was costing $140K+ annually while manual database deployments were error-prone across 5 environments',
+    solution: 'Built full-stack Database Schema Deployer (DSD) with Angular frontend, NestJS backend, and AWS orchestration',
     highlights: [
-      'Replaced expensive third-party tool with custom solution achieving <Highlight>99.9% cost reduction</Highlight> (<Highlight>$140K+ to ~$100/year</Highlight>)',
-      'Automated sync processes handling <Highlight>10K+ records/hour</Highlight> with event-driven architecture, eliminating <Highlight>70% of manual work</Highlight>',
-      'Optimized CI/CD pipelines with intelligent artifact reuse, cutting deployment time by <Highlight>50%</Highlight>'
+      'Replaced expensive third-party tool achieving <Highlight>99.9% cost reduction</Highlight> (<Highlight>$140K+ to ~$100/year</Highlight>)',
+      'Built event-driven sync system processing <Highlight>10K+ records/hour</Highlight> with <Highlight>99.9% uptime</Highlight>, eliminating API timeouts',
+      'Automated DACPAC deployments across <Highlight>5 environments</Highlight> with intelligent hosted/non-hosted database routing',
+      'Implemented multi-step deployment wizard with client selection, version management, and <Highlight>zero deployment errors</Highlight>'
     ],
-    tech: ['Angular', 'NestJS', 'AWS Lambda', 'DynamoDB', 'EventBridge', 'C# .NET'],
-    metrics: '<Highlight>$140K+ saved annually</Highlight>, <Highlight>70% automation increase</Highlight>, <Highlight>50% faster deployments</Highlight>'
+    tech: ['Angular 20', 'NestJS', 'AWS Step Functions', 'CodeBuild', 'DynamoDB', 'CodeArtifact'],
+    metrics: '<Highlight>$140K+ saved annually</Highlight>, <Highlight>5 environments</Highlight>, <Highlight>zero deployment errors</Highlight>'
   },
   {
     title: 'DevOps Engineer',
@@ -146,26 +149,26 @@ export default function Experience() {
                 <div className="flex-1">
                   {exp.problem && (
                     <div className="mb-4 p-3 bg-red-500/10 rounded-lg border border-red-500/30">
-                      <p className="text-red-400 font-semibold text-base mb-1">Problem</p>
-                      <p className="text-gray-300 text-base">{exp.problem}</p>
+                      <p className="text-red-400 font-semibold mb-1">Problem</p>
+                      <p className="text-gray-300">{exp.problem}</p>
                     </div>
                   )}
                   
                   {exp.solution && (
                     <div className="mb-4 p-3 bg-green-500/10 rounded-lg border border-green-500/30">
-                      <p className="text-green-400 font-semibold text-base mb-1">Solution</p>
-                      <p className="text-gray-300 text-base">{exp.solution}</p>
+                      <p className="text-green-400 font-semibold mb-1">Solution</p>
+                      <p className="text-gray-300">{exp.solution}</p>
                     </div>
                   )}
                   
                   <div className="mb-4 p-3 bg-cyber-blue/10 rounded-lg border border-cyber-blue/30">
-                    <p className="text-cyber-blue font-semibold text-base mb-1">Impact</p>
-                    <p className="text-white text-base">{renderWhiteHighlightedText(exp.metrics)}</p>
+                    <p className="text-cyber-blue font-semibold mb-1">Impact</p>
+                    <p className="text-white">{renderWhiteHighlightedText(exp.metrics)}</p>
                   </div>
                   
                   <ul className="space-y-2">
                     {exp.highlights.map((highlight, i) => (
-                      <li key={i} className="flex items-start gap-3 text-gray-300 text-base">
+                      <li key={i} className="flex items-start gap-3 text-gray-300">
                         <div className="w-1.5 h-1.5 bg-cyber-blue rounded-full mt-2 flex-shrink-0" />
                         <span>{renderHighlightedText(highlight)}</span>
                       </li>
