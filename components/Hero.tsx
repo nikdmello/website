@@ -84,7 +84,7 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            Building <Highlight>production systems</Highlight> at scale
+            Building <Highlight handDrawn>production systems</Highlight> at scale
           </motion.p>
           
           <motion.div 

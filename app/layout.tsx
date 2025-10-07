@@ -1,11 +1,12 @@
 import type { Metadata } from 'next'
-import { JetBrains_Mono } from 'next/font/google'
+import { Kalam } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import SkipLink from '@/components/SkipLink'
 import './globals.css'
 
-const jetbrainsMono = JetBrains_Mono({ 
+const kalam = Kalam({ 
   subsets: ['latin'],
+  weight: ['300', '400', '700'],
   display: 'swap',
   preload: true
 })
@@ -77,7 +78,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={jetbrainsMono.className} suppressHydrationWarning>
+      <body className={kalam.className} suppressHydrationWarning>
         <SkipLink />
         {children}
         <Analytics />

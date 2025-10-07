@@ -146,26 +146,26 @@ export default function Experience() {
                 <div className="flex-1">
                   {exp.problem && (
                     <div className="mb-4 p-3 bg-red-500/10 rounded-lg border border-red-500/30">
-                      <p className="text-red-400 font-semibold text-sm mb-1">Problem</p>
-                      <p className="text-gray-300 text-sm">{exp.problem}</p>
+                      <p className="text-red-400 font-semibold text-base mb-1">Problem</p>
+                      <p className="text-gray-300 text-base">{exp.problem}</p>
                     </div>
                   )}
                   
                   {exp.solution && (
                     <div className="mb-4 p-3 bg-green-500/10 rounded-lg border border-green-500/30">
-                      <p className="text-green-400 font-semibold text-sm mb-1">Solution</p>
-                      <p className="text-gray-300 text-sm">{exp.solution}</p>
+                      <p className="text-green-400 font-semibold text-base mb-1">Solution</p>
+                      <p className="text-gray-300 text-base">{exp.solution}</p>
                     </div>
                   )}
                   
                   <div className="mb-4 p-3 bg-cyber-blue/10 rounded-lg border border-cyber-blue/30">
-                    <p className="text-cyber-blue font-semibold text-sm mb-1">Impact</p>
-                    <p className="text-white text-sm">{renderWhiteHighlightedText(exp.metrics)}</p>
+                    <p className="text-cyber-blue font-semibold text-base mb-1">Impact</p>
+                    <p className="text-white text-base">{renderWhiteHighlightedText(exp.metrics)}</p>
                   </div>
                   
                   <ul className="space-y-2">
                     {exp.highlights.map((highlight, i) => (
-                      <li key={i} className="flex items-start gap-3 text-gray-300 text-sm">
+                      <li key={i} className="flex items-start gap-3 text-gray-300 text-base">
                         <div className="w-1.5 h-1.5 bg-cyber-blue rounded-full mt-2 flex-shrink-0" />
                         <span>{renderHighlightedText(highlight)}</span>
                       </li>

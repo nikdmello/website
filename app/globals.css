@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
-
 * {
   box-sizing: border-box;
   padding: 0;
@@ -28,6 +26,7 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  font-size: 18px;
 }
 
 :root {
@@ -178,8 +177,12 @@ a:focus-visible {
   border-radius: 4px;
   z-index: 1000;
   font-weight: bold;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .skip-to-content:focus {
   top: 6px;
+  opacity: 1;
+  pointer-events: auto;
 }
