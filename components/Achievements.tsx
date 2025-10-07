@@ -2,7 +2,35 @@
 
 import { motion } from 'framer-motion'
 import { Trophy, Code, Play } from 'lucide-react'
+import { useEffect, useState } from 'react'
 export default function Achievements() {
+  const [currentSlide, setCurrentSlide] = useState(0)
+  
+  const images = [
+    {
+      src: "/images/winning-photo.jpeg",
+      alt: "Nik D'Mello presenting Cubs ARcade",
+      badge: "🥈 2ND"
+    },
+    {
+      src: "/images/hackathon-presentation-2.jpeg",
+      alt: "Cubs ARcade demo",
+      badge: null
+    },
+    {
+      src: "/images/hackathon-presentation-3.jpeg",
+      alt: "Team presentation",
+      badge: null
+    }
+  ]
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % images.length)
+    }, 3000) // Change every 3 seconds
+    
+    return () => clearInterval(interval)
+  }, [])
   
   return (
     <section className="py-16">
@@ -22,7 +50,7 @@ export default function Achievements() {
           </p>
         </motion.div>
 
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -36,7 +64,7 @@ export default function Achievements() {
               <span className="ml-auto px-3 py-1 bg-yellow-400/20 text-yellow-400 text-sm rounded-full">$500 Award</span>
             </div>
             
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
               <div className="flex flex-col justify-center h-full space-y-6">
                 <div className="text-center space-y-4">
                   <div className="inline-flex items-center gap-3 px-4 py-3 bg-cyber-purple/10 rounded-lg border border-cyber-purple/30">
@@ -65,34 +93,43 @@ export default function Achievements() {
                 </div>
               </div>
               
-              <div className="space-y-3">
-                <div className="relative">
-                  <div className="cyber-border rounded-lg overflow-hidden">
-                    <img
-                      src="/images/winning-photo.jpeg"
-                      alt="Nik D'Mello presenting Cubs ARcade"
-                      className="w-full h-32 object-cover"
-                    />
-                  </div>
-                  <div className="absolute -top-2 -right-2 bg-yellow-400 text-black px-2 py-1 rounded-full text-xs font-bold">
-                    🥈 2ND
-                  </div>
+              <div className="relative">
+                <div className="cyber-border rounded-lg overflow-hidden relative h-48 md:h-64">
+                  {images.map((image, index) => (
+                    <div
+                      key={index}
+                      className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                        index === currentSlide ? 'opacity-100' : 'opacity-0'
+                      }`}
+                    >
+                      <img
+                        src={image.src}
+                        alt={image.alt}
+                        className="w-full h-full object-cover"
+                      />
+                      {image.badge && index === currentSlide && (
+                        <div className="absolute -top-2 -right-2 bg-yellow-400 text-black px-2 py-1 rounded-full text-xs font-bold animate-pulse">
+                          {image.badge}
+                        </div>
+                      )}
+                    </div>
+                  ))}
                 </div>
-                <div className="grid grid-cols-2 gap-2">
-                  <div className="cyber-border rounded-lg overflow-hidden">
-                    <img
-                      src="/images/hackathon-presentation-2.jpeg"
-                      alt="Cubs ARcade demo"
-                      className="w-full h-20 object-cover"
+                
+                {/* Slide indicators */}
+                <div className="flex justify-center mt-4 space-x-2">
+                  {images.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentSlide(index)}
+                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                        index === currentSlide 
+                          ? 'bg-cyber-blue w-6' 
+                          : 'bg-gray-600 hover:bg-gray-500'
+                      }`}
+                      aria-label={`Go to slide ${index + 1}`}
                     />
-                  </div>
-                  <div className="cyber-border rounded-lg overflow-hidden">
-                    <img
-                      src="/images/hackathon-presentation-3.jpeg"
-                      alt="Team presentation"
-                      className="w-full h-20 object-cover"
-                    />
-                  </div>
+                  ))}
                 </div>
               </div>
             </div>

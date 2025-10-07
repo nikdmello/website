@@ -79,28 +79,19 @@ export default function Hero() {
           </motion.h1>
           
           <motion.p 
-            className="text-xl md:text-2xl text-gray-300 mb-4 leading-relaxed"
+            className="text-xl md:text-3xl text-gray-300 mb-12 leading-relaxed font-medium"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            Software Engineer
-          </motion.p>
-          
-          <motion.p 
-            className="text-sm text-gray-400 mb-12"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-          >
-            <Highlight>4+ Years Experience</Highlight> • <Highlight>8M+ Users Served</Highlight>
+            Building <Highlight>production systems</Highlight> at scale
           </motion.p>
           
           <motion.div 
             className="mb-14"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
           >
             <p className="text-sm text-gray-400 mb-8 font-medium">Trusted by</p>
             <div className="relative w-full overflow-hidden h-32" style={{maskImage: 'linear-gradient(to right, transparent, white 30%, white 70%, transparent)'}}>

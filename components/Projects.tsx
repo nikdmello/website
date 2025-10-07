@@ -20,34 +20,34 @@ const renderHighlightedText = (text: string) => {
 const projects = [
   {
     title: 'Swift Protocol',
-    subtitle: 'Autonomous Agent Payment Infrastructure',
-    description: 'Payment infrastructure enabling AI agents to transact autonomously on Base L2 with cryptographic identity verification and streaming payments.',
+    subtitle: 'AI Agent Payment System',
+    description: 'The problem: AI agents need to pay each other but can\'t use traditional banking. My solution: A blockchain payment system where AI agents can send money automatically, verify each other\'s identity, and stream payments in real-time.',
     icon: <Bot className="w-8 h-8" />,
     tech: ['Solidity', 'Hardhat', 'TypeScript', 'Next.js 14', 'Ethers.js v6', 'Base L2'],
     metrics: ['<Highlight>100% reliability</Highlight> across <Highlight>1,000+ test transactions</Highlight>', '<Highlight>Zero human intervention</Highlight> after setup'],
-    highlights: ['AgentRegistry for identity verification', 'StreamManager for real-time payments', 'TypeScript SDK + headless CLI'],
+    highlights: ['Identity verification system', 'Real-time payment streaming', 'Developer tools and SDK'],
     status: 'Live on Base Testnet',
     gradient: 'from-cyber-blue to-blue-600'
   },
   {
     title: 'Database Schema Deployer',
-    subtitle: 'Full-Stack Deployment Platform',
-    description: 'Full-stack platform automating DACPAC deployments across multiple environments with Angular frontend, NestJS backend, and AWS orchestration.',
+    subtitle: 'Custom Deployment Platform',
+    description: 'The problem: Associa was paying $140K+ annually for Octopus Deploy. My solution: Built a custom deployment platform from scratch that does the same job for ~$100/year in AWS costs.',
     icon: <Database className="w-8 h-8" />,
     tech: ['Angular 20', 'NestJS', 'DynamoDB', 'CodeBuild', 'Step Functions', 'TypeScript'],
     metrics: ['<Highlight>99.9% cost reduction</Highlight> (<Highlight>$140K+ to ~$100/year</Highlight>)', 'Multi-environment support (QA/UAT/Prod)'],
-    highlights: ['Version-aware client filtering', 'AWS workflow orchestration', 'Intelligent redundancy prevention'],
+    highlights: ['Smart version management', 'Automated AWS workflows', 'Prevents duplicate deployments'],
     status: 'Production @ Associa',
     gradient: 'from-green-400 to-emerald-600'
   },
   {
     title: 'Event-Driven Sync System',
-    subtitle: 'AWS Serverless Microservice',
-    description: 'Event-driven microservice synchronizing 6 entity types between property management systems using AWS Lambda, EventBridge, and DynamoDB.',
+    subtitle: 'Data Synchronization Service',
+    description: 'The problem: Property management data was getting out of sync between systems, causing manual work. My solution: An automated system that keeps 6 different data types synchronized across multiple systems in real-time.',
     icon: <Cloud className="w-8 h-8" />,
     tech: ['C# .NET 8', 'AWS Lambda', 'EventBridge', 'DynamoDB', 'SQS', 'CloudWatch'],
     metrics: ['<Highlight>70% reduction in manual operations</Highlight>', 'Eliminated API timeout issues'],
-    highlights: ['EventBridge decoupling architecture', 'Strategy pattern for 6 entity types', 'Correlation IDs for tracing'],
+    highlights: ['Event-driven architecture', 'Handles 6 different data types', 'Full request tracing'],
     status: 'Production @ Associa',
     gradient: 'from-cyber-purple to-purple-600'
   }
@@ -67,10 +67,10 @@ export default function Projects() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
-            Technical Deep Dive
+            What I've Built
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Production systems and research projects
+            Real systems solving real problems
           </p>
         </motion.div>
 
