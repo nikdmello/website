@@ -33,7 +33,7 @@ const experiences = [
   {
     title: 'Founder / Engineer',
     company: 'Swift Protocol',
-    period: 'Dec 2024 – Present',
+    period: 'Apr 2025 – Present',
     icon: <Zap className="w-6 h-6" />,
     problem: 'AI agents need autonomous payment infrastructure but existing systems require human intervention and can\'t handle sub-cent transactions',
     solution: 'Built "Stripe for AI agents" - production payment infrastructure with cryptographic identity and streaming payments on Base L2',
