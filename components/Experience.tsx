@@ -63,16 +63,6 @@ const experiences = [
     metrics: '<Highlight>$140K+ saved annually</Highlight>, <Highlight>5 environments</Highlight>, <Highlight>zero deployment errors</Highlight>'
   },
   {
-    title: 'DevOps Engineer',
-    company: 'PanAgora Asset Management',
-    period: 'Sep 2022 – Mar 2023',
-    icon: <Users className="w-6 h-6" />,
-    highlights: [
-      'Implemented Jenkins CI/CD pipeline automating deployment workflows and reducing deployment errors'
-    ],
-    metrics: '80% reduction in deployment time, improved release reliability'
-  },
-  {
     title: 'BI Developer',
     company: 'ASICS Digital',
     period: 'Jan 2022 – Jul 2022',
@@ -81,6 +71,16 @@ const experiences = [
       'Analyzed e-commerce traffic patterns driving revenue optimization through data-driven strategies'
     ],
     metrics: '10% revenue increase through data-driven optimization'
+  },
+  {
+    title: 'DevOps Engineer',
+    company: 'PanAgora Asset Management',
+    period: 'Feb 2021 – Jul 2021',
+    icon: <Users className="w-6 h-6" />,
+    highlights: [
+      'Implemented Jenkins CI/CD pipeline automating deployment workflows and reducing deployment errors'
+    ],
+    metrics: '80% reduction in deployment time, improved release reliability'
   },
   {
     title: 'Teaching Assistant',

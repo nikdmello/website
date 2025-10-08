@@ -24,8 +24,8 @@ const projects = [
     description: 'The problem: AI agents need autonomous payment infrastructure but existing systems require human intervention and can\'t handle micro-transactions. My solution: Production payment infrastructure enabling agents to transact sub-cent payments with cryptographic identity verification.',
     icon: <Bot className="w-8 h-8" />,
     tech: ['Solidity ^0.8.20', 'Next.js 14', 'TypeScript', 'Base L2', 'Ethers.js v6', 'Hardhat'],
-    metrics: ['<Highlight>96% success rate</Highlight> processing <Highlight>50+ micro-transactions</Highlight>', '<Highlight>Sub-cent payments</Highlight> (0.000001 ETH minimum)', '<Highlight>20+ TPS</Highlight> targeting 1,000+ TPS'],
-    highlights: ['3 production smart contracts deployed', 'Autonomous agent economy demonstration', '100x cost reduction vs Ethereum mainnet'],
+    metrics: ['<Highlight>96% success rate</Highlight>', '<Highlight>Sub-cent payments</Highlight>', '<Highlight>20+ TPS</Highlight>'],
+    highlights: ['3 smart contracts deployed', 'Autonomous agent economy', '100x cost reduction'],
     status: 'Production on Base L2',
     gradient: 'from-cyber-blue to-blue-600'
   },
@@ -74,7 +74,7 @@ export default function Projects() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 items-stretch">
           {projects.map((project, index) => {
             const Component = isMobile ? 'div' : motion.div
             const props = isMobile ? {} : {
@@ -88,7 +88,7 @@ export default function Projects() {
             <Component
               key={index}
               {...props}
-              className="cyber-border rounded-xl p-8 bg-card-bg hover:glow-effect transition-all duration-300 group rainbow-glow"
+              className="cyber-border rounded-xl p-8 bg-card-bg hover:glow-effect transition-all duration-300 group rainbow-glow flex flex-col"
             >
               <div className="flex items-start gap-4 mb-6">
                 <div className={`p-3 rounded-full bg-gradient-to-r ${project.gradient} text-white`}>
@@ -103,10 +103,12 @@ export default function Projects() {
                 </div>
               </div>
 
-              <p className="text-gray-300 mb-6 leading-relaxed">{renderHighlightedText(project.description)}</p>
+              <div className="flex-1 mb-6">
+                <p className="text-gray-300 leading-relaxed">{renderHighlightedText(project.description)}</p>
+              </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-                <div>
+              <div className="flex flex-col md:flex-row gap-6">
+                <div className="flex-1">
                   <h4 className="text-white font-semibold mb-3">Key Metrics</h4>
                   <ul className="space-y-2">
                     {project.metrics.map((metric, i) => (
@@ -117,7 +119,7 @@ export default function Projects() {
                     ))}
                   </ul>
                 </div>
-                <div>
+                <div className="flex-1">
                   <h4 className="text-white font-semibold mb-3">Technical Highlights</h4>
                   <ul className="space-y-2">
                     {project.highlights.map((highlight, i) => (
@@ -128,7 +130,7 @@ export default function Projects() {
                     ))}
                   </ul>
                 </div>
-                <div>
+                <div className="flex-1">
                   <h4 className="text-white font-semibold mb-3">Tech Stack</h4>
                   <div className="flex flex-wrap gap-2">
                     {project.tech.map((tech, i) => (
