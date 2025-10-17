@@ -27,6 +27,12 @@ export const metadata: Metadata = {
     title: 'Nik D\'Mello - Portfolio',
     description: 'Software engineer building production systems at scale.',
     siteName: 'Nik D\'Mello Portfolio',
+    images: [{
+      url: '/pp.png',
+      width: 800,
+      height: 800,
+      alt: 'Nik D\'Mello - Software Engineer',
+    }],
   },
   twitter: {
     card: 'summary_large_image',
