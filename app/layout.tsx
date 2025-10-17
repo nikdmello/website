@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     description: 'Software engineer building production systems at scale.',
     siteName: 'Nik D\'Mello Portfolio',
     images: [{
-      url: '/pp.png',
+      url: '/images/pp.png',
       width: 800,
       height: 800,
       alt: 'Nik D\'Mello - Software Engineer',
