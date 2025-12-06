@@ -51,7 +51,7 @@ export default function OpenSource() {
             Open Source
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Contributing to VS Code, used by millions of developers worldwide
+            Contributing to VS Code
           </p>
         </motion.div>
 
