@@ -32,19 +32,19 @@ const renderWhiteHighlightedText = (text: string) => {
 const experiences = [
   {
     title: 'Founder / Engineer',
-    company: 'Swift Protocol',
+    company: 'Swift',
     period: 'Apr 2025 – Present',
     icon: <Zap className="w-6 h-6" />,
-    problem: 'AI agents need autonomous payment infrastructure but existing systems require human intervention and can\'t handle sub-cent transactions',
-    solution: 'Built "Stripe for AI agents" - production payment infrastructure with cryptographic identity and streaming payments on Base L2',
+    problem: 'AI agents can\'t coordinate reliably—partial failures break workflows, payments need manual intervention, and there\'s no trust between organizations',
+    solution: 'Building atomic coordination infrastructure with blockchain settlement guaranteeing all-or-nothing execution across distributed agent networks',
     highlights: [
-      'Achieved <Highlight>96% success rate</Highlight> processing <Highlight>50+ micro-transactions</Highlight> with sub-cent payments (0.000001 ETH minimum)',
-      'Built autonomous agent economy with <Highlight>zero human intervention</Highlight> - agents register, verify identity, and transact independently',
-      'Deployed <Highlight>3 production smart contracts</Highlight> on Base L2 with 100x cost reduction vs Ethereum mainnet',
-      'Targeting <Highlight>1,000+ TPS</Highlight> Stripe-level performance with current 20+ TPS throughput'
+      'Architected blockchain settlement system preventing partial failures with <Highlight>automatic refunds</Highlight> on workflow failure',
+      'Designed cross-organization payment layer processing <Highlight>sub-second transactions</Highlight> with <Highlight>100% success rate</Highlight>',
+      'Built production system with smart contracts, orchestration engine, and TypeScript SDK for agent integration',
+      'Enabling reliable multi-agent workflows where all agents succeed and get paid, or everything reverts'
     ],
-    tech: ['Solidity ^0.8.20', 'Next.js 14', 'TypeScript', 'Base L2', 'Ethers.js v6', 'Hardhat'],
-    metrics: '<Highlight>96% success rate</Highlight>, <Highlight>sub-cent transactions</Highlight>, <Highlight>zero human intervention</Highlight>'
+    tech: ['TypeScript', 'Blockchain', 'Smart Contracts', 'Next.js', 'Solidity', 'Ethers.js'],
+    metrics: '<Highlight>All-or-nothing execution</Highlight>, <Highlight>sub-second settlement</Highlight>, <Highlight>cross-org coordination</Highlight>'
   },
   {
     title: 'Software Developer',

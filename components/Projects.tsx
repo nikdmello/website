@@ -19,35 +19,29 @@ const renderHighlightedText = (text: string) => {
 
 const projects = [
   {
-    title: 'Swift Protocol',
-    subtitle: 'Stripe for AI Agents',
-    description: 'The problem: AI agents need autonomous payment infrastructure but existing systems require human intervention and can\'t handle micro-transactions. My solution: Production payment infrastructure enabling agents to transact sub-cent payments with cryptographic identity verification.',
+    title: 'Swift',
+    subtitle: 'Atomic Coordination for AI Agents',
+    description: 'AI agents can\'t coordinate reliably. Partial failures break workflows, payments need manual intervention, and there\'s no trust between organizations. Swift guarantees atomic execution: all agents succeed and get paid, or everything reverts with full refunds.',
     icon: <Bot className="w-8 h-8" />,
-    tech: ['Solidity ^0.8.20', 'Next.js 14', 'TypeScript', 'Base L2', 'Ethers.js v6', 'Hardhat'],
-    metrics: ['<Highlight>96% success rate</Highlight>', '<Highlight>Sub-cent payments</Highlight>', '<Highlight>20+ TPS</Highlight>'],
-    highlights: ['3 smart contracts deployed', 'Autonomous agent economy', '100x cost reduction'],
-    status: 'Production on Base L2',
+    tech: ['TypeScript', 'Blockchain', 'Smart Contracts', 'Next.js'],
+    status: 'Active Development',
     gradient: 'from-cyber-blue to-blue-600'
   },
   {
     title: 'Database Schema Deployer',
     subtitle: 'Custom Deployment Platform',
-    description: 'The problem: Associa was paying $140K+ annually for Octopus Deploy. My solution: Built a custom deployment platform from scratch that does the same job for ~$100/year in AWS costs.',
+    description: 'Associa was paying $140K+ annually for Octopus Deploy. Built a custom deployment platform from scratch that does the same job for ~$100/year in AWS costs.',
     icon: <Database className="w-8 h-8" />,
-    tech: ['Angular 20', 'NestJS', 'DynamoDB', 'CodeBuild', 'Step Functions', 'TypeScript'],
-    metrics: ['<Highlight>99.9% cost reduction</Highlight> (<Highlight>$140K+ to ~$100/year</Highlight>)', 'Multi-environment support (QA/UAT/Prod)'],
-    highlights: ['Smart version management', 'Automated AWS workflows', 'Prevents duplicate deployments'],
+    tech: ['Angular', 'NestJS', 'DynamoDB', 'Step Functions'],
     status: 'Production @ Associa',
     gradient: 'from-green-400 to-emerald-600'
   },
   {
     title: 'Message Pusher',
     subtitle: 'Event-Driven Sync System',
-    description: 'The problem: Synchronous APIs were timing out on large datasets (1000+ records), causing manual intervention. My solution: Built an event-driven microservice that processes data asynchronously with job tracking and real-time status updates.',
+    description: 'Synchronous APIs were timing out on 1000+ record datasets, requiring constant manual intervention. Built an event-driven microservice that processes asynchronously with job tracking. Now handles 10K+ records/hour with 99.9% uptime.',
     icon: <Cloud className="w-8 h-8" />,
-    tech: ['C# .NET 8', 'AWS Lambda', 'EventBridge', 'DynamoDB', 'SQS', 'CDK', 'CloudWatch'],
-    metrics: ['<Highlight>10K+ records/hour</Highlight> processing', '<Highlight>99.9% uptime</Highlight>', '<Highlight>70% less manual work</Highlight>'],
-    highlights: ['Strategy pattern for 6 entity types', 'Correlation IDs for tracing', 'Auto-scaling serverless architecture'],
+    tech: ['C# .NET', 'Lambda', 'EventBridge', 'DynamoDB', 'SQS'],
     status: 'Production @ Associa',
     gradient: 'from-cyber-purple to-purple-600'
   }
@@ -107,41 +101,16 @@ export default function Projects() {
                 <p className="text-gray-300 leading-relaxed">{renderHighlightedText(project.description)}</p>
               </div>
 
-              <div className="flex flex-col md:flex-row gap-6">
-                <div className="flex-1">
-                  <h4 className="text-white font-semibold mb-3">Key Metrics</h4>
-                  <ul className="space-y-2">
-                    {project.metrics.map((metric, i) => (
-                      <li key={i} className="flex items-center gap-2 text-sm text-gray-300">
-                        <div className="w-1.5 h-1.5 bg-cyber-blue rounded-full" />
-                        <span>{renderHighlightedText(metric)}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="flex-1">
-                  <h4 className="text-white font-semibold mb-3">Technical Highlights</h4>
-                  <ul className="space-y-2">
-                    {project.highlights.map((highlight, i) => (
-                      <li key={i} className="flex items-center gap-2 text-sm text-gray-300">
-                        <div className="w-1.5 h-1.5 bg-cyber-purple rounded-full" />
-                        {highlight}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="flex-1">
-                  <h4 className="text-white font-semibold mb-3">Tech Stack</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech, i) => (
-                      <span
-                        key={i}
-                        className="px-2 py-1 bg-gray-800 text-gray-300 text-xs rounded-full border border-gray-700"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+              <div>
+                <div className="flex flex-wrap gap-2">
+                  {project.tech.map((tech, i) => (
+                    <span
+                      key={i}
+                      className="px-3 py-1 bg-gray-800 text-gray-300 text-sm rounded-full border border-gray-700"
+                    >
+                      {tech}
+                    </span>
+                  ))}
                 </div>
               </div>
             </Component>
