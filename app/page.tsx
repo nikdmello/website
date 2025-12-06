@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Hero from '@/components/Hero'
 import Experience from '@/components/Experience'
+import OpenSource from '@/components/OpenSource'
 import Projects from '@/components/Projects'
 import Achievements from '@/components/Achievements'
 import Skills from '@/components/Skills'
@@ -36,6 +37,7 @@ export default function Home() {
         <Hero />
         <Projects />
         <Experience />
+        <OpenSource />
         <Achievements />
         <Skills />
         <Contact />
