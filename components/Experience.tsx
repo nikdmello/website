@@ -35,7 +35,7 @@ const experiences = [
     company: 'Swift',
     period: 'Apr 2025 – Present',
     icon: <Zap className="w-6 h-6" />,
-    problem: 'AI agents can\'t coordinate reliably—partial failures break workflows, payments need manual intervention, and there\'s no trust between organizations',
+    problem: 'AI agents can\'t coordinate reliably. Partial failures break workflows, payments need manual intervention, and there\'s no trust between organizations',
     solution: 'Building atomic coordination infrastructure with blockchain settlement guaranteeing all-or-nothing execution across distributed agent networks',
     highlights: [
       'Architected blockchain settlement system preventing partial failures with <Highlight>automatic refunds</Highlight> on workflow failure',
