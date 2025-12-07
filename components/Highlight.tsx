@@ -6,17 +6,8 @@ interface HighlightProps {
 }
 
 export default function Highlight({ children, handDrawn = false }: HighlightProps) {
-  if (handDrawn) {
-    return (
-      <span className="relative inline-block font-medium text-cyber-blue">
-        {children}
-        <HandDrawnUnderline />
-      </span>
-    )
-  }
-  
   return (
-    <span className="font-medium text-cyber-blue">
+    <span className="font-medium text-white">
       {children}
     </span>
   )

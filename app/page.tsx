@@ -19,21 +19,9 @@ export default function Home() {
 
   return (
     <main id="main-content" tabIndex={-1} className="min-h-screen text-white relative overflow-hidden outline-none">
-      {/* Global animated background */}
-      <div className="fixed inset-0 bg-gradient-to-br from-dark-bg via-gray-900 to-black">
-        <motion.div 
-          className="absolute inset-0 bg-[linear-gradient(rgba(0,245,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,245,255,0.03)_1px,transparent_1px)] bg-[size:50px_50px]"
-          animate={{
-            backgroundPosition: ['0px 0px', '50px 50px'],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: 'linear'
-          }}
-        />
-      </div>
-      <div className="relative z-10">
+      {/* Minimal background */}
+      <div className="fixed inset-0 bg-black" />
+      <div className="relative z-10 max-w-6xl mx-auto">
         <Hero />
         <Projects />
         <Experience />

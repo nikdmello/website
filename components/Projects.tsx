@@ -60,12 +60,9 @@ export default function Projects() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
-            What I've Built
+          <h2 className="text-4xl md:text-5xl font-bold gradient-text">
+            Projects
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Real systems solving real problems
-          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 items-stretch">

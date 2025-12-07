@@ -14,12 +14,9 @@ export default function Contact() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-6">
-            Get In Touch
+          <h2 className="text-4xl md:text-5xl font-bold gradient-text">
+            Contact
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Let's connect
-          </p>
         </motion.div>
 
         <motion.div

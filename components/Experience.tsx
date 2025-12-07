@@ -107,12 +107,9 @@ export default function Experience() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold gradient-text">
             Experience
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Building production systems at scale
-          </p>
         </motion.div>
 
         <div className="space-y-8">
@@ -146,34 +143,25 @@ export default function Experience() {
                   </div>
                 </div>
                 
-                <div className="flex-1">
+                <div className="flex-1 space-y-6">
                   {exp.problem && (
-                    <div className="mb-4 p-3 bg-red-500/10 rounded-lg border border-red-500/30">
-                      <p className="text-red-400 font-semibold mb-1">Problem</p>
-                      <p className="text-gray-300">{exp.problem}</p>
+                    <div>
+                      <p className="text-gray-500 text-xs uppercase tracking-wider mb-2">Problem</p>
+                      <p className="text-gray-300 leading-relaxed">{exp.problem}</p>
                     </div>
                   )}
                   
                   {exp.solution && (
-                    <div className="mb-4 p-3 bg-green-500/10 rounded-lg border border-green-500/30">
-                      <p className="text-green-400 font-semibold mb-1">Solution</p>
-                      <p className="text-gray-300">{exp.solution}</p>
+                    <div>
+                      <p className="text-gray-500 text-xs uppercase tracking-wider mb-2">Solution</p>
+                      <p className="text-gray-300 leading-relaxed">{exp.solution}</p>
                     </div>
                   )}
                   
-                  <div className="mb-4 p-3 bg-cyber-blue/10 rounded-lg border border-cyber-blue/30">
-                    <p className="text-cyber-blue font-semibold mb-1">Impact</p>
-                    <p className="text-white">{renderWhiteHighlightedText(exp.metrics)}</p>
+                  <div>
+                    <p className="text-gray-500 text-xs uppercase tracking-wider mb-2">Impact</p>
+                    <p className="text-white leading-relaxed">{renderWhiteHighlightedText(exp.metrics)}</p>
                   </div>
-                  
-                  <ul className="space-y-2">
-                    {exp.highlights.map((highlight, i) => (
-                      <li key={i} className="flex items-start gap-3 text-gray-300">
-                        <div className="w-1.5 h-1.5 bg-cyber-blue rounded-full mt-2 flex-shrink-0" />
-                        <span>{renderHighlightedText(highlight)}</span>
-                      </li>
-                    ))}
-                  </ul>
                 </div>
               </div>
             </Component>

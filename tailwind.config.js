@@ -8,8 +8,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'cyber-blue': '#00f5ff',
-        'cyber-purple': '#8b5cf6',
+        'cyber-blue': '#ffffff',
+        'cyber-purple': '#a3a3a3',
         'dark-bg': '#0a0a0a',
         'card-bg': '#1a1a1a',
       },
@@ -22,8 +22,8 @@ module.exports = {
       },
       keyframes: {
         glow: {
-          '0%': { boxShadow: '0 0 5px #00f5ff, 0 0 10px #00f5ff, 0 0 15px #00f5ff' },
-          '100%': { boxShadow: '0 0 10px #00f5ff, 0 0 20px #00f5ff, 0 0 30px #00f5ff' }
+          '0%': { boxShadow: '0 0 5px rgba(255,255,255,0.3), 0 0 10px rgba(255,255,255,0.2)' },
+          '100%': { boxShadow: '0 0 10px rgba(255,255,255,0.4), 0 0 20px rgba(255,255,255,0.3)' }
         },
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },

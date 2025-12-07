@@ -13,7 +13,8 @@ export default function Hero() {
     { src: "/logos/associa_logo.jpeg", name: "Associa" },
     { src: "/logos/panagora_asset_management_logo.jpeg", name: "PanAgora Asset Management" },
     { src: "/logos/asics_digital_logo.jpeg", name: "ASICS Digital" },
-    { src: "/logos/northeastern_university_logo.jpeg", name: "Northeastern University" }
+    { src: "/logos/northeastern_university_logo.jpeg", name: "Northeastern University" },
+    { src: "/logos/vscode_logo.png", name: "Microsoft VS Code" }
   ]
 
   useEffect(() => {
@@ -78,14 +79,7 @@ export default function Hero() {
             <span className="gradient-text">Nik D'Mello</span>
           </motion.h1>
           
-          <motion.p 
-            className="text-xl md:text-3xl text-gray-300 mb-12 leading-relaxed font-medium"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-          >
-            Building <Highlight handDrawn>production systems</Highlight> at scale
-          </motion.p>
+
           
           <motion.div 
             className="mb-14"

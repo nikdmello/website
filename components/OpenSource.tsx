@@ -47,12 +47,9 @@ export default function OpenSource() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold gradient-text">
             Open Source
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Contributing to VS Code
-          </p>
         </motion.div>
 
         <div className="space-y-8 max-w-5xl mx-auto">

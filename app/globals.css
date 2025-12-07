@@ -36,20 +36,15 @@ body {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #00f5ff 0%, #8b5cf6 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #ffffff;
 }
 
 .cyber-border {
-  border: 1px solid transparent;
-  background: linear-gradient(#1a1a1a, #1a1a1a) padding-box,
-              linear-gradient(135deg, #00f5ff, #8b5cf6) border-box;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .glow-effect {
-  box-shadow: 0 0 20px rgba(0, 245, 255, 0.3);
+  box-shadow: none;
 }
 
 /* Custom scrollbar */
@@ -58,16 +53,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #1a1a1a;
+  background: #000000;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #00f5ff, #8b5cf6);
+  background: #ffffff;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #8b5cf6, #00f5ff);
+  background: #a3a3a3;
 }
 
 /* Mobile-friendly interactions */
@@ -77,19 +72,19 @@ body {
   }
   
   .hover\:glow-effect:active {
-    box-shadow: 0 0 20px rgba(0, 245, 255, 0.3);
+    box-shadow: none;
   }
 }
 
 /* Focus states for accessibility */
 .rainbow-glow:focus-visible {
-  outline: 2px solid #00f5ff;
+  outline: 2px solid #ffffff;
   outline-offset: 2px;
 }
 
 button:focus-visible,
 a:focus-visible {
-  outline: 2px solid #00f5ff;
+  outline: 2px solid #ffffff;
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -97,10 +92,7 @@ a:focus-visible {
 /* High contrast mode support */
 @media (prefers-contrast: high) {
   .gradient-text {
-    background: #ffffff;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #ffffff;
   }
 }
 
@@ -117,13 +109,9 @@ a:focus-visible {
   }
 }
 
-/* Animated grid background */
+/* Animated grid background - removed for minimalism */
 .animated-grid {
-  background-image: 
-    linear-gradient(rgba(0,245,255,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,245,255,0.03) 1px, transparent 1px);
-  background-size: 50px 50px;
-  animation: grid-move 20s linear infinite;
+  background: none;
 }
 
 @keyframes grid-move {
@@ -134,6 +122,7 @@ a:focus-visible {
 /* Rainbow glow effect - only on hover */
 .rainbow-glow {
   position: relative;
+  transition: transform 0.2s ease;
 }
 
 .rainbow-glow::before {
@@ -159,6 +148,10 @@ a:focus-visible {
   opacity: 0.6;
 }
 
+.rainbow-glow:hover {
+  transform: translateY(-2px);
+}
+
 @keyframes rainbow-rotate {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -170,7 +163,7 @@ a:focus-visible {
   position: absolute;
   top: -40px;
   left: 6px;
-  background: #00f5ff;
+  background: #ffffff;
   color: #000;
   padding: 8px;
   text-decoration: none;

@@ -58,12 +58,9 @@ export default function Skills() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
-            Technical Skills
+          <h2 className="text-4xl md:text-5xl font-bold gradient-text">
+            Skills
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Technologies I use to build reliable systems
-          </p>
         </motion.div>
 
         {/* Skills Grid */}

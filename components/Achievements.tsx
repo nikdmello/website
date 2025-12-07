@@ -42,12 +42,9 @@ export default function Achievements() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
-            Hackathon Winner
+          <h2 className="text-4xl md:text-5xl font-bold gradient-text">
+            Hackathon
           </h2>
-          <p className="text-lg text-gray-300">
-            2nd place at Omnia x GENESIS AR Hackathon
-          </p>
         </motion.div>
 
         <div className="max-w-6xl mx-auto">
@@ -56,12 +53,15 @@ export default function Achievements() {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="cyber-border rounded-xl p-6 bg-card-bg rainbow-glow relative overflow-hidden"
+            className="cyber-border rounded-xl p-6 bg-card-bg rainbow-glow relative"
           >
-            <div className="flex items-center gap-4 mb-4">
-              <Trophy className="w-6 h-6 text-yellow-400" />
-              <h3 className="text-xl font-bold text-white">Cubs ARcade</h3>
-              <span className="px-3 py-1 bg-yellow-400/20 text-yellow-400 text-sm rounded-full">$500 Award</span>
+            <div className="mb-4">
+              <div className="flex items-center gap-4 mb-2">
+                <Trophy className="w-6 h-6 text-yellow-400" />
+                <h3 className="text-xl font-bold text-white">Cubs ARcade</h3>
+                <span className="px-3 py-1 bg-yellow-400/20 text-yellow-400 text-sm rounded-full">$500 Award</span>
+              </div>
+              <p className="text-gray-400 text-sm">2nd place at Omnia x GENESIS AR Hackathon</p>
             </div>
             
             {/* Mobile: Content first, then image below with upward fade */}
