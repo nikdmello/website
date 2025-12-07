@@ -4,7 +4,6 @@ import { motion } from 'framer-motion'
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react'
 import Image from 'next/image'
 import { useEffect, useRef } from 'react'
-import Highlight from './Highlight'
 
 export default function Hero() {
   const marqueeRef = useRef<HTMLDivElement>(null)

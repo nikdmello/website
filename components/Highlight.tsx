@@ -1,11 +1,8 @@
-import { HandDrawnUnderline } from './HandDrawn'
-
 interface HighlightProps {
   children: React.ReactNode
-  handDrawn?: boolean
 }
 
-export default function Highlight({ children, handDrawn = false }: HighlightProps) {
+export default function Highlight({ children }: HighlightProps) {
   return (
     <span className="font-medium text-white">
       {children}

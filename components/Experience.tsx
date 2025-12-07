@@ -3,19 +3,6 @@
 import { motion } from 'framer-motion'
 import { Calendar, TrendingUp, Zap, Shield, Users, GraduationCap } from 'lucide-react'
 import { useIsMobile } from '@/hooks/useIsMobile'
-import Highlight from './Highlight'
-
-const renderHighlightedText = (text: string) => {
-  const parts = text.split(/(<Highlight[^>]*>[^<]+<\/Highlight>)/g)
-  return parts.map((part, index) => {
-    const match = part.match(/<Highlight[^>]*>([^<]+)<\/Highlight>/)
-    if (match) {
-      const [, content] = match
-      return <Highlight key={index}>{content}</Highlight>
-    }
-    return part
-  })
-}
 
 const renderWhiteHighlightedText = (text: string) => {
   const parts = text.split(/(<Highlight[^>]*>[^<]+<\/Highlight>)/g)
