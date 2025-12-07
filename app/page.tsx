@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect } from 'react'
-import { motion } from 'framer-motion'
 import Hero from '@/components/Hero'
 import Experience from '@/components/Experience'
 import OpenSource from '@/components/OpenSource'
