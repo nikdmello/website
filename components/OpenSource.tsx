@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Github, GitPullRequest } from 'lucide-react'
+import { Github } from 'lucide-react'
 import Image from 'next/image'
 
 const contributions = [
