@@ -1,15 +1,7 @@
 import type { Metadata } from 'next'
-import { Kalam } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import SkipLink from '@/components/SkipLink'
 import './globals.css'
-
-const kalam = Kalam({ 
-  subsets: ['latin'],
-  weight: ['300', '400', '700'],
-  display: 'swap',
-  preload: true
-})
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://nikdmello.com'),
@@ -84,7 +76,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={kalam.className} suppressHydrationWarning>
+      <body suppressHydrationWarning>
         <SkipLink />
         {children}
         <Analytics />

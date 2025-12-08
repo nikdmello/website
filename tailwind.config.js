@@ -14,7 +14,15 @@ module.exports = {
         'card-bg': '#1a1a1a',
       },
       fontFamily: {
-        'mono': ['JetBrains Mono', 'monospace'],
+        sans: [
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Segoe UI',
+          'Roboto',
+          'Helvetica Neue',
+          'Arial',
+          'sans-serif'
+        ],
       },
       animation: {
         'glow': 'glow 2s ease-in-out infinite alternate',
