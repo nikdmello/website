@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Github, GitPullRequest } from 'lucide-react'
+import Image from 'next/image'
 
 const contributions = [
   {
@@ -63,8 +64,14 @@ export default function OpenSource() {
               className="cyber-border rounded-xl p-8 bg-card-bg hover:glow-effect transition-all duration-300 rainbow-glow"
             >
               <div className="flex items-start gap-4 mb-4">
-                <div className="p-3 rounded-full bg-cyber-blue/20 text-cyber-blue">
-                  <GitPullRequest className="w-6 h-6" />
+                <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+                  <Image
+                    src="/logos/vscode_logo.png"
+                    alt="VS Code"
+                    width={64}
+                    height={64}
+                    className="w-full h-full object-contain"
+                  />
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl font-bold text-white mb-1">{contrib.title}</h3>

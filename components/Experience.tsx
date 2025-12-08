@@ -1,8 +1,9 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Calendar, TrendingUp, Zap, Shield, Users, GraduationCap } from 'lucide-react'
+import { Calendar } from 'lucide-react'
 import { useIsMobile } from '@/hooks/useIsMobile'
+import Image from 'next/image'
 
 const renderWhiteHighlightedText = (text: string) => {
   const parts = text.split(/(<Highlight[^>]*>[^<]+<\/Highlight>)/g)
@@ -21,7 +22,7 @@ const experiences = [
     title: 'Founder / Engineer',
     company: 'Swift',
     period: 'Apr 2025 – Present',
-    icon: <Zap className="w-6 h-6" />,
+    logo: null,
     problem: 'AI agents can\'t coordinate reliably. Partial failures break workflows, payments need manual intervention, and there\'s no trust between organizations',
     solution: 'Building atomic coordination infrastructure with blockchain settlement guaranteeing all-or-nothing execution across distributed agent networks',
     highlights: [
@@ -37,7 +38,7 @@ const experiences = [
     title: 'Software Developer',
     company: 'Associa',
     period: 'Mar 2023 – Present',
-    icon: <Shield className="w-6 h-6" />,
+    logo: '/logos/associa_logo.jpeg',
     problem: 'Octopus Deploy was costing $140K+ annually while manual database deployments were error-prone across 5 environments',
     solution: 'Built full-stack Database Schema Deployer (DSD) with Angular frontend, NestJS backend, and AWS orchestration',
     highlights: [
@@ -53,7 +54,7 @@ const experiences = [
     title: 'BI Developer',
     company: 'ASICS Digital',
     period: 'Jan 2022 – Jul 2022',
-    icon: <TrendingUp className="w-6 h-6" />,
+    logo: '/logos/asics_digital_logo.jpeg',
     highlights: [
       'Analyzed e-commerce traffic patterns driving revenue optimization through data-driven strategies'
     ],
@@ -63,7 +64,7 @@ const experiences = [
     title: 'DevOps Engineer',
     company: 'PanAgora Asset Management',
     period: 'Feb 2021 – Jul 2021',
-    icon: <Users className="w-6 h-6" />,
+    logo: '/logos/panagora_asset_management_logo.jpeg',
     highlights: [
       'Implemented Jenkins CI/CD pipeline automating deployment workflows and reducing deployment errors'
     ],
@@ -73,7 +74,7 @@ const experiences = [
     title: 'Teaching Assistant',
     company: 'Northeastern University',
     period: 'Sep 2021 – Dec 2021',
-    icon: <GraduationCap className="w-6 h-6" />,
+    logo: '/logos/northeastern_university_logo.jpeg',
     highlights: [
       'Provided 1-on-1 sessions and peer mentoring in Foundations of Data Science covering statistical concepts and programming challenges'
     ],
@@ -117,9 +118,21 @@ export default function Experience() {
             >
               <div className="flex flex-col lg:flex-row lg:items-start gap-6">
                 <div className="flex items-start gap-4 lg:min-w-[320px] lg:flex-shrink-0">
-                  <div className="p-3 rounded-full bg-cyber-blue/20 text-cyber-blue">
-                    {exp.icon}
-                  </div>
+                  {exp.logo ? (
+                    <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-white">
+                      <Image
+                        src={exp.logo}
+                        alt={exp.company}
+                        width={64}
+                        height={64}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                  ) : (
+                    <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-white to-gray-300 flex items-center justify-center flex-shrink-0">
+                      <span className="text-2xl font-bold text-black">{exp.company[0]}</span>
+                    </div>
+                  )}
                   <div>
                     <h3 className="text-xl font-bold text-white">{exp.title}</h3>
                     <p className="text-cyber-purple font-semibold">{exp.company}</p>
