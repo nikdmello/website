@@ -22,8 +22,8 @@ export default function Home() {
       <div className="fixed inset-0 bg-black" />
       <div className="relative z-10 max-w-6xl mx-auto">
         <Hero />
-        <Projects />
         <Experience />
+        <Projects />
         <OpenSource />
         <Achievements />
         <Skills />

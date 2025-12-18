@@ -132,9 +132,9 @@ export default function Hero() {
       </div>
       
       <button 
-        onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+        onClick={() => document.querySelector('section')?.nextElementSibling?.scrollIntoView({ behavior: 'smooth' })}
         className="absolute bottom-8 left-1/2 w-6 h-6 -ml-3 cursor-pointer hover:text-white transition-colors"
-        aria-label="Scroll to projects section"
+        aria-label="Scroll to experience section"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
