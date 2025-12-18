@@ -30,7 +30,6 @@ const contributions = [
     status: 'Merged & Released',
     description: 'Fixed critical bug in screencast mode affecting keyboard shortcut display for developer recordings',
     impact: [
-      'Fixed bug affecting millions of VS Code users globally',
       'Improved developer experience for screencast recordings',
       'Released in March 2023 update'
     ]

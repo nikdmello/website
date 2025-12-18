@@ -6,39 +6,39 @@ import { useIsMobile } from '@/hooks/useIsMobile'
 
 const skillCategories = [
   {
-    title: 'Blockchain & AI Agents',
-    icon: <Zap className="w-6 h-6" />,
-    skills: ['Solidity', 'Hardhat', 'Ethers.js v6', 'Base L2', 'Agent Coordination', 'Cryptographic Protocols'],
+    title: 'Programming Languages',
+    icon: <Code className="w-6 h-6" />,
+    skills: ['TypeScript', 'JavaScript', 'Java', 'C# .NET 8', 'Solidity', 'SQL', 'Python'],
     gradient: 'from-cyber-blue to-blue-600'
   },
   {
-    title: 'Cloud & Infrastructure',
+    title: 'Cloud & AWS',
     icon: <Cloud className="w-6 h-6" />,
-    skills: ['AWS Lambda', 'EventBridge', 'DynamoDB', 'SQS', 'Serverless Architecture', 'Event-Driven Systems'],
+    skills: ['AWS Lambda', 'DynamoDB', 'EventBridge', 'SQS', 'Step Functions', 'CodeBuild'],
     gradient: 'from-cyber-purple to-purple-600'
   },
   {
-    title: 'Backend Development',
+    title: 'Backend & APIs',
     icon: <Cpu className="w-6 h-6" />,
-    skills: ['.NET 8', 'Node.js', 'Python', 'C#', 'RESTful APIs', 'Microservices'],
+    skills: ['Node.js', 'Express.js', 'NestJS', 'RESTful APIs', 'Microservices', 'Event-Driven Architecture'],
     gradient: 'from-green-400 to-emerald-600'
   },
   {
-    title: 'Database & Analytics',
+    title: 'Frontend & Web',
     icon: <Database className="w-6 h-6" />,
-    skills: ['MongoDB', 'BigQuery', 'SQL', 'Tableau', 'Data Pipelines', 'ETL Processes'],
+    skills: ['React', 'Next.js', 'Angular', 'Tailwind CSS', 'Responsive Design', 'SPA Development'],
     gradient: 'from-orange-400 to-red-600'
   },
   {
-    title: 'Frontend & UI',
-    icon: <Code className="w-6 h-6" />,
-    skills: ['TypeScript', 'React', 'Next.js 14', 'Tailwind CSS', 'Framer Motion', 'Responsive Design'],
+    title: 'Database & Storage',
+    icon: <Shield className="w-6 h-6" />,
+    skills: ['SQL Server', 'DynamoDB', 'BigQuery', 'NoSQL', 'Data Modeling', 'Database Design'],
     gradient: 'from-pink-400 to-rose-600'
   },
   {
-    title: 'DevOps & Quality',
-    icon: <Shield className="w-6 h-6" />,
-    skills: ['Jenkins', 'Bitbucket Pipelines', 'SonarCloud', 'Docker', 'CI/CD', 'Quality Gates'],
+    title: 'DevOps & Tools',
+    icon: <Zap className="w-6 h-6" />,
+    skills: ['Git', 'Docker', 'CI/CD', 'Bitbucket Pipelines', 'SonarCloud', 'CloudWatch'],
     gradient: 'from-indigo-400 to-blue-600'
   }
 ]

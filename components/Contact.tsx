@@ -30,9 +30,9 @@ export default function Contact() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <a 
                 href="mailto:nik.dmello@gmail.com"
-                className="flex flex-col items-center gap-3 p-6 rounded-lg bg-gray-800 hover:bg-cyber-blue/20 transition-colors group text-center"
+                className="flex flex-col items-center gap-3 p-6 rounded-lg bg-card-bg border border-gray-700 hover:border-cyber-blue/50 transition-all duration-300 group text-center"
               >
-                <div className="p-3 rounded-full bg-cyber-blue/20 text-cyber-blue group-hover:bg-cyber-blue group-hover:text-white transition-colors">
+                <div className="p-3 rounded-full bg-cyber-blue/20 text-cyber-blue transition-colors">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
@@ -45,9 +45,9 @@ export default function Contact() {
                 href="https://linkedin.com/in/nikdmello"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col items-center gap-3 p-6 rounded-lg bg-gray-800 hover:bg-cyber-blue/20 transition-colors group text-center"
+                className="flex flex-col items-center gap-3 p-6 rounded-lg bg-card-bg border border-gray-700 hover:border-cyber-blue/50 transition-all duration-300 group text-center"
               >
-                <div className="p-3 rounded-full bg-cyber-blue/20 text-cyber-blue group-hover:bg-cyber-blue group-hover:text-white transition-colors">
+                <div className="p-3 rounded-full bg-cyber-blue/20 text-cyber-blue transition-colors">
                   <Linkedin className="w-5 h-5" />
                 </div>
                 <div>
@@ -60,9 +60,9 @@ export default function Contact() {
                 href="https://github.com/nikdmello"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col items-center gap-3 p-6 rounded-lg bg-gray-800 hover:bg-cyber-blue/20 transition-colors group text-center"
+                className="flex flex-col items-center gap-3 p-6 rounded-lg bg-card-bg border border-gray-700 hover:border-cyber-blue/50 transition-all duration-300 group text-center"
               >
-                <div className="p-3 rounded-full bg-cyber-blue/20 text-cyber-blue group-hover:bg-cyber-blue group-hover:text-white transition-colors">
+                <div className="p-3 rounded-full bg-cyber-blue/20 text-cyber-blue transition-colors">
                   <Github className="w-5 h-5" />
                 </div>
                 <div>
@@ -71,7 +71,7 @@ export default function Contact() {
                 </div>
               </a>
 
-              <div className="flex flex-col items-center gap-3 p-6 rounded-lg bg-gray-800 text-center">
+              <div className="flex flex-col items-center gap-3 p-6 rounded-lg bg-card-bg border border-gray-700 text-center">
                 <div className="p-3 rounded-full bg-cyber-purple/20 text-cyber-purple">
                   <MapPin className="w-5 h-5" />
                 </div>

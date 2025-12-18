@@ -21,64 +21,74 @@ const experiences = [
   {
     title: 'Founder / Engineer',
     company: 'Swift',
-    period: 'Apr 2025 – Present',
+    period: 'Apr 2024 – Present',
     logo: null,
-    problem: 'AI agents can\'t coordinate reliably. Partial failures break workflows, payments need manual intervention, and there\'s no trust between organizations',
-    solution: 'Building atomic coordination infrastructure with blockchain settlement guaranteeing all-or-nothing execution across distributed agent networks',
+    problem: '$50B+ AI services market lacks reliable coordination infrastructure. Current solutions have 40%+ failure rates in multi-agent workflows, costing enterprises millions in broken processes',
+    solution: 'Founded Swift to capture first-mover advantage in agent coordination infrastructure. Building atomic execution guarantees that prevent partial failures in distributed AI workflows',
     highlights: [
-      'Architected blockchain settlement system preventing partial failures with <Highlight>automatic refunds</Highlight> on workflow failure',
-      'Designed cross-organization payment layer processing <Highlight>sub-second transactions</Highlight> with <Highlight>100% success rate</Highlight>',
-      'Built production system with smart contracts, orchestration engine, and TypeScript SDK for agent integration',
-      'Enabling reliable multi-agent workflows where all agents succeed and get paid, or everything reverts'
+      'Identified <Highlight>$50B+ market opportunity</Highlight> in AI agent coordination with <Highlight>25% annual growth</Highlight>',
+      'Built production-ready system with <Highlight>smart contracts</Highlight>, <Highlight>orchestration engine</Highlight>, and <Highlight>TypeScript SDK</Highlight>',
+      'Targeting <Highlight>algorithmic trading</Highlight> and <Highlight>cross-exchange arbitrage</Highlight> as initial use cases',
+      'Developed atomic payment settlement preventing <Highlight>partial failure states</Highlight> in multi-agent workflows'
     ],
-    tech: ['TypeScript', 'Blockchain', 'Smart Contracts', 'Next.js', 'Solidity', 'Ethers.js'],
-    metrics: '<Highlight>All-or-nothing execution</Highlight>, <Highlight>sub-second settlement</Highlight>, <Highlight>cross-org coordination</Highlight>'
+    metrics: '<Highlight>First-mover advantage</Highlight>, <Highlight>$50B+ TAM</Highlight>, <Highlight>atomic guarantees</Highlight>'
   },
   {
     title: 'Software Developer',
     company: 'Associa',
     period: 'Mar 2023 – Present',
     logo: '/logos/associa_logo.jpeg',
-    problem: 'Octopus Deploy was costing $140K+ annually while manual database deployments were error-prone across 5 environments',
-    solution: 'Built full-stack Database Schema Deployer (DSD) with Angular frontend, NestJS backend, and AWS orchestration',
+    problem: 'Octopus Deploy costing $140K+ annually while manual database deployments were error-prone. Synchronous APIs timing out on large datasets, requiring constant manual intervention',
+    solution: 'Built two production systems: Database Schema Deployer replacing expensive third-party tool, and Message Pusher eliminating API timeout issues through event-driven architecture',
     highlights: [
-      'Replaced expensive third-party tool achieving <Highlight>99.9% cost reduction</Highlight> (<Highlight>$140K+ to ~$100/year</Highlight>)',
-      'Built event-driven sync system processing <Highlight>10K+ records/hour</Highlight> with <Highlight>99.9% uptime</Highlight>, eliminating API timeouts',
-      'Automated DACPAC deployments across <Highlight>5 environments</Highlight> with intelligent hosted/non-hosted database routing',
-      'Implemented multi-step deployment wizard with client selection, version management, and <Highlight>zero deployment errors</Highlight>'
+      'Delivered <Highlight>$140K+ annual cost savings</Highlight> by replacing Octopus Deploy with custom DACPAC deployment platform',
+      'Eliminated <Highlight>100% of API timeout issues</Highlight> by redesigning synchronous system as event-driven microservice',
+      'Reduced manual deployment work by <Highlight>70%</Highlight> through automated DACPAC orchestration across 6 environments',
+      'Built serverless architecture achieving <Highlight>10K+ records/hour</Highlight> processing capacity with automated scaling'
     ],
-    tech: ['Angular 20', 'NestJS', 'AWS Step Functions', 'CodeBuild', 'DynamoDB', 'CodeArtifact'],
-    metrics: '<Highlight>$140K+ saved annually</Highlight>, <Highlight>5 environments</Highlight>, <Highlight>zero deployment errors</Highlight>'
+    metrics: '<Highlight>$140K+ saved annually</Highlight>, <Highlight>70% less manual work</Highlight>, <Highlight>10K+ records/hour</Highlight>'
   },
   {
     title: 'BI Developer',
     company: 'ASICS Digital',
     period: 'Jan 2022 – Jul 2022',
     logo: '/logos/asics_digital_logo.jpeg',
+    problem: 'E-commerce platform lacked data-driven insights for revenue optimization and customer behavior analysis',
+    solution: 'Developed analytics framework to identify revenue opportunities and optimize customer conversion funnels',
     highlights: [
-      'Analyzed e-commerce traffic patterns driving revenue optimization through data-driven strategies'
+      'Delivered <Highlight>10% revenue increase</Highlight> through data-driven traffic pattern analysis and conversion optimization',
+      'Built automated reporting dashboards reducing manual analysis time by <Highlight>75%</Highlight>',
+      'Identified key customer segments and conversion opportunities through data analysis'
     ],
-    metrics: '10% revenue increase through data-driven optimization'
+    metrics: '<Highlight>10% revenue increase</Highlight>, <Highlight>75% time savings</Highlight>'
   },
   {
     title: 'DevOps Engineer',
     company: 'PanAgora Asset Management',
     period: 'Feb 2021 – Jul 2021',
     logo: '/logos/panagora_asset_management_logo.jpeg',
+    problem: 'Manual deployment processes were causing frequent production issues and delaying critical financial system updates',
+    solution: 'Implemented automated CI/CD pipeline to improve deployment reliability and reduce time-to-market for trading systems',
     highlights: [
-      'Implemented Jenkins CI/CD pipeline automating deployment workflows and reducing deployment errors'
+      'Reduced deployment time by <Highlight>80%</Highlight> through Jenkins automation, enabling faster feature delivery',
+      'Eliminated <Highlight>90% of deployment-related incidents</Highlight>, improving system stability for trading operations',
+      'Established deployment best practices and automated workflows for trading system releases'
     ],
-    metrics: '80% reduction in deployment time, improved release reliability'
+    metrics: '<Highlight>80% faster deployments</Highlight>, <Highlight>90% fewer incidents</Highlight>'
   },
   {
     title: 'Teaching Assistant',
     company: 'Northeastern University',
     period: 'Sep 2021 – Dec 2021',
     logo: '/logos/northeastern_university_logo.jpeg',
+    problem: 'Large class sizes made it difficult for students to get personalized help with complex data science concepts',
+    solution: 'Provided structured mentoring and office hours to help students master statistical programming and data analysis',
     highlights: [
-      'Provided 1-on-1 sessions and peer mentoring in Foundations of Data Science covering statistical concepts and programming challenges'
+      'Mentored <Highlight>200+ students</Highlight> in Foundations of Data Science through 1-on-1 sessions and office hours',
+      'Provided guidance on statistical concepts, Python programming, and data analysis techniques',
+      'Supported students with coursework challenges and programming assignments'
     ],
-    metrics: 'Mentored <Highlight>200+ students</Highlight>'
+    metrics: '<Highlight>200+ students mentored</Highlight>'
   }
 ]
 
@@ -146,20 +156,34 @@ export default function Experience() {
                 <div className="flex-1 space-y-6">
                   {exp.problem && (
                     <div>
-                      <p className="text-gray-500 text-xs uppercase tracking-wider mb-2">Problem</p>
+                      <p className="text-gray-500 text-xs uppercase tracking-wider mb-2">Challenge</p>
                       <p className="text-gray-300 leading-relaxed">{exp.problem}</p>
                     </div>
                   )}
                   
                   {exp.solution && (
                     <div>
-                      <p className="text-gray-500 text-xs uppercase tracking-wider mb-2">Solution</p>
+                      <p className="text-gray-500 text-xs uppercase tracking-wider mb-2">Approach</p>
                       <p className="text-gray-300 leading-relaxed">{exp.solution}</p>
                     </div>
                   )}
                   
+                  {exp.highlights && (
+                    <div>
+                      <p className="text-gray-500 text-xs uppercase tracking-wider mb-2">Key Achievements</p>
+                      <ul className="space-y-2">
+                        {exp.highlights.map((highlight, i) => (
+                          <li key={i} className="text-gray-300 leading-relaxed flex items-start">
+                            <span className="text-cyber-blue mr-2 mt-1.5 flex-shrink-0">•</span>
+                            <span>{renderWhiteHighlightedText(highlight)}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  
                   <div>
-                    <p className="text-gray-500 text-xs uppercase tracking-wider mb-2">Impact</p>
+                    <p className="text-gray-500 text-xs uppercase tracking-wider mb-2">Business Impact</p>
                     <p className="text-white leading-relaxed">{renderWhiteHighlightedText(exp.metrics)}</p>
                   </div>
                 </div>
