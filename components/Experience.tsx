@@ -21,7 +21,7 @@ const experiences = [
   {
     title: 'Founder / Engineer',
     company: 'Swift',
-    period: 'Apr 2024 – Present',
+    period: 'Apr 2025 – Present',
     logo: null,
     problem: 'AI agent coordination infrastructure lacks reliable execution guarantees, leading to partial failures, inconsistent state, and brittle recovery in multi-agent workflows',
     solution: 'Founded Swift to design production-grade coordination infrastructure with atomic execution guarantees for distributed AI systems, prioritizing correctness and failure recovery over throughput and latency in early designs',
