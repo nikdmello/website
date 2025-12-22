@@ -6,7 +6,6 @@ import OpenSource from '@/components/OpenSource'
 import Projects from '@/components/Projects'
 import Achievements from '@/components/Achievements'
 import Skills from '@/components/Skills'
-import Contact from '@/components/Contact'
 
 export default function Home() {
   return (
@@ -19,7 +18,6 @@ export default function Home() {
         <OpenSource />
         <Achievements />
         <Skills />
-        <Contact />
       </div>
     </main>
   )
