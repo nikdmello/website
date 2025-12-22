@@ -49,7 +49,7 @@ export default function Vision() {
           </h2>
           <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
             Bridging the gap between theoretical multi-agent research and production-ready systems. 
-            Swift Protocol demonstrates <span className="text-cyber-blue font-semibold">cryptographically guaranteed coordination</span> 
+            Swift demonstrates <span className="text-cyber-blue font-semibold">cryptographically guaranteed coordination</span> 
             at machine speed, while production systems at Associa prove scalability across millions of users.
           </p>
         </motion.div>

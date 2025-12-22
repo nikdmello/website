@@ -23,30 +23,29 @@ const experiences = [
     company: 'Swift',
     period: 'Apr 2024 – Present',
     logo: null,
-    problem: '$50B+ AI services market lacks reliable coordination infrastructure. Current solutions have 40%+ failure rates in multi-agent workflows, costing enterprises millions in broken processes',
-    solution: 'Founded Swift to capture first-mover advantage in agent coordination infrastructure. Building atomic execution guarantees that prevent partial failures in distributed AI workflows',
+    problem: 'AI agent coordination infrastructure lacks reliable execution guarantees, leading to partial failures, inconsistent state, and brittle recovery in multi-agent workflows',
+    solution: 'Founded Swift to design production-grade coordination infrastructure with atomic execution guarantees for distributed AI systems, prioritizing correctness and failure recovery over throughput and latency in early designs',
     highlights: [
-      'Identified <Highlight>$50B+ market opportunity</Highlight> in AI agent coordination with <Highlight>25% annual growth</Highlight>',
-      'Built production-ready system with <Highlight>smart contracts</Highlight>, <Highlight>orchestration engine</Highlight>, and <Highlight>TypeScript SDK</Highlight>',
-      'Targeting <Highlight>algorithmic trading</Highlight> and <Highlight>cross-exchange arbitrage</Highlight> as initial use cases',
-      'Developed atomic payment settlement preventing <Highlight>partial failure states</Highlight> in multi-agent workflows'
+      'Designed and built a production system combining <Highlight>smart contracts</Highlight>, <Highlight>orchestration engine</Highlight>, and <Highlight>TypeScript SDK</Highlight>',
+      'Implemented atomic workflow and payment settlement, preventing <Highlight>partial failure states</Highlight> in multi-agent executions',
+      'Defined coordination primitives to support <Highlight>failure recovery</Highlight> and <Highlight>consistency</Highlight> across distributed agents',
+      'Focused initial use cases on high-reliability domains such as <Highlight>trading</Highlight> and <Highlight>cross-system automation</Highlight>'
     ],
-    metrics: '<Highlight>First-mover advantage</Highlight>, <Highlight>$50B+ TAM</Highlight>, <Highlight>atomic guarantees</Highlight>'
+    metrics: '<Highlight>Atomic guarantees</Highlight> and <Highlight>reliable coordination</Highlight> for multi-agent AI workflows'
   },
   {
     title: 'Software Developer',
     company: 'Associa',
     period: 'Mar 2023 – Present',
     logo: '/logos/associa_logo.jpeg',
-    problem: 'Octopus Deploy costing $140K+ annually while manual database deployments were error-prone. Synchronous APIs timing out on large datasets, requiring constant manual intervention',
-    solution: 'Built two production systems: Database Schema Deployer replacing expensive third-party tool, and Message Pusher eliminating API timeout issues through event-driven architecture',
+    problem: 'Deployment workflows and data-processing APIs did not scale with growing environment complexity and data volume, resulting in high tooling costs, operational risk during schema changes, and frequent failures in synchronous processing paths',
+    solution: 'Served as core engineer on two production systems, collaborating with platform teams to design and implement: custom deployment platform and event-driven processing service',
     highlights: [
-      'Delivered <Highlight>$140K+ annual cost savings</Highlight> by replacing Octopus Deploy with custom DACPAC deployment platform',
-      'Eliminated <Highlight>100% of API timeout issues</Highlight> by redesigning synchronous system as event-driven microservice',
-      'Reduced manual deployment work by <Highlight>70%</Highlight> through automated DACPAC orchestration across 6 environments',
-      'Built serverless architecture achieving <Highlight>10K+ records/hour</Highlight> processing capacity with automated scaling'
+      'Implemented core components of custom DACPAC deployment platform, contributing to <Highlight>six-figure annual cost savings</Highlight>',
+      'Helped redesign synchronous APIs into event-driven microservice, eliminating <Highlight>timeout-related failures</Highlight> in production workloads',
+      'Built serverless architecture components processing <Highlight>10K+ records/hour</Highlight> with automated scaling and fault tolerance'
     ],
-    metrics: '<Highlight>$140K+ saved annually</Highlight>, <Highlight>70% less manual work</Highlight>, <Highlight>10K+ records/hour</Highlight>'
+    metrics: '<Highlight>Six-figure cost reduction</Highlight>, <Highlight>timeout elimination</Highlight>, <Highlight>10K+ records/hour</Highlight>'
   },
   {
     title: 'BI Developer',
@@ -54,27 +53,27 @@ const experiences = [
     period: 'Jan 2022 – Jul 2022',
     logo: '/logos/asics_digital_logo.jpeg',
     problem: 'E-commerce platform lacked data-driven insights for revenue optimization and customer behavior analysis',
-    solution: 'Developed analytics framework to identify revenue opportunities and optimize customer conversion funnels',
+    solution: 'Developed analytics framework in collaboration with product teams to identify revenue opportunities and optimize conversion funnels',
     highlights: [
-      'Delivered <Highlight>10% revenue increase</Highlight> through data-driven traffic pattern analysis and conversion optimization',
+      'Contributed to <Highlight>10% revenue growth</Highlight> through data-driven traffic analysis and conversion optimization',
       'Built automated reporting dashboards reducing manual analysis time by <Highlight>75%</Highlight>',
-      'Identified key customer segments and conversion opportunities through data analysis'
+      'Identified key customer segments and conversion opportunities through comprehensive data analysis'
     ],
-    metrics: '<Highlight>10% revenue increase</Highlight>, <Highlight>75% time savings</Highlight>'
+    metrics: '<Highlight>10% revenue contribution</Highlight>, <Highlight>75% time savings</Highlight>, <Highlight>automated insights</Highlight>'
   },
   {
     title: 'DevOps Engineer',
     company: 'PanAgora Asset Management',
     period: 'Feb 2021 – Jul 2021',
     logo: '/logos/panagora_asset_management_logo.jpeg',
-    problem: 'Manual deployment processes were causing frequent production issues and delaying critical financial system updates',
+    problem: 'Manual deployment processes caused production issues and delayed critical financial system updates',
     solution: 'Implemented automated CI/CD pipeline to improve deployment reliability and reduce time-to-market for trading systems',
     highlights: [
       'Reduced deployment time by <Highlight>80%</Highlight> through Jenkins automation, enabling faster feature delivery',
-      'Eliminated <Highlight>90% of deployment-related incidents</Highlight>, improving system stability for trading operations',
-      'Established deployment best practices and automated workflows for trading system releases'
+      'Improved system stability by eliminating <Highlight>90% of deployment-related incidents</Highlight>',
+      'Established deployment best practices and automated workflows for financial system releases'
     ],
-    metrics: '<Highlight>80% faster deployments</Highlight>, <Highlight>90% fewer incidents</Highlight>'
+    metrics: '<Highlight>80% faster deployments</Highlight>, <Highlight>90% fewer incidents</Highlight>, <Highlight>automated workflows</Highlight>'
   },
   {
     title: 'Teaching Assistant',

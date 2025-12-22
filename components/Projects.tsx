@@ -63,8 +63,8 @@ export default function Projects() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text">
-            Projects
+          <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
+            Technical Projects
           </h2>
         </motion.div>
 
