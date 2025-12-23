@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Database, Cloud, Bot } from 'lucide-react'
+import { Database, Cloud } from 'lucide-react'
 import { useIsMobile } from '@/hooks/useIsMobile'
 import Highlight from './Highlight'
 
