@@ -19,7 +19,7 @@ const renderWhiteHighlightedText = (text: string) => {
 
 const experiences = [
   {
-    title: 'Founder / Engineer',
+    title: 'Software Engineer',
     company: 'Swift',
     period: 'Apr 2025 – Present',
     logo: null,
@@ -34,7 +34,7 @@ const experiences = [
     metrics: '<Highlight>Atomic guarantees</Highlight> and <Highlight>reliable coordination</Highlight> for multi-agent AI workflows'
   },
   {
-    title: 'Software Developer',
+    title: 'Software Engineer',
     company: 'Associa',
     period: 'Mar 2023 – Present',
     logo: '/logos/associa_logo.jpeg',
@@ -52,42 +52,38 @@ const experiences = [
     company: 'ASICS Digital',
     period: 'Jan 2022 – Jul 2022',
     logo: '/logos/asics_digital_logo.jpeg',
-    problem: 'E-commerce platform lacked data-driven insights for revenue optimization and customer behavior analysis',
-    solution: 'Developed analytics framework in collaboration with product teams to identify revenue opportunities and optimize conversion funnels',
+    problem: null,
+    solution: null,
     highlights: [
-      'Contributed to <Highlight>10% revenue growth</Highlight> through data-driven traffic analysis and conversion optimization',
-      'Built automated reporting dashboards reducing manual analysis time by <Highlight>75%</Highlight>',
-      'Identified key customer segments and conversion opportunities through comprehensive data analysis'
+      'Built automated analytics pipeline contributing to <Highlight>10% revenue growth</Highlight>',
+      'Reduced manual reporting overhead by <Highlight>75%</Highlight> through dashboard automation'
     ],
-    metrics: '<Highlight>10% revenue contribution</Highlight>, <Highlight>75% time savings</Highlight>, <Highlight>automated insights</Highlight>'
+    metrics: '<Highlight>Revenue impact</Highlight>, <Highlight>automation efficiency</Highlight>'
   },
   {
     title: 'DevOps Engineer',
     company: 'PanAgora Asset Management',
     period: 'Feb 2021 – Jul 2021',
     logo: '/logos/panagora_asset_management_logo.jpeg',
-    problem: 'Manual deployment processes caused production issues and delayed critical financial system updates',
-    solution: 'Implemented automated CI/CD pipeline to improve deployment reliability and reduce time-to-market for trading systems',
+    problem: null,
+    solution: null,
     highlights: [
-      'Reduced deployment time by <Highlight>80%</Highlight> through Jenkins automation, enabling faster feature delivery',
-      'Improved system stability by eliminating <Highlight>90% of deployment-related incidents</Highlight>',
-      'Established deployment best practices and automated workflows for financial system releases'
+      'Implemented CI/CD automation reducing deployment time by <Highlight>80%</Highlight>',
+      'Eliminated <Highlight>90% of deployment failures</Highlight> through automated testing and rollback'
     ],
-    metrics: '<Highlight>80% faster deployments</Highlight>, <Highlight>90% fewer incidents</Highlight>, <Highlight>automated workflows</Highlight>'
+    metrics: '<Highlight>Deployment reliability</Highlight>, <Highlight>operational efficiency</Highlight>'
   },
   {
     title: 'Teaching Assistant',
     company: 'Northeastern University',
     period: 'Sep 2021 – Dec 2021',
     logo: '/logos/northeastern_university_logo.jpeg',
-    problem: 'Large class sizes made it difficult for students to get personalized help with complex data science concepts',
-    solution: 'Provided structured mentoring and office hours to help students master statistical programming and data analysis',
+    problem: null,
+    solution: null,
     highlights: [
-      'Mentored <Highlight>200+ students</Highlight> in Foundations of Data Science through 1-on-1 sessions and office hours',
-      'Provided guidance on statistical concepts, Python programming, and data analysis techniques',
-      'Supported students with coursework challenges and programming assignments'
+      'Mentored <Highlight>200+ students</Highlight> in statistical programming and data analysis'
     ],
-    metrics: '<Highlight>200+ students mentored</Highlight>'
+    metrics: '<Highlight>Teaching and mentorship</Highlight>'
   }
 ]
 
@@ -173,7 +169,7 @@ export default function Experience() {
                       <ul className="space-y-2">
                         {exp.highlights.map((highlight, i) => (
                           <li key={i} className="text-gray-300 leading-relaxed flex items-start">
-                            <span className="text-cyber-blue mr-2 mt-1.5 flex-shrink-0">•</span>
+                            <span className="text-cyber-blue mr-2 flex-shrink-0">•</span>
                             <span>{renderWhiteHighlightedText(highlight)}</span>
                           </li>
                         ))}

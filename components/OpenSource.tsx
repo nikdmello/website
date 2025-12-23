@@ -89,7 +89,7 @@ export default function OpenSource() {
               <ul className="space-y-2 mb-6">
                 {contrib.impact.map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-cyber-blue rounded-full mt-2 flex-shrink-0" />
+                    <div className="w-1.5 h-1.5 bg-cyber-blue rounded-full mt-2.5 flex-shrink-0" />
                     <span>{item}</span>
                   </li>
                 ))}
