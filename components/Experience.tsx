@@ -20,21 +20,6 @@ const renderWhiteHighlightedText = (text: string) => {
 const experiences = [
   {
     title: 'Software Engineer',
-    company: 'Swift',
-    period: 'Apr 2025 – Present',
-    logo: null,
-    problem: 'AI agent coordination infrastructure lacks reliable execution guarantees, leading to partial failures, inconsistent state, and brittle recovery in multi-agent workflows',
-    solution: 'Founded Swift to design production-grade coordination infrastructure with atomic execution guarantees for distributed AI systems, prioritizing correctness and failure recovery over throughput and latency in early designs',
-    highlights: [
-      'Designed and built a production system combining <Highlight>smart contracts</Highlight>, <Highlight>orchestration engine</Highlight>, and <Highlight>TypeScript SDK</Highlight>',
-      'Implemented atomic workflow and payment settlement, preventing <Highlight>partial failure states</Highlight> in multi-agent executions',
-      'Defined coordination primitives to support <Highlight>failure recovery</Highlight> and <Highlight>consistency</Highlight> across distributed agents',
-      'Focused initial use cases on high-reliability domains such as <Highlight>trading</Highlight> and <Highlight>cross-system automation</Highlight>'
-    ],
-    metrics: '<Highlight>Atomic guarantees</Highlight> and <Highlight>reliable coordination</Highlight> for multi-agent AI workflows'
-  },
-  {
-    title: 'Software Engineer',
     company: 'Associa',
     period: 'Mar 2023 – Present',
     logo: '/logos/associa_logo.jpeg',

@@ -19,24 +19,14 @@ const renderHighlightedText = (text: string) => {
 
 const projects = [
   {
-    title: 'Message Pusher',
-    subtitle: 'High-Throughput Event Processing System',
-    description: 'Event-driven microservice with C# .NET 8 Lambda functions, EventBridge orchestration, and SQS message queuing. Processes 6 entity types with strategy pattern implementation, DynamoDB job tracking, and correlation ID tracing for 10K+ records/hour throughput.',
-    icon: <Cloud className="w-8 h-8" />,
-    tech: ['C# .NET', 'AWS Lambda', 'EventBridge', 'SQS', 'DynamoDB', 'Microservices'],
-    architecture: 'Event-Driven + Strategy Pattern + Job Tracking',
-    gradient: 'from-cyber-purple to-purple-600',
-    metrics: ['10K+ records/hour', '99.9% uptime', '6 entity types']
-  },
-  {
-    title: 'Database Schema Deployer',
-    subtitle: 'DACPAC Deployment Orchestration Platform',
-    description: 'Full-stack deployment platform with Angular frontend, NestJS backend, and AWS Step Functions orchestration. Manages DACPAC deployments across 6 environments with intelligent hosted/non-hosted database routing, CodeArtifact package management, and automated security group configuration.',
+    title: 'Swift Protocol',
+    subtitle: 'Atomic Coordination for AI Agents',
+    description: 'Blockchain-based coordination infrastructure with Solidity smart contracts on Base L2 and Express.js orchestration engine. Implements atomic workflow execution with automatic rollback, preventing partial failures in multi-agent workflows through guaranteed all-or-nothing execution.',
     icon: <Database className="w-8 h-8" />,
-    tech: ['TypeScript', 'Angular', 'NestJS', 'AWS Lambda', 'DynamoDB', 'CI/CD'],
-    architecture: 'SPA + API + Step Functions + CodeBuild',
-    gradient: 'from-green-400 to-emerald-600',
-    metrics: ['6 environments', 'DACPAC automation', 'Hosted/non-hosted routing']
+    tech: ['Solidity', 'JavaScript', 'Node.js', 'Express.js', 'Docker', 'Git'],
+    architecture: 'Smart Contracts + Orchestrator + Client SDK',
+    gradient: 'from-cyber-blue to-blue-600',
+    metrics: ['Atomic guarantees', 'Base L2 deployment', 'All-or-nothing execution']
   }
 ]
 
@@ -54,11 +44,11 @@ export default function Projects() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
-            Technical Projects
+            Projects
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+        <div className="grid grid-cols-1 gap-8 max-w-6xl mx-auto">
           {projects.map((project, index) => {
             const Component = isMobile ? 'div' : motion.div
             const props = isMobile ? {} : {

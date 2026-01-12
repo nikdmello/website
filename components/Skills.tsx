@@ -26,7 +26,7 @@ const skillCategories = [
   {
     title: 'Frontend & Web',
     icon: <Database className="w-6 h-6" />,
-    skills: ['React', 'Next.js', 'Angular', 'Tailwind CSS', 'Responsive Design', 'SPA Development'],
+    skills: ['React', 'Next.js', 'Angular', 'Tailwind CSS', 'Responsive Design'],
     gradient: 'from-orange-400 to-red-600'
   },
   {

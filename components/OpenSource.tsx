@@ -52,7 +52,7 @@ export default function OpenSource() {
           </h2>
         </motion.div>
 
-        <div className="space-y-8 max-w-5xl mx-auto">
+        <div className="space-y-8 max-w-6xl mx-auto">
           {contributions.map((contrib, index) => (
             <motion.div
               key={index}
