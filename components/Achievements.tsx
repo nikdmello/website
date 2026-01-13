@@ -141,7 +141,7 @@ export default function Achievements() {
                 </div>
               </div>
               
-              <div className="absolute top-0 right-0 bottom-0 left-1/2">
+              <div className="absolute top-0 right-0 bottom-0 left-1/2 rounded-r-xl overflow-hidden">
                 <div className="relative h-full overflow-hidden" style={{maskImage: 'linear-gradient(to right, transparent, black 30%, black 100%)'}}>
                   {images.map((image, index) => (
                     <div
@@ -153,7 +153,7 @@ export default function Achievements() {
                       <img
                         src={image.src}
                         alt={image.alt}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover rounded-r-xl"
                       />
                     </div>
                   ))}
