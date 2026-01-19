@@ -5,18 +5,6 @@ import { Calendar } from 'lucide-react'
 import { useIsMobile } from '@/hooks/useIsMobile'
 import Image from 'next/image'
 
-const renderWhiteHighlightedText = (text: string) => {
-  const parts = text.split(/(<Highlight[^>]*>[^<]+<\/Highlight>)/g)
-  return parts.map((part, index) => {
-    const match = part.match(/<Highlight[^>]*>([^<]+)<\/Highlight>/)
-    if (match) {
-      const [, content] = match
-      return <span key={index} className="font-medium text-white">{content}</span>
-    }
-    return part
-  })
-}
-
 const experiences = [
   {
     title: 'Software Engineer',
@@ -42,7 +30,7 @@ const experiences = [
     logo: '/logos/asics_digital_logo.jpeg',
     highlights: [
       'Built automated analytics pipeline contributing to 10% revenue growth',
-      'Reduced manual reporting overhead by 75% through dashboard automation'
+      'Reduced manual reporting overhead through dashboard automation'
     ]
   },
   {
@@ -52,7 +40,7 @@ const experiences = [
     logo: '/logos/panagora_asset_management_logo.jpeg',
     highlights: [
       'Implemented CI/CD automation reducing deployment time by 80%',
-      'Eliminated 90% of deployment failures through automated testing and rollback'
+      'Eliminated deployment failures through automated testing and rollback'
     ]
   },
   {
@@ -134,7 +122,7 @@ export default function Experience() {
                     </div>
                   )}
                   
-                  {exp.highlights && (
+                  {exp.highlights && Array.isArray(exp.highlights) && (
                     <div>
                       <p className="text-gray-500 text-xs uppercase tracking-wider mb-2">What I did</p>
                       <ul className="space-y-2">
@@ -159,41 +147,6 @@ export default function Experience() {
                           </li>
                         ))}
                       </ul>
-                    </div>
-                  )}
-                  
-                  {exp.philosophy && (
-                    <div className="mt-6 pt-6 border-t border-gray-800">
-                      <p className="text-gray-500 text-xs uppercase tracking-wider mb-3">How I Think About Engineering</p>
-                      <ul className="space-y-2">
-                        {exp.philosophy.map((item, i) => (
-                          <li key={i} className="text-gray-400 leading-relaxed font-light flex items-start text-sm italic">
-                            <span className="text-cyber-purple mr-2 flex-shrink-0">•</span>
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                  
-                  {exp.problem && (
-                    <div>
-                      <p className="text-gray-500 text-xs uppercase tracking-wider mb-2">Challenge</p>
-                      <p className="text-gray-300 leading-relaxed font-light">{exp.problem}</p>
-                    </div>
-                  )}
-                  
-                  {exp.solution && (
-                    <div>
-                      <p className="text-gray-500 text-xs uppercase tracking-wider mb-2">Approach</p>
-                      <p className="text-gray-300 leading-relaxed font-light">{exp.solution}</p>
-                    </div>
-                  )}
-                  
-                  {exp.metrics && (
-                    <div>
-                      <p className="text-gray-500 text-xs uppercase tracking-wider mb-2">Results</p>
-                      <p className="text-white leading-relaxed">{renderWhiteHighlightedText(exp.metrics)}</p>
                     </div>
                   )}
                 </div>

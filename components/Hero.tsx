@@ -73,7 +73,7 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-            <span className="gradient-text">Nik D'Mello</span>
+            <span className="gradient-text">Nikhil D'Mello</span>
           </motion.h1>
           
           <motion.p
@@ -87,9 +87,9 @@ export default function Hero() {
           
           <div className="flex justify-center space-x-6 mb-20">
             {[
-              { href: "mailto:nik.dmello@gmail.com", icon: Mail, label: "Send email to Nik D'Mello" },
-              { href: "https://linkedin.com/in/nikdmello", icon: Linkedin, label: "View Nik D'Mello's LinkedIn profile (opens in new tab)", external: true },
-              { href: "https://github.com/nikdmello", icon: Github, label: "View Nik D'Mello's GitHub profile (opens in new tab)", external: true }
+              { href: "mailto:nik.dmello@gmail.com", icon: Mail, label: "Send email to Nikhil D'Mello" },
+              { href: "https://linkedin.com/in/nikdmello", icon: Linkedin, label: "View Nikhil D'Mello's LinkedIn profile (opens in new tab)", external: true },
+              { href: "https://github.com/nikdmello", icon: Github, label: "View Nikhil D'Mello's GitHub profile (opens in new tab)", external: true }
             ].map((social, index) => {
               const Icon = social.icon
               return (

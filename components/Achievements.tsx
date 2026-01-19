@@ -9,7 +9,7 @@ export default function Achievements() {
   const images = [
     {
       src: "/images/winning-photo.jpeg",
-      alt: "Nik D'Mello presenting Cubs ARcade",
+      alt: "Nikhil D'Mello presenting Cubs ARcade",
       badge: "🥈 2ND"
     },
     {

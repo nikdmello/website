@@ -6,18 +6,18 @@ import './globals.css'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://nikdmello.com'),
-  title: 'Nik D\'Mello - Software Engineer',
+  title: 'Nikhil D\'Mello - Software Engineer',
   description: 'Software engineer building reliable systems and infrastructure.',
   openGraph: {
-    title: 'Nik D\'Mello - Software Engineer',
+    title: 'Nikhil D\'Mello - Software Engineer',
     description: 'Software engineer building reliable systems and infrastructure.',
     url: 'https://nikdmello.com',
-    siteName: 'Nik D\'Mello',
+    siteName: 'Nikhil D\'Mello',
     type: 'website',
   },
   twitter: {
     card: 'summary',
-    title: 'Nik D\'Mello - Software Engineer',
+    title: 'Nikhil D\'Mello - Software Engineer',
     description: 'Software engineer building reliable systems and infrastructure.',
   },
 }

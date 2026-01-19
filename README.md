@@ -14,4 +14,4 @@ npm install
 npm run dev
 ```
 
-Built by Nik D'Mello
+Built by Nikhil D'Mello
