@@ -11,7 +11,7 @@ module.exports = {
         'cyber-blue': '#ffffff',
         'cyber-purple': '#a3a3a3',
         'dark-bg': '#0a0a0a',
-        'card-bg': '#1a1a1a',
+        'card-bg': 'rgba(0, 0, 0, 0.3)',
       },
       fontFamily: {
         sans: [

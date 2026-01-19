@@ -1,9 +1,10 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react'
+import { Github, Linkedin, Mail } from 'lucide-react'
 import Image from 'next/image'
 import { useEffect, useRef } from 'react'
+import ScrollArrow from './ScrollArrow'
 
 export default function Hero() {
   const marqueeRef = useRef<HTMLDivElement>(null)
@@ -135,18 +136,12 @@ export default function Hero() {
         </motion.div>
       </div>
       
-      <button 
-        onClick={() => document.querySelector('section')?.nextElementSibling?.scrollIntoView({ behavior: 'smooth' })}
-        className="absolute bottom-8 left-1/2 w-6 h-6 -ml-3 cursor-pointer hover:text-white transition-colors"
-        aria-label="Scroll to experience section"
-      >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Infinity, duration: 2 }}
-        >
-          <ArrowDown className="w-6 h-6 text-cyber-blue hover:text-white transition-colors" />
-        </motion.div>
-      </button>
+      <div className="absolute bottom-8 left-1/2 -ml-3">
+        <ScrollArrow 
+          direction="down" 
+          onClick={() => document.querySelector('section')?.nextElementSibling?.scrollIntoView({ behavior: 'smooth' })} 
+        />
+      </div>
     </section>
   )
 }

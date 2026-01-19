@@ -36,28 +36,17 @@ body {
 
 .cyber-border {
   border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.bg-card-bg {
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .glow-effect {
   box-shadow: none;
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #ffffff;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #a3a3a3;
 }
 
 /* Mobile-friendly interactions */

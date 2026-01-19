@@ -5,6 +5,7 @@ import Experience from '@/components/Experience'
 import OpenSource from '@/components/OpenSource'
 import Projects from '@/components/Projects'
 import Achievements from '@/components/Achievements'
+import ScrollArrow from '@/components/ScrollArrow'
 
 export default function Home() {
   return (
@@ -15,6 +16,13 @@ export default function Home() {
         <Projects />
         <OpenSource />
         <Achievements />
+        
+        <div className="flex justify-center py-12">
+          <ScrollArrow 
+            direction="up" 
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} 
+          />
+        </div>
       </div>
     </main>
   )
