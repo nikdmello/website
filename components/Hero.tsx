@@ -69,7 +69,7 @@ export default function Hero() {
           className="text-center max-w-4xl mx-auto"
         >
           <motion.h1 
-            className="text-6xl md:text-8xl font-bold mb-6"
+            className="text-5xl md:text-8xl font-bold mb-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
