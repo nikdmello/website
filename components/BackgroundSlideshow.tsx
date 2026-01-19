@@ -16,7 +16,7 @@ export default function BackgroundSlideshow() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % photos.length)
-    }, 15000)
+    }, 10000)
     return () => clearInterval(interval)
   }, [])
 
