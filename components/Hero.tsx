@@ -23,10 +23,9 @@ export default function Hero() {
     let animationId: number
     let startTime: number
     let totalWidth: number
-    const duration = 16000 // 16 seconds, slower
+    const duration = 16000
 
     const updateWidth = () => {
-      // Wait a bit more for mobile layout
       setTimeout(() => {
         totalWidth = marquee.scrollWidth / 4
       }, 100)
@@ -47,7 +46,6 @@ export default function Hero() {
       animationId = requestAnimationFrame(animate)
     }
     
-    // Delay start for mobile
     setTimeout(() => {
       updateWidth()
       setTimeout(() => {
@@ -70,7 +68,7 @@ export default function Hero() {
           className="text-center max-w-4xl mx-auto"
         >
           <motion.h1 
-            className="text-5xl md:text-7xl font-bold mb-6"
+            className="text-6xl md:text-8xl font-bold mb-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
@@ -78,33 +76,16 @@ export default function Hero() {
             <span className="gradient-text">Nik D'Mello</span>
           </motion.h1>
           
-
-          
-          <motion.div 
-            className="mb-14"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-2xl md:text-3xl text-gray-300 mb-16 font-light"
           >
-            <p className="text-sm text-gray-400 mb-8 font-medium">Trusted by</p>
-            <div className="relative w-full overflow-hidden h-32" style={{maskImage: 'linear-gradient(to right, transparent, white 30%, white 70%, transparent)'}}>
-              <div ref={marqueeRef} className="flex items-center">
-                {[...companies, ...companies, ...companies, ...companies].map((company, index) => (
-                  <div key={index} className="flex-shrink-0">
-                    <Image 
-                      src={company.src} 
-                      alt={company.name} 
-                      width={400} 
-                      height={160} 
-                      className="h-32 w-auto opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-500" 
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
+            Software Engineer
+          </motion.p>
           
-          <div className="flex justify-center space-x-6 mb-16">
+          <div className="flex justify-center space-x-6 mb-20">
             {[
               { href: "mailto:nik.dmello@gmail.com", icon: Mail, label: "Send email to Nik D'Mello" },
               { href: "https://linkedin.com/in/nikdmello", icon: Linkedin, label: "View Nik D'Mello's LinkedIn profile (opens in new tab)", external: true },
@@ -121,13 +102,36 @@ export default function Hero() {
                   aria-label={social.label}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.9 + index * 0.1, duration: 0.5 }}
+                  transition={{ delay: 0.6 + index * 0.1, duration: 0.5 }}
                 >
                   <Icon className="w-6 h-6 text-cyber-blue" aria-hidden="true" />
                 </motion.a>
               )
             })}
           </div>
+          
+          <motion.div 
+            className="mb-8"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.9, duration: 0.8 }}
+          >
+            <div className="relative w-full overflow-hidden h-32" style={{maskImage: 'linear-gradient(to right, transparent, white 30%, white 70%, transparent)'}}>
+              <div ref={marqueeRef} className="flex items-center">
+                {[...companies, ...companies, ...companies, ...companies].map((company, index) => (
+                  <div key={index} className="flex-shrink-0">
+                    <Image 
+                      src={company.src} 
+                      alt={company.name} 
+                      width={400} 
+                      height={160} 
+                      className="h-32 w-auto opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-500" 
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
       

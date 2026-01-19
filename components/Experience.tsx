@@ -23,52 +23,46 @@ const experiences = [
     company: 'Associa',
     period: 'Mar 2023 – Present',
     logo: '/logos/associa_logo.jpeg',
-    problem: 'Deployment workflows and data-processing APIs did not scale with growing environment complexity and data volume, resulting in high tooling costs, operational risk during schema changes, and frequent failures in synchronous processing paths',
-    solution: 'Served as core engineer on two production systems, collaborating with platform teams to design and implement: custom deployment platform and event-driven processing service',
+    intro: 'I worked on platform and backend systems that handle deployments, authentication, and event-driven data processing at scale. Some of my work focused on replacing tooling with systems that are reliable and easy to operate.',
     highlights: [
-      'Implemented core components of custom DACPAC deployment platform, contributing to <Highlight>six-figure annual cost savings</Highlight>',
-      'Helped redesign synchronous APIs into event-driven microservice, eliminating <Highlight>timeout-related failures</Highlight> in production workloads',
-      'Built serverless architecture components processing <Highlight>10K+ records/hour</Highlight> with automated scaling and fault tolerance'
+      'Built core parts of a custom database deployment platform to make schema changes safe and repeatable across environments',
+      'Re-architected synchronous APIs into event-driven services to eliminate timeout-driven failures',
+      'Designed and operated serverless AWS services (Lambda, EventBridge, DynamoDB, SQS) with retries, DLQs, and automated scaling'
     ],
-    metrics: '<Highlight>Six-figure cost reduction</Highlight>, <Highlight>timeout elimination</Highlight>, <Highlight>10K+ records/hour</Highlight>'
+    impact: [
+      'Cut six figures in annual tooling costs',
+      'Removed a whole class of production failures from blocking workflows',
+      'Enabled processing of 10K+ records/hour without manual intervention'
+    ]
   },
   {
     title: 'BI Developer',
     company: 'ASICS Digital',
     period: 'Jan 2022 – Jul 2022',
     logo: '/logos/asics_digital_logo.jpeg',
-    problem: null,
-    solution: null,
     highlights: [
-      'Built automated analytics pipeline contributing to <Highlight>10% revenue growth</Highlight>',
-      'Reduced manual reporting overhead by <Highlight>75%</Highlight> through dashboard automation'
-    ],
-    metrics: '<Highlight>Revenue impact</Highlight>, <Highlight>automation efficiency</Highlight>'
+      'Built automated analytics pipeline contributing to 10% revenue growth',
+      'Reduced manual reporting overhead by 75% through dashboard automation'
+    ]
   },
   {
     title: 'DevOps Engineer',
     company: 'PanAgora Asset Management',
     period: 'Feb 2021 – Jul 2021',
     logo: '/logos/panagora_asset_management_logo.jpeg',
-    problem: null,
-    solution: null,
     highlights: [
-      'Implemented CI/CD automation reducing deployment time by <Highlight>80%</Highlight>',
-      'Eliminated <Highlight>90% of deployment failures</Highlight> through automated testing and rollback'
-    ],
-    metrics: '<Highlight>Deployment reliability</Highlight>, <Highlight>operational efficiency</Highlight>'
+      'Implemented CI/CD automation reducing deployment time by 80%',
+      'Eliminated 90% of deployment failures through automated testing and rollback'
+    ]
   },
   {
     title: 'Teaching Assistant',
     company: 'Northeastern University',
     period: 'Sep 2021 – Dec 2021',
     logo: '/logos/northeastern_university_logo.jpeg',
-    problem: null,
-    solution: null,
     highlights: [
-      'Mentored <Highlight>200+ students</Highlight> in statistical programming and data analysis'
-    ],
-    metrics: '<Highlight>Teaching and mentorship</Highlight>'
+      'Mentored 200+ students in statistical programming and data analysis'
+    ]
   }
 ]
 
@@ -134,38 +128,74 @@ export default function Experience() {
                 </div>
                 
                 <div className="flex-1 space-y-6">
-                  {exp.problem && (
+                  {exp.intro && (
                     <div>
-                      <p className="text-gray-500 text-xs uppercase tracking-wider mb-2">Challenge</p>
-                      <p className="text-gray-300 leading-relaxed">{exp.problem}</p>
-                    </div>
-                  )}
-                  
-                  {exp.solution && (
-                    <div>
-                      <p className="text-gray-500 text-xs uppercase tracking-wider mb-2">Approach</p>
-                      <p className="text-gray-300 leading-relaxed">{exp.solution}</p>
+                      <p className="text-gray-300 leading-relaxed font-light">{exp.intro}</p>
                     </div>
                   )}
                   
                   {exp.highlights && (
                     <div>
-                      <p className="text-gray-500 text-xs uppercase tracking-wider mb-2">Key Achievements</p>
+                      <p className="text-gray-500 text-xs uppercase tracking-wider mb-2">What I did</p>
                       <ul className="space-y-2">
                         {exp.highlights.map((highlight, i) => (
-                          <li key={i} className="text-gray-300 leading-relaxed flex items-start">
+                          <li key={i} className="text-gray-300 leading-relaxed font-light flex items-start">
                             <span className="text-cyber-blue mr-2 flex-shrink-0">•</span>
-                            <span>{renderWhiteHighlightedText(highlight)}</span>
+                            <span>{highlight}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
                   )}
                   
-                  <div>
-                    <p className="text-gray-500 text-xs uppercase tracking-wider mb-2">Business Impact</p>
-                    <p className="text-white leading-relaxed">{renderWhiteHighlightedText(exp.metrics)}</p>
-                  </div>
+                  {exp.impact && (
+                    <div>
+                      <p className="text-gray-500 text-xs uppercase tracking-wider mb-2">Why it mattered</p>
+                      <ul className="space-y-2">
+                        {exp.impact.map((item, i) => (
+                          <li key={i} className="text-gray-300 leading-relaxed font-light flex items-start">
+                            <span className="text-cyber-blue mr-2 flex-shrink-0">•</span>
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  
+                  {exp.philosophy && (
+                    <div className="mt-6 pt-6 border-t border-gray-800">
+                      <p className="text-gray-500 text-xs uppercase tracking-wider mb-3">How I Think About Engineering</p>
+                      <ul className="space-y-2">
+                        {exp.philosophy.map((item, i) => (
+                          <li key={i} className="text-gray-400 leading-relaxed font-light flex items-start text-sm italic">
+                            <span className="text-cyber-purple mr-2 flex-shrink-0">•</span>
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  
+                  {exp.problem && (
+                    <div>
+                      <p className="text-gray-500 text-xs uppercase tracking-wider mb-2">Challenge</p>
+                      <p className="text-gray-300 leading-relaxed font-light">{exp.problem}</p>
+                    </div>
+                  )}
+                  
+                  {exp.solution && (
+                    <div>
+                      <p className="text-gray-500 text-xs uppercase tracking-wider mb-2">Approach</p>
+                      <p className="text-gray-300 leading-relaxed font-light">{exp.solution}</p>
+                    </div>
+                  )}
+                  
+                  {exp.metrics && (
+                    <div>
+                      <p className="text-gray-500 text-xs uppercase tracking-wider mb-2">Results</p>
+                      <p className="text-white leading-relaxed">{renderWhiteHighlightedText(exp.metrics)}</p>
+                    </div>
+                  )}
                 </div>
               </div>
             </Component>
