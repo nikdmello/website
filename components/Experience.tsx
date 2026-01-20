@@ -9,7 +9,7 @@ const experiences = [
   {
     title: 'Software Engineer',
     company: 'Associa',
-    period: 'Mar 2023 – Present',
+    period: 'Mar 2023 – Jan 2026',
     logo: '/logos/associa_logo.jpeg',
     intro: 'I worked on platform and backend systems that handle deployments, authentication, and event-driven data processing at scale. Some of my work focused on replacing tooling with systems that are reliable and easy to operate.',
     highlights: [
