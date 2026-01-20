@@ -12,8 +12,10 @@ const photos = [
 
 export default function BackgroundSlideshow() {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
+    setLoaded(true)
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % photos.length)
     }, 10000)
@@ -23,7 +25,7 @@ export default function BackgroundSlideshow() {
   const currentPhoto = photos[currentIndex]
 
   return (
-    <div className="fixed inset-0" style={{ zIndex: 0 }}>
+    <div className="fixed inset-0" style={{ zIndex: 0, background: '#000000' }}>
       {photos.map((photo, index) => (
         <div
           key={photo.src}

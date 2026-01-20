@@ -34,12 +34,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="scroll-smooth" style={{ background: 'transparent' }}>
+    <html lang="en" className="scroll-smooth" style={{ background: '#000000' }}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body suppressHydrationWarning>
+      <body suppressHydrationWarning style={{ background: '#000000' }}>
         <BackgroundSlideshow />
         <div className="relative" style={{ zIndex: 10 }}>
           <SkipLink />
