@@ -12,6 +12,7 @@ const photos = [
 
 export default function BackgroundSlideshow() {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -37,7 +38,12 @@ export default function BackgroundSlideshow() {
           <img
             src={photo.src}
             alt=""
-            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+            style={{ 
+              width: '100%', 
+              height: '100%', 
+              objectFit: 'cover'
+            }}
+            onLoad={() => setIsLoaded(true)}
           />
         </div>
       ))}
