@@ -12,10 +12,8 @@ const photos = [
 
 export default function BackgroundSlideshow() {
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
-    setLoaded(true)
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % photos.length)
     }, 10000)
