@@ -91,7 +91,7 @@ export default function Experience() {
               <div className="flex flex-col lg:flex-row lg:items-start gap-6">
                 <div className="flex items-start gap-4 lg:min-w-[320px] lg:flex-shrink-0">
                   {exp.logo ? (
-                    <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-white">
+                    <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-black/80">
                       <Image
                         src={exp.logo}
                         alt={exp.company}

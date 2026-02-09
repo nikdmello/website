@@ -63,7 +63,7 @@ export default function OpenSource() {
               className="cyber-border rounded-xl p-8 bg-card-bg hover:glow-effect transition-all duration-300 rainbow-glow"
             >
               <div className="flex items-start gap-4 mb-4">
-                <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+                <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-black/80">
                   <Image
                     src="/logos/vscode_logo.png"
                     alt="VS Code"

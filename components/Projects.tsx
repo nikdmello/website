@@ -1,9 +1,10 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Database } from 'lucide-react'
+import { Github } from 'lucide-react'
 import { useIsMobile } from '@/hooks/useIsMobile'
 import Highlight from './Highlight'
+import Image from 'next/image'
 
 const renderHighlightedText = (text: string) => {
   const parts = text.split(/(<Highlight[^>]*>[^<]+<\/Highlight>)/g)
@@ -19,14 +20,26 @@ const renderHighlightedText = (text: string) => {
 
 const projects = [
   {
-    title: 'Swift Protocol',
-    subtitle: 'Atomic Coordination for AI Agents',
-    description: 'Blockchain-based coordination infrastructure with Solidity smart contracts on Base L2 and Express.js orchestration engine. Implements atomic workflow execution with automatic rollback, preventing partial failures in multi-agent workflows through guaranteed all-or-nothing execution.',
-    icon: <Database className="w-8 h-8" />,
-    tech: ['Solidity', 'JavaScript', 'Node.js', 'Express.js', 'Docker', 'Git'],
-    architecture: 'Smart Contracts + Orchestrator + Client SDK',
+    title: 'Upside',
+    subtitle: 'Creator-Brand Marketplace',
+    description: 'SwiftUI marketplace app that matches creators and brands with a swipe-based feed, role-aware onboarding, and a polished match flow that turns interest into warm intros.',
+    logo: '/logos/upside_logo.png',
+    githubUrl: 'https://github.com/nikdmello/upside',
+    tech: ['Swift 5', 'SwiftUI', 'Combine', 'Xcode', 'iOS'],
+    architecture: 'SwiftUI + MVVM with role-aware flows and modular UI components',
     gradient: 'from-cyber-blue to-blue-600',
-    metrics: ['Atomic guarantees', 'Base L2 deployment', 'All-or-nothing execution']
+    metrics: ['Smooth swipe deck', 'Minimal view updates', 'Explicit animations']
+  },
+  {
+    title: 'Strongly',
+    subtitle: 'Strength Training System',
+    description: 'SwiftUI strength-training app with a split builder, per-muscle volume engine, and adaptive schedule progression tied to workout completion. It turns weekly plans into dynamic workouts and keeps training on track when schedules change.',
+    logo: '/logos/strongly_logo.png',
+    githubUrl: 'https://github.com/nikdmello/strongly',
+    tech: ['Swift 5', 'SwiftUI', 'Combine', 'Xcode', 'iOS'],
+    architecture: 'SwiftUI + MVVM with domain models, services, and persisted plan state',
+    gradient: 'from-emerald-400 to-teal-600',
+    metrics: ['Local computation', 'Async local storage', 'Lazy list rendering']
   }
 ]
 
@@ -65,13 +78,27 @@ export default function Projects() {
               className="cyber-border rounded-xl p-8 bg-card-bg hover:glow-effect transition-all duration-300 group rainbow-glow flex flex-col"
             >
               <div className="flex items-start gap-4 mb-6">
-                <div className={`p-3 rounded-full bg-gradient-to-r ${project.gradient} text-white`}>
-                  {project.icon}
+                <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-black/80">
+                  <Image
+                    src={project.logo}
+                    alt={`${project.title} logo`}
+                    width={64}
+                    height={64}
+                    className="w-full h-full object-contain"
+                  />
                 </div>
                 <div className="flex-1">
                   <h3 className="text-2xl font-bold text-white mb-1">{project.title}</h3>
                   <p className="text-cyber-blue font-semibold mb-2">{project.subtitle}</p>
-
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-3 py-1.5 bg-gray-800 hover:bg-cyber-blue/20 text-gray-300 hover:text-white text-xs rounded-lg transition-colors"
+                  >
+                    <Github className="w-4 h-4" />
+                    GitHub
+                  </a>
                 </div>
               </div>
 
