@@ -54,7 +54,7 @@ export default function OpenSource() {
 
         <div className="mx-auto max-w-5xl">
           <div className="cyber-border rainbow-glow rounded-3xl bg-card-bg transition-all duration-300 hover:glow-effect">
-            {contributions.map((contrib, index) => (
+            {contributions.map((contrib) => (
               <motion.article
                 key={contrib.pr}
                 initial={{ opacity: 0 }}
