@@ -6,19 +6,19 @@ import './globals.css'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://nikdmello.com'),
-  title: 'Nikhil D\'Mello - Software Engineer',
-  description: 'Software engineer building reliable systems and infrastructure.',
+  title: 'Nikhil D\'Mello | Software Engineer',
+  description: 'Software Engineer building backend services, distributed systems, and cool products.',
   openGraph: {
-    title: 'Nikhil D\'Mello - Software Engineer',
-    description: 'Software engineer building reliable systems and infrastructure.',
+    title: 'Nikhil D\'Mello | Software Engineer',
+    description: 'Software Engineer building backend services, distributed systems, and cool products.',
     url: 'https://nikdmello.com',
     siteName: 'Nikhil D\'Mello',
     type: 'website',
   },
   twitter: {
     card: 'summary',
-    title: 'Nikhil D\'Mello - Software Engineer',
-    description: 'Software engineer building reliable systems and infrastructure.',
+    title: 'Nikhil D\'Mello | Software Engineer',
+    description: 'Software Engineer building backend services, distributed systems, and cool products.',
   },
 }
 

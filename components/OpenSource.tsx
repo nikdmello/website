@@ -1,38 +1,35 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Github } from 'lucide-react'
-import Image from 'next/image'
+import { ArrowUpRight } from 'lucide-react'
 
-const contributions = [
+type Contribution = {
+  title: string
+  date: string
+  status: string
+  description: string
+  pr: string
+  prUrl: string
+}
+
+const contributions: Contribution[] = [
   {
     title: 'KaTeX Regex Fix for jQuery Expressions',
-    repo: 'microsoft/vscode',
-    pr: '#269635',
-    prUrl: 'https://github.com/microsoft/vscode/pull/269635',
-    issueUrl: 'https://github.com/microsoft/vscode/issues/268378',
     date: 'Nov 2025',
-    status: 'Merged',
-    description: 'Fixed KaTeX regex to prevent jQuery expressions from being incorrectly parsed as math delimiters',
-    impact: [
-      'Resolved parsing conflicts between jQuery syntax and KaTeX math rendering',
-      'Fixed edge cases with multiple dollar signs in code blocks',
-      'Improved markdown preview accuracy for technical documentation'
-    ]
+    status: 'Merged and Released',
+    description:
+      'Fixed markdown preview parsing so jQuery expressions were not incorrectly treated as KaTeX delimiters.',
+    pr: 'PR #269635',
+    prUrl: 'https://github.com/microsoft/vscode/pull/269635'
   },
   {
     title: 'Screencast Mode Keyboard Shortcut Fix',
-    repo: 'microsoft/vscode',
-    pr: '#176149',
-    prUrl: 'https://github.com/microsoft/vscode/pull/176149',
-    issueUrl: 'https://github.com/microsoft/vscode/issues/173752',
     date: 'Mar 2023',
-    status: 'Merged & Released',
-    description: 'Fixed critical bug in screencast mode affecting keyboard shortcut display for developer recordings',
-    impact: [
-      'Improved developer experience for screencast recordings',
-      'Released in March 2023 update'
-    ]
+    status: 'Merged and Released',
+    description:
+      'Fixed a screencast mode bug affecting keyboard shortcut display for developer recordings.',
+    pr: 'PR #176149',
+    prUrl: 'https://github.com/microsoft/vscode/pull/176149'
   }
 ]
 
@@ -45,77 +42,62 @@ export default function OpenSource() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="mb-16 text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text">
+          <h2 className="mb-4 text-4xl font-bold gradient-text md:text-5xl">
             Open Source
           </h2>
+          <p className="mx-auto max-w-2xl text-base leading-relaxed text-gray-300 md:text-lg">
+            Merged fixes to VS Code from issues I ran into while using it day to day.
+          </p>
         </motion.div>
 
-        <div className="space-y-8 max-w-6xl mx-auto">
-          {contributions.map((contrib, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.3 }}
-              viewport={{ once: true }}
-              className="cyber-border rounded-xl p-8 bg-card-bg hover:glow-effect transition-all duration-300 rainbow-glow"
-            >
-              <div className="flex items-start gap-4 mb-4">
-                <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-black/80">
-                  <Image
-                    src="/logos/vscode_logo.png"
-                    alt="VS Code"
-                    width={64}
-                    height={64}
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-xl font-bold text-white mb-1">{contrib.title}</h3>
-                  <p className="text-cyber-purple font-semibold mb-2">{contrib.repo}</p>
-                  <div className="flex flex-wrap items-center gap-3 text-sm">
-                    <span className="text-gray-400">{contrib.date}</span>
-                    <span className="px-3 py-1 bg-green-500/20 text-green-400 rounded-full">
-                      {contrib.status}
-                    </span>
+        <div className="mx-auto max-w-5xl">
+          <div className="cyber-border rainbow-glow rounded-3xl bg-card-bg transition-all duration-300 hover:glow-effect">
+            {contributions.map((contrib, index) => (
+              <motion.article
+                key={contrib.pr}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.3, ease: 'easeOut' }}
+                viewport={{ once: true, amount: 0.1 }}
+                className="border-t border-white/10 px-8 py-8 transition-colors duration-300 hover:bg-white/[0.03] first:border-t-0 md:px-10"
+              >
+                <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+                  <div className="max-w-3xl">
+                    <div className="flex flex-wrap items-center gap-3 text-sm">
+                      <span className="text-gray-500">VS Code</span>
+                      <span className="text-gray-600">|</span>
+                      <span className="text-gray-500">{contrib.date}</span>
+                      <span className="rounded-full border border-white/10 bg-white/[0.03] px-2.5 py-1 text-[11px] uppercase tracking-[0.16em] text-gray-300">
+                        {contrib.status}
+                      </span>
+                    </div>
+
+                    <h3 className="mt-3 text-xl font-semibold text-white md:text-2xl">
+                      {contrib.title}
+                    </h3>
+
+                    <p className="mt-3 leading-relaxed text-gray-300">
+                      {contrib.description}
+                    </p>
+                  </div>
+
+                  <div className="md:pl-8">
+                    <a
+                      href={contrib.prUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm font-medium text-white transition-colors hover:text-cyber-blue"
+                    >
+                      {contrib.pr}
+                      <ArrowUpRight className="h-4 w-4" />
+                    </a>
                   </div>
                 </div>
-              </div>
-
-              <p className="text-gray-300 mb-4">{contrib.description}</p>
-
-              <ul className="space-y-2 mb-6">
-                {contrib.impact.map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-gray-300">
-                    <div className="w-1.5 h-1.5 bg-cyber-blue rounded-full mt-2.5 flex-shrink-0" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <div className="flex gap-3">
-                <a
-                  href={contrib.prUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-cyber-blue/20 text-gray-300 hover:text-white text-sm rounded-lg transition-colors"
-                >
-                  <Github className="w-4 h-4" />
-                  {contrib.pr}
-                </a>
-                <a
-                  href={contrib.issueUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-cyber-blue/20 text-gray-300 hover:text-white text-sm rounded-lg transition-colors"
-                >
-                  View Issue
-                </a>
-              </div>
-            </motion.div>
-          ))}
+              </motion.article>
+            ))}
+          </div>
         </div>
       </div>
     </section>

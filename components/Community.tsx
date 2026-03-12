@@ -29,7 +29,7 @@ export default function Community() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="cyber-border rounded-xl p-8 bg-card-bg hover:glow-effect transition-all duration-300"
+            className="cyber-border rounded-xl p-8 bg-card-bg hover:glow-effect transition-all duration-300 rainbow-glow"
           >
             <div className="flex items-start gap-4 mb-6">
               <div className="p-3 rounded-full bg-gradient-to-r from-cyber-blue to-blue-600 text-white">
@@ -97,7 +97,7 @@ export default function Community() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="cyber-border rounded-xl p-8 bg-card-bg hover:glow-effect transition-all duration-300"
+            className="cyber-border rounded-xl p-8 bg-card-bg hover:glow-effect transition-all duration-300 rainbow-glow"
           >
             <div className="flex items-start gap-4 mb-6">
               <div className="p-3 rounded-full bg-gradient-to-r from-cyber-purple to-purple-600 text-white">

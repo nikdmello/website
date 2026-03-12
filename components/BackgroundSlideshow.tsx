@@ -45,11 +45,26 @@ export default function BackgroundSlideshow() {
           />
         </div>
       ))}
-      <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.7)', zIndex: 1 }} />
+      <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.78)', zIndex: 1 }} />
       
-      <div style={{ position: 'absolute', bottom: '24px', left: '24px', color: 'rgba(255,255,255,0.4)', fontSize: '13px', zIndex: 2, fontWeight: 300 }}>
-        <p>{currentPhoto.location}</p>
-        <p>{currentPhoto.date}</p>
+      <div
+        style={{
+          position: 'absolute',
+          bottom: '20px',
+          right: '24px',
+          color: 'rgba(255,255,255,0.32)',
+          fontSize: '11px',
+          letterSpacing: '0.18em',
+          textTransform: 'uppercase',
+          zIndex: 2,
+          fontWeight: 400,
+          textAlign: 'right'
+        }}
+      >
+        <div>{currentPhoto.location}</div>
+        <div style={{ marginTop: '6px', color: 'rgba(255,255,255,0.22)' }}>
+          {currentPhoto.date}
+        </div>
       </div>
     </div>
   )
