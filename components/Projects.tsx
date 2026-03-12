@@ -53,7 +53,7 @@ export default function Projects() {
 
         <div className="mx-auto max-w-5xl">
           <div className="cyber-border rainbow-glow rounded-3xl bg-card-bg transition-all duration-300 hover:glow-effect">
-            {projects.map((project, index) => (
+            {projects.map((project) => (
               <motion.article
                 key={project.title}
                 initial={{ opacity: 0 }}
