@@ -110,9 +110,6 @@ export default function Experience() {
           <h2 className="text-4xl md:text-5xl font-bold gradient-text">
             Experience
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-gray-300 md:text-lg">
-            Backend, cloud, analytics, and deployment engineering across product and internal platforms.
-          </p>
         </motion.div>
 
         <div className="mx-auto max-w-5xl space-y-6">

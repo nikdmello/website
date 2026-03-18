@@ -47,9 +47,6 @@ export default function OpenSource() {
           <h2 className="mb-4 text-4xl font-bold gradient-text md:text-5xl">
             Open Source
           </h2>
-          <p className="mx-auto max-w-2xl text-base leading-relaxed text-gray-300 md:text-lg">
-            Merged fixes to VS Code from issues I ran into while using it day to day.
-          </p>
         </motion.div>
 
         <div className="mx-auto max-w-5xl">

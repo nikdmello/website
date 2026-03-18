@@ -46,9 +46,6 @@ export default function Projects() {
           <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
             Selected Projects
           </h2>
-          <p className="mx-auto max-w-2xl text-base leading-relaxed text-gray-300 md:text-lg">
-            End-to-end builds that show product execution, state management, and shipping discipline.
-          </p>
         </motion.div>
 
         <div className="mx-auto max-w-5xl">

@@ -45,7 +45,7 @@ export default function BackgroundSlideshow() {
           />
         </div>
       ))}
-      <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.78)', zIndex: 1 }} />
+      <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.42)', zIndex: 1 }} />
       
       <div
         style={{
