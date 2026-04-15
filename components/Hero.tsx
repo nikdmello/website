@@ -2,8 +2,11 @@
 
 import { motion } from 'framer-motion'
 import { FileText, Github, Linkedin, Mail } from 'lucide-react'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, type MouseEvent } from 'react'
 import ScrollArrow from './ScrollArrow'
+import CursorToast from './CursorToast'
+import { useCursorToast } from '@/hooks/useCursorToast'
+import { copyTextToClipboard } from '@/lib/copyTextToClipboard'
 
 type HeadlineLayout = {
   prefixLines: string[]
@@ -51,7 +54,6 @@ const actions = [
     external: true
   },
   {
-    href: emailAddress,
     icon: Mail,
     label: 'Email',
     copy: true
@@ -67,7 +69,7 @@ export default function Hero() {
   const [currentHeadlineIndex, setCurrentHeadlineIndex] = useState(0)
   const [headlineLayout, setHeadlineLayout] = useState<HeadlineLayout>(defaultHeadlineLayout)
   const [showActions, setShowActions] = useState(false)
-  const [copiedEmail, setCopiedEmail] = useState(false)
+  const { toast, showToast } = useCursorToast()
 
   useEffect(() => {
     let isCancelled = false
@@ -231,29 +233,13 @@ export default function Hero() {
     }
   }, [])
 
-  useEffect(() => {
-    if (!copiedEmail) return
+  const copyEmail = async (event: MouseEvent<HTMLButtonElement>) => {
+    const target = event.currentTarget
+    const clientX = event.clientX
+    const clientY = event.clientY
 
-    const timeoutId = window.setTimeout(() => setCopiedEmail(false), 1600)
-    return () => window.clearTimeout(timeoutId)
-  }, [copiedEmail])
-
-  const copyEmail = async () => {
-    try {
-      await navigator.clipboard.writeText(emailAddress)
-    } catch {
-      const textArea = document.createElement('textarea')
-      textArea.value = emailAddress
-      textArea.setAttribute('readonly', '')
-      textArea.style.position = 'absolute'
-      textArea.style.left = '-9999px'
-      document.body.appendChild(textArea)
-      textArea.select()
-      document.execCommand('copy')
-      document.body.removeChild(textArea)
-    }
-
-    setCopiedEmail(true)
+    await copyTextToClipboard(emailAddress)
+    showToast({ target, clientX, clientY }, 'Email copied')
   }
 
   const introComplete = typedIntro.length === typedIntroText.length
@@ -293,7 +279,7 @@ export default function Hero() {
   const activeSuffixLineIndex = getActiveLineIndex(suffixTypedLines)
 
   return (
-    <section className="relative flex min-h-screen items-center py-24 sm:py-28">
+    <section id="home" className="relative flex min-h-screen items-center pb-24 pt-32 sm:pb-28 sm:pt-36">
       <div className="container mx-auto px-6">
         <div className="mx-auto max-w-5xl">
           <div className="hero-panel rainbow-glow rounded-3xl p-8 md:p-12 lg:p-14">
@@ -401,13 +387,11 @@ export default function Hero() {
                         type="button"
                         onClick={copyEmail}
                         className={`inline-flex w-full min-h-[56px] items-center justify-center gap-2 rounded-2xl border px-4 py-3 text-sm font-semibold transition-colors sm:min-h-0 sm:w-auto sm:justify-start sm:border-0 sm:bg-transparent sm:px-1 ${
-                          copiedEmail
-                            ? 'border-cyber-blue/40 bg-cyber-blue/15 text-white'
-                            : mobileTileClass
+                          mobileTileClass
                         }`}
                       >
                         <Icon className="h-4 w-4" aria-hidden="true" />
-                        {copiedEmail ? 'Copied' : action.label}
+                        {action.label}
                       </button>
                     )
                   }
@@ -441,6 +425,7 @@ export default function Hero() {
           onClick={() => document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' })}
         />
       </div>
+      <CursorToast toast={toast} />
     </section>
   )
 }

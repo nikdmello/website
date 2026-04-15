@@ -34,10 +34,10 @@ type AdditionalItem = {
 const experiences: ExperienceItem[] = [
   {
     company: 'Associa',
-    title: 'Software Engineer',
+    title: 'Software Developer',
     period: 'Mar 2023 - Jan 2026',
     logo: '/logos/associa_logo.jpeg',
-    intro: 'Core engineer on backend services and internal platforms for TownSq across deployment automation, authentication, and event-driven processing in AWS.',
+    intro: 'Worked on backend services and internal platforms for TownSq across deployment automation, authentication, and event-driven processing in AWS.',
     impact: [
       'Owned key parts of a DACPAC-based database deployment platform that replaced third-party tooling, standardized database schema deployments across environments, and drove meaningful annual cost savings.',
       'Led the re-architecture of synchronous APIs into event-driven serverless workflows using AWS Lambda, EventBridge, DynamoDB, and SQS, eliminating timeout failures and enabling 10,000+ records per hour.',

@@ -1,55 +1,50 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Code, Database, Cloud, Cpu, Zap, Shield } from 'lucide-react'
-import { useIsMobile } from '@/hooks/useIsMobile'
+import { Cloud, Code2, Database, Layers3, Rocket, ShieldCheck } from 'lucide-react'
 
 const skillCategories = [
   {
-    title: 'Programming Languages',
-    icon: <Code className="w-6 h-6" />,
-    skills: ['TypeScript', 'JavaScript', 'Java', 'C# .NET 8', 'Solidity', 'SQL', 'Python'],
-    gradient: 'from-cyber-blue to-blue-600'
+    title: 'Languages',
+    icon: <Code2 className="h-5 w-5" />,
+    summary: 'Comfortable moving between product work, backend services, and data-heavy problems.',
+    skills: ['TypeScript', 'JavaScript', 'Java', 'C# .NET', 'SQL', 'Python']
   },
   {
-    title: 'Cloud & AWS',
-    icon: <Cloud className="w-6 h-6" />,
-    skills: ['AWS Lambda', 'DynamoDB', 'EventBridge', 'SQS', 'Step Functions', 'CodeBuild'],
-    gradient: 'from-cyber-purple to-purple-600'
+    title: 'Cloud',
+    icon: <Cloud className="h-5 w-5" />,
+    summary: 'Experienced with event-driven AWS systems that need to scale cleanly and stay observable.',
+    skills: ['AWS Lambda', 'DynamoDB', 'EventBridge', 'SQS', 'Step Functions', 'CloudWatch']
   },
   {
-    title: 'Backend & APIs',
-    icon: <Cpu className="w-6 h-6" />,
-    skills: ['Node.js', 'Express.js', 'NestJS', 'RESTful APIs', 'Microservices', 'Event-Driven Architecture'],
-    gradient: 'from-green-400 to-emerald-600'
+    title: 'Backend',
+    icon: <Layers3 className="h-5 w-5" />,
+    summary: 'Focused on clean APIs, resilient workflows, and backend designs that reduce operational drag.',
+    skills: ['Node.js', 'Express.js', 'NestJS', 'REST APIs', 'Microservices', 'Event-Driven Architecture']
   },
   {
-    title: 'Frontend & Web',
-    icon: <Database className="w-6 h-6" />,
-    skills: ['React', 'Next.js', 'Angular', 'Tailwind CSS', 'Responsive Design'],
-    gradient: 'from-orange-400 to-red-600'
+    title: 'Frontend',
+    icon: <Rocket className="h-5 w-5" />,
+    summary: 'Comfortable shipping product surfaces with strong responsiveness, clarity, and motion.',
+    skills: ['React', 'Next.js', 'SwiftUI', 'Angular', 'Tailwind CSS', 'Responsive Design']
   },
   {
-    title: 'Database & Storage',
-    icon: <Shield className="w-6 h-6" />,
-    skills: ['SQL Server', 'DynamoDB', 'BigQuery', 'NoSQL', 'Data Modeling', 'Database Design'],
-    gradient: 'from-pink-400 to-rose-600'
+    title: 'Data',
+    icon: <Database className="h-5 w-5" />,
+    summary: 'Strong with relational and NoSQL systems, from schema design to analytics-oriented modeling.',
+    skills: ['SQL Server', 'DynamoDB', 'BigQuery', 'NoSQL', 'Data Modeling', 'Database Design']
   },
   {
-    title: 'DevOps & Tools',
-    icon: <Zap className="w-6 h-6" />,
-    skills: ['Git', 'Docker', 'CI/CD', 'Bitbucket Pipelines', 'SonarCloud', 'CloudWatch'],
-    gradient: 'from-indigo-400 to-blue-600'
+    title: 'Delivery',
+    icon: <ShieldCheck className="h-5 w-5" />,
+    summary: 'I care about deployability, feedback loops, and the reliability work that keeps systems calm.',
+    skills: ['Git', 'Docker', 'CI/CD', 'CodeBuild', 'Bitbucket Pipelines', 'SonarCloud']
   }
 ]
 
-
-
 export default function Skills() {
-  const isMobile = useIsMobile()
-  
   return (
-    <section className="py-20">
+    <section id="skills" className="py-20">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -63,45 +58,42 @@ export default function Skills() {
           </h2>
         </motion.div>
 
-        {/* Skills Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
           {skillCategories.map((category, index) => {
-            const Component = isMobile ? 'div' : motion.div
-            const props = isMobile ? {} : {
-              initial: { opacity: 0, y: 30 },
-              whileInView: { opacity: 1, y: 0 },
-              transition: { duration: 0.6, delay: index * 0.1 },
-              viewport: { once: true }
-            }
-            
             return (
-              <Component
-                key={index}
-                {...props}
-                className="cyber-border rounded-xl p-6 bg-card-bg hover:glow-effect transition-all duration-300 rainbow-glow"
+              <motion.article
+                key={category.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.45, delay: index * 0.06 }}
+                viewport={{ once: true, amount: 0.15 }}
+                className="cyber-border rainbow-glow rounded-3xl bg-card-bg p-6 transition-all duration-300 hover:glow-effect md:p-7"
               >
-              <div className="flex items-center gap-3 mb-4">
-                <div className={`p-2 rounded-lg bg-gradient-to-r ${category.gradient} text-white`}>
-                  {category.icon}
+                <div className="flex items-center gap-3">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/12 bg-white/[0.04] text-white">
+                    {category.icon}
+                  </div>
+                  <h3 className="text-lg font-semibold text-white">{category.title}</h3>
                 </div>
-                <h3 className="text-lg font-bold text-white">{category.title}</h3>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {category.skills.map((skill, i) => (
-                  <span
-                    key={i}
-                    className="px-3 py-1 bg-gray-800 text-gray-300 text-sm rounded-full border border-gray-700 hover:border-cyber-blue/50 transition-colors"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-              </Component>
+
+                <p className="mt-4 text-sm leading-relaxed text-gray-300">
+                  {category.summary}
+                </p>
+
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {category.skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="rounded-full border border-white/10 bg-black/35 px-3 py-1.5 text-sm text-gray-200"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </motion.article>
             )
           })}
         </div>
-
-
       </div>
     </section>
   )

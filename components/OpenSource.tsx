@@ -35,7 +35,7 @@ const contributions: Contribution[] = [
 
 export default function OpenSource() {
   return (
-    <section className="py-20">
+    <section id="open-source" className="py-20">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
