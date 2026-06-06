@@ -3,13 +3,14 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { ArrowRight, FileText, Github, Linkedin, Mail } from 'lucide-react'
-import { type MouseEvent } from 'react'
+import { useEffect, useState, type MouseEvent } from 'react'
 import ScrollArrow from './ScrollArrow'
 import CursorToast from './CursorToast'
 import { useCursorToast } from '@/hooks/useCursorToast'
 import { copyTextToClipboard } from '@/lib/copyTextToClipboard'
 
 const emailAddress = 'nik.dmello@gmail.com'
+const rotatingWords = ['build', 'create', 'explore', 'test']
 
 const socialLinks = [
   {
@@ -26,6 +27,48 @@ const socialLinks = [
 
 export default function Hero() {
   const { toast, showToast } = useCursorToast()
+  const [activeWordIndex, setActiveWordIndex] = useState(0)
+  const [typedLength, setTypedLength] = useState(0)
+  const [isDeleting, setIsDeleting] = useState(false)
+
+  useEffect(() => {
+    const currentWord = `${rotatingWords[activeWordIndex]}.`
+
+    if (!isDeleting && typedLength < currentWord.length) {
+      const typeTimeout = window.setTimeout(() => {
+        setTypedLength((currentLength) => currentLength + 1)
+      }, 45)
+
+      return () => window.clearTimeout(typeTimeout)
+    }
+
+    if (!isDeleting && typedLength === currentWord.length) {
+      const holdTimeout = window.setTimeout(() => {
+        setIsDeleting(true)
+      }, 2000)
+
+      return () => window.clearTimeout(holdTimeout)
+    }
+
+    if (isDeleting && typedLength > 0) {
+      const deleteTimeout = window.setTimeout(() => {
+        setTypedLength((currentLength) => currentLength - 1)
+      }, 28)
+
+      return () => window.clearTimeout(deleteTimeout)
+    }
+
+    if (isDeleting && typedLength === 0) {
+      const nextWordTimeout = window.setTimeout(() => {
+        setIsDeleting(false)
+        setActiveWordIndex((currentIndex) => (currentIndex + 1) % rotatingWords.length)
+      }, 70)
+
+      return () => window.clearTimeout(nextWordTimeout)
+    }
+
+    return undefined
+  }, [activeWordIndex, typedLength, isDeleting])
 
   const copyEmail = async (event: MouseEvent<HTMLButtonElement>) => {
     const target = event.currentTarget
@@ -39,6 +82,15 @@ export default function Hero() {
   const scrollToProjects = () => {
     document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
+
+  const animatedWord = rotatingWords[activeWordIndex]
+  const currentWord = `${animatedWord}.`
+  const visibleText = currentWord.slice(0, typedLength)
+  const visibleWord = visibleText.replace(/\.$/, '')
+  const showPeriod = visibleText.endsWith('.')
+  const underlineWidth = Math.max(animatedWord.length * 0.48, 1.1)
+  const underlineRightInset = animatedWord === 'build' ? '0.18em' : '0.12em'
+  const periodOffsetClass = animatedWord === 'build' ? '-ml-[0.08em]' : '-ml-[0.02em]'
 
   return (
     <section id="home" className="relative flex min-h-[100svh] items-start pb-16 pt-24 sm:min-h-screen sm:items-center sm:pb-28 sm:pt-32">
@@ -60,7 +112,7 @@ export default function Hero() {
             transition={{ duration: 0.85, ease: 'easeOut', delay: 0.06 }}
             className="relative order-1 w-full max-w-[280px] justify-self-center sm:max-w-[320px] lg:order-2 lg:max-w-[300px] lg:self-start lg:justify-self-end"
           >
-            <div className="relative mx-auto flex w-full items-center justify-center lg:translate-y-20 xl:translate-y-[4.5rem]">
+            <div className="relative mx-auto flex w-full items-center justify-center lg:translate-y-28 xl:translate-y-24">
               <div className="absolute inset-[-18px] rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.1),rgba(255,255,255,0)_70%)] blur-lg" />
               <div className="relative h-[236px] w-[236px] sm:h-[268px] sm:w-[268px] lg:h-[280px] lg:w-[280px]">
                 <div className="relative h-full w-full overflow-hidden rounded-full shadow-[0_28px_70px_rgba(0,0,0,0.42)]">
@@ -83,8 +135,27 @@ export default function Hero() {
               Hi, I&apos;m Nikhil D&apos;Mello
             </p>
 
-            <h1 className="mx-auto mt-4 max-w-[14ch] text-[2.22rem] font-semibold leading-[0.99] tracking-[-0.045em] text-white sm:mt-5 sm:max-w-[15ch] sm:text-[3.1rem] lg:mx-0 lg:max-w-[16ch] lg:text-[4.2rem] xl:text-[4.7rem]">
-              Software Engineer with a curious mind and an instinct to build.
+            <h1 className="mx-auto mt-4 max-w-[15ch] text-[2.22rem] font-semibold leading-[0.99] tracking-[-0.045em] text-white sm:mt-5 sm:max-w-[15ch] sm:text-[3.1rem] lg:mx-0 lg:max-w-none lg:text-[4.2rem] xl:text-[4.7rem]">
+              <span className="block">Software Engineer</span>
+              <span className="block">with a curious mind</span>
+              <span className="block">
+                and an instinct to{' '}
+                <motion.span
+                  animate={{ width: `${underlineWidth}em` }}
+                  transition={{ duration: 0.16, ease: [0.2, 0.8, 0.2, 1] }}
+                  className="relative inline-flex h-[1.1em] items-end overflow-hidden align-baseline"
+                >
+                  <span className="absolute bottom-[3px] left-0 block whitespace-nowrap leading-none">
+                    {visibleWord}
+                  </span>
+                  <span
+                    aria-hidden="true"
+                    className="absolute bottom-[1px] left-0 h-[4px] rounded-full bg-white"
+                    style={{ right: underlineRightInset }}
+                  />
+                </motion.span>
+                {showPeriod ? <span className={`relative ${periodOffsetClass} -top-[0.16em] text-[0.72em] text-white/78`}>.</span> : null}
+              </span>
             </h1>
 
             <p className="mx-auto mt-5 max-w-[32rem] text-[1rem] leading-relaxed text-white/90 sm:hidden">
