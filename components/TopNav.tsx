@@ -1,6 +1,8 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { Menu, X } from 'lucide-react'
+import Image from 'next/image'
+import { useEffect, useState } from 'react'
 
 const navigationItems = [
   { id: 'home', label: 'Home' },
@@ -11,30 +13,43 @@ const navigationItems = [
   { id: 'contact', label: 'Contact' }
 ]
 
+const scrollTrackedItems = navigationItems.filter((item) => item.id !== 'home')
+
 export default function TopNav() {
-  const [activeSection, setActiveSection] = useState('home')
-  const navItemRefs = useRef<Record<string, HTMLButtonElement | null>>({})
+  const [activeSection, setActiveSection] = useState<string | null>(null)
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId)
+    setMobileMenuOpen(false)
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
   useEffect(() => {
     const updateActiveSection = () => {
+      setIsScrolled(window.scrollY > 24)
+
       const pageBottom = window.innerHeight + window.scrollY
       const documentHeight = document.documentElement.scrollHeight
 
       if (documentHeight - pageBottom < 80) {
-        setActiveSection(navigationItems[navigationItems.length - 1].id)
+        setActiveSection(scrollTrackedItems[scrollTrackedItems.length - 1].id)
         return
       }
 
       const focusLine = Math.min(window.innerHeight * 0.38, 320)
-      let currentSection = navigationItems[0].id
+      const firstSection = document.getElementById(scrollTrackedItems[0].id)
+
+      if (firstSection && firstSection.getBoundingClientRect().top > focusLine) {
+        setActiveSection('home')
+        return
+      }
+
+      let currentSection = scrollTrackedItems[0].id
       let closestDistance = Number.POSITIVE_INFINITY
 
-      for (const item of navigationItems) {
+      for (const item of scrollTrackedItems) {
         const section = document.getElementById(item.id)
         if (!section) continue
 
@@ -62,52 +77,108 @@ export default function TopNav() {
   }, [])
 
   useEffect(() => {
-    navItemRefs.current[activeSection]?.scrollIntoView({
-      behavior: 'smooth',
-      inline: 'center',
-      block: 'nearest'
-    })
-  }, [activeSection])
+    const closeOnDesktop = () => {
+      if (window.innerWidth >= 640) {
+        setMobileMenuOpen(false)
+      }
+    }
+
+    window.addEventListener('resize', closeOnDesktop)
+    return () => window.removeEventListener('resize', closeOnDesktop)
+  }, [])
 
   return (
     <div className="pointer-events-none fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6">
-      <nav className="pointer-events-auto mx-auto flex max-w-6xl items-center gap-3 rounded-full border border-white/12 bg-black/45 px-3 py-3 shadow-lg shadow-black/20 backdrop-blur-md sm:gap-4 sm:px-6">
-        <button
-          type="button"
-          onClick={() => scrollToSection('home')}
-          className="flex flex-shrink-0 items-center gap-3 text-left text-sm font-medium text-white"
+      <div className="site-shell relative">
+        <nav
+          className={`pointer-events-auto flex items-center gap-3 border-b px-4 py-2.5 transition-all duration-300 sm:gap-5 sm:px-6 ${
+          isScrolled
+            ? 'border-white/10 bg-transparent shadow-none'
+            : 'border-transparent bg-transparent shadow-none'
+          }`}
         >
-          <span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/12 bg-white/[0.05] text-sm">
-            ND
-          </span>
-          <span className="hidden text-left sm:block">
-            <span className="block text-sm">Nikhil D&apos;Mello</span>
-            <span className="eyebrow block text-[10px] text-gray-400">Software Engineer</span>
-          </span>
-        </button>
+          <button
+            type="button"
+            onClick={() => scrollToSection('home')}
+            className={`flex flex-shrink-0 items-center gap-3 px-1 py-1 text-left text-sm font-medium text-white transition-opacity ${
+              isScrolled ? 'hover:opacity-100 sm:opacity-95' : 'opacity-90 hover:opacity-100'
+            }`}
+          >
+            <span className="relative h-9 w-9 overflow-hidden rounded-full ring-1 ring-white/10">
+              <Image
+                src="/images/PFP.webp"
+                alt="Nikhil D'Mello"
+                fill
+                sizes="36px"
+                className="object-cover"
+              />
+            </span>
+            <span className="hidden text-left sm:block">
+              <span className="block text-sm text-white">Nikhil D&apos;Mello</span>
+            </span>
+          </button>
 
-        <div className="flex min-w-0 flex-1 items-center gap-1 overflow-x-auto text-sm text-gray-300 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden sm:ml-auto sm:min-w-fit sm:flex-none sm:overflow-visible">
-          {navigationItems.map((item) => {
-            const isActive = activeSection === item.id
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen((open) => !open)}
+            aria-expanded={mobileMenuOpen}
+            aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+            className="ml-auto flex h-10 w-10 items-center justify-center rounded-full border border-white/8 bg-white/[0.03] text-white/85 transition-colors hover:bg-white/[0.06] hover:text-white sm:hidden"
+          >
+            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
 
-            return (
-              <button
-                key={item.id}
-                ref={(element) => {
-                  navItemRefs.current[item.id] = element
-                }}
-                type="button"
-                onClick={() => scrollToSection(item.id)}
-                className={`whitespace-nowrap rounded-full px-2.5 py-2 text-[13px] transition-colors sm:px-3 sm:text-sm ${
-                  isActive ? 'bg-white text-black' : 'hover:bg-white/[0.06] hover:text-white'
-                }`}
-              >
-                {item.label}
-              </button>
-            )
-          })}
-        </div>
-      </nav>
+          <div className="hidden min-w-0 flex-1 items-center gap-1 text-sm text-white/80 sm:ml-auto sm:flex sm:min-w-fit sm:flex-none sm:overflow-visible">
+            {navigationItems.map((item) => {
+              const isActive = activeSection === item.id
+
+              return (
+                <button
+                  key={item.id}
+                  type="button"
+                  onClick={() => scrollToSection(item.id)}
+                  className={`nav-link whitespace-nowrap px-2 py-1.5 text-[13px] sm:px-3 sm:text-sm ${
+                    isActive ? 'nav-link-active text-white' : 'text-white/80 hover:text-white'
+                  }`}
+                >
+                  {item.label}
+                </button>
+                )
+              })}
+          </div>
+        </nav>
+
+        {mobileMenuOpen ? (
+          <div className="pointer-events-auto absolute right-0 top-full mt-2 w-60 sm:hidden">
+            <div className="overflow-hidden rounded-[1rem] border border-white/8 bg-[linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.015))] shadow-[0_18px_40px_rgba(0,0,0,0.24)] backdrop-blur-2xl">
+              <div className="border-b border-white/8 px-4 py-3">
+                <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-white/60">
+                  Navigate
+                </p>
+              </div>
+              <div className="flex flex-col p-2">
+              {navigationItems.map((item) => {
+                const isActive = activeSection === item.id
+
+                return (
+                  <button
+                    key={item.id}
+                    type="button"
+                    onClick={() => scrollToSection(item.id)}
+                    className={`flex items-center justify-between rounded-[0.8rem] px-3 py-3 text-left text-sm transition-colors ${
+                      isActive ? 'bg-white/[0.07] text-white' : 'text-white/80 hover:bg-white/[0.04] hover:text-white'
+                    }`}
+                  >
+                    <span>{item.label}</span>
+                    {isActive ? <span className="h-1.5 w-1.5 rounded-full bg-white" aria-hidden="true" /> : null}
+                  </button>
+                )
+              })}
+              </div>
+            </div>
+          </div>
+        ) : null}
+      </div>
     </div>
   )
 }

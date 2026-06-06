@@ -3,11 +3,11 @@
 import { useEffect, useState } from 'react'
 
 const photos = [
-  { src: '/images/IMG_0673.jpeg', location: 'Lower Antelope Canyon', date: 'Jun 2025' },
-  { src: '/images/IMG_6650.jpeg', location: 'Chicago, IL', date: 'Apr 2025' },
-  { src: '/images/IMG_7280.jpeg', location: 'Horseshoe Canyon', date: 'Jun 2025' },
-  { src: '/images/IMG_8807.jpeg', location: 'Petra, Jordan', date: 'Oct 2025' },
-  { src: '/images/IMG_8864.jpeg', location: 'Amman Citadel, Jordan', date: 'Oct 2025' }
+  { src: '/images/IMG_0673.webp', location: 'Lower Antelope Canyon', date: 'Jun 2025' },
+  { src: '/images/IMG_6650.webp', location: 'Chicago, IL', date: 'Apr 2025' },
+  { src: '/images/IMG_7280.webp', location: 'Horseshoe Canyon', date: 'Jun 2025' },
+  { src: '/images/IMG_8807.webp', location: 'Petra, Jordan', date: 'Oct 2025' },
+  { src: '/images/IMG_8864.webp', location: 'Amman Citadel, Jordan', date: 'Oct 2025' }
 ]
 
 export default function BackgroundSlideshow() {

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { IBM_Plex_Mono, Space_Grotesk } from 'next/font/google'
+import { IBM_Plex_Mono, Instrument_Sans, Space_Grotesk } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import SkipLink from '@/components/SkipLink'
 import BackgroundSlideshow from '@/components/BackgroundSlideshow'
@@ -8,6 +8,11 @@ import './globals.css'
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
   variable: '--font-display'
+})
+
+const instrumentSans = Instrument_Sans({
+  subsets: ['latin'],
+  variable: '--font-body'
 })
 
 const ibmPlexMono = IBM_Plex_Mono({
@@ -61,7 +66,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`scroll-smooth ${spaceGrotesk.variable} ${ibmPlexMono.variable}`}
+      className={`scroll-smooth ${spaceGrotesk.variable} ${instrumentSans.variable} ${ibmPlexMono.variable}`}
       style={{ background: '#000000' }}
     >
       <body suppressHydrationWarning className="font-sans" style={{ background: '#000000' }}>

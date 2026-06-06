@@ -8,17 +8,17 @@ export default function Achievements() {
   
   const images = [
     {
-      src: "/images/winning-photo.jpeg",
+      src: "/images/winning-photo.webp",
       alt: "Nikhil D'Mello presenting Cubs ARcade",
       badge: "🥈 2ND"
     },
     {
-      src: "/images/hackathon-presentation-2.jpeg",
+      src: "/images/hackathon-presentation-2.webp",
       alt: "Cubs ARcade demo",
       badge: null
     },
     {
-      src: "/images/hackathon-presentation-3.jpeg",
+      src: "/images/hackathon-presentation-3.webp",
       alt: "Team presentation",
       badge: null
     }
