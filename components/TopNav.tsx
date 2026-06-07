@@ -149,14 +149,9 @@ export default function TopNav() {
         </nav>
 
         {mobileMenuOpen ? (
-          <div className="pointer-events-auto absolute right-0 top-full mt-2 w-60 sm:hidden">
-            <div className="overflow-hidden rounded-[1rem] border border-white/8 bg-[linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.015))] shadow-[0_18px_40px_rgba(0,0,0,0.24)] backdrop-blur-2xl">
-              <div className="border-b border-white/8 px-4 py-3">
-                <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-white/60">
-                  Navigate
-                </p>
-              </div>
-              <div className="flex flex-col p-2">
+          <div className="pointer-events-auto absolute right-0 top-full mt-2 w-56 sm:hidden">
+            <div className="overflow-hidden rounded-[1.15rem] border border-white/10 bg-[linear-gradient(180deg,rgba(26,26,26,0.9),rgba(18,18,18,0.82))] shadow-[0_18px_36px_rgba(0,0,0,0.22)] backdrop-blur-2xl">
+              <div className="flex flex-col gap-1.5 p-2">
               {navigationItems.map((item) => {
                 const isActive = activeSection === item.id
 
@@ -165,12 +160,11 @@ export default function TopNav() {
                     key={item.id}
                     type="button"
                     onClick={() => scrollToSection(item.id)}
-                    className={`flex items-center justify-between rounded-[0.8rem] px-3 py-3 text-left text-sm transition-colors ${
-                      isActive ? 'bg-white/[0.07] text-white' : 'text-white/80 hover:bg-white/[0.04] hover:text-white'
+                    className={`flex items-center justify-between rounded-[0.9rem] px-3.5 py-3 text-left text-sm transition-colors ${
+                      isActive ? 'bg-white/[0.07] text-white' : 'text-white/80 hover:bg-white/[0.045] hover:text-white'
                     }`}
                   >
                     <span>{item.label}</span>
-                    {isActive ? <span className="h-1.5 w-1.5 rounded-full bg-white" aria-hidden="true" /> : null}
                   </button>
                 )
               })}
