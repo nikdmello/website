@@ -33,12 +33,12 @@ const projects: Project[] = [
     tags: ['Swift', 'iOS', 'Fitness']
   },
   {
-    title: 'Open Signal',
-    subtitle: 'Crypto Data and Signal Research',
-    description: 'A research project for exploring crypto market data, signals, and decision workflows, with an emphasis on learning from patterns instead of reacting to noise.',
-    githubUrl: 'https://github.com/nikdmello/open-signal',
-    tags: ['TypeScript', 'Crypto', 'Research'],
-    badge: 'OS'
+    title: 'Zenesis Website',
+    subtitle: 'Dubai Business Setup Site',
+    description: 'A client-facing website for a Dubai business setup and advisory firm, focused on making complex services feel clear, credible, and easy to navigate.',
+    logo: '/logos/zenesis-logo-mark.webp',
+    githubUrl: 'https://github.com/nikdmello/zenesis-website',
+    tags: ['TypeScript', 'Website', 'Business']
   },
   {
     title: 'Source of Truth',
@@ -49,12 +49,12 @@ const projects: Project[] = [
     badge: 'ST'
   },
   {
-    title: 'Zenesis Website',
-    subtitle: 'Dubai Business Setup Site',
-    description: 'A client-facing website for a Dubai business setup and advisory firm, focused on making complex services feel clear, credible, and easy to navigate.',
-    githubUrl: 'https://github.com/nikdmello/zenesis-website',
-    tags: ['TypeScript', 'Website', 'Business'],
-    badge: 'ZW'
+    title: 'Open Signal',
+    subtitle: 'Crypto Data and Signal Research',
+    description: 'A research project for exploring crypto market data, signals, and decision workflows, with an emphasis on learning from patterns instead of reacting to noise.',
+    githubUrl: 'https://github.com/nikdmello/open-signal',
+    tags: ['TypeScript', 'Crypto', 'Research'],
+    badge: 'OS'
   },
   {
     title: 'Portfolio',
