@@ -11,6 +11,7 @@ type Project = {
   description: string
   logo?: string
   githubUrl: string
+  websiteUrl?: string
   tags: string[]
   badge?: string
 }
@@ -38,6 +39,7 @@ const projects: Project[] = [
     description: 'A client-facing website for a Dubai business setup and advisory firm, focused on making complex services feel clear, credible, and easy to navigate.',
     logo: '/logos/zenesis-logo-mark.webp',
     githubUrl: 'https://github.com/nikdmello/zenesis-website',
+    websiteUrl: 'https://www.zenesiscorp.com',
     tags: ['TypeScript', 'Website', 'Business']
   },
   {
@@ -92,18 +94,35 @@ export default function Projects() {
               viewport={{ once: true, amount: 0.1 }}
               className="cyber-border panel-sheen rainbow-glow rounded-3xl bg-card-bg px-7 py-7 transition-all duration-300 hover:glow-effect md:px-8"
             >
-              <div className="flex h-full flex-col gap-6">
+              <a
+                href={project.websiteUrl ?? project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-full flex-col gap-6"
+              >
                 <div className="flex items-start gap-4">
                   {project.logo ? (
-                    <div className="h-14 w-14 flex-shrink-0 overflow-hidden rounded-lg bg-black/80">
-                      <Image
-                        src={project.logo}
-                        alt={`${project.title} logo`}
-                        width={56}
-                        height={56}
-                        className="h-full w-full object-contain"
-                      />
-                    </div>
+                    project.websiteUrl ? (
+                      <div className="h-14 w-14 flex-shrink-0 overflow-hidden rounded-lg bg-black/80 transition-opacity">
+                        <Image
+                          src={project.logo}
+                          alt={`${project.title} logo`}
+                          width={56}
+                          height={56}
+                          className="h-full w-full object-contain brightness-0 invert"
+                        />
+                      </div>
+                    ) : (
+                      <div className="h-14 w-14 flex-shrink-0 overflow-hidden rounded-lg bg-black/80">
+                        <Image
+                          src={project.logo}
+                          alt={`${project.title} logo`}
+                          width={56}
+                          height={56}
+                          className="h-full w-full object-contain"
+                        />
+                      </div>
+                    )
                   ) : (
                     <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/[0.04] text-sm font-semibold text-white">
                       {project.badge}
@@ -136,19 +155,14 @@ export default function Projects() {
 
                   <div className="mt-auto pt-1">
                     <div className="mb-4 h-px w-full bg-white/10" aria-hidden="true" />
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm font-medium text-white transition-colors hover:text-cyber-blue"
-                    >
+                    <div className="inline-flex items-center gap-2 text-sm font-medium text-white transition-colors hover:text-cyber-blue">
                       <Github className="h-4 w-4" />
-                      GitHub
+                      {project.websiteUrl ? 'Website' : 'GitHub'}
                       <ArrowUpRight className="h-4 w-4" />
-                    </a>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </a>
             </motion.article>
           ))}
         </div>
