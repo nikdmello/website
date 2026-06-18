@@ -71,11 +71,11 @@ export default function OpenSource() {
                     </span>
                   </div>
 
-                  <h3 className="mt-4 text-xl font-semibold text-white md:text-2xl">
+                  <h3 className="mt-4 text-[1.55rem] font-semibold text-white md:text-[1.8rem]">
                     {contrib.title}
                   </h3>
 
-                  <p className="mt-4 leading-relaxed text-white/88">
+                  <p className="mt-4 text-base leading-relaxed text-white/88 md:text-[1.02rem]">
                     {contrib.description}
                   </p>
                 </div>

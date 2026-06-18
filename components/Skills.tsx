@@ -74,10 +74,10 @@ export default function Skills() {
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/12 bg-white/[0.06] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] md:h-13 md:w-13">
                     {category.icon}
                   </div>
-                  <h3 className="text-xl font-semibold text-white md:text-[1.35rem]">{category.title}</h3>
+                  <h3 className="text-[1.4rem] font-semibold text-white md:text-[1.55rem]">{category.title}</h3>
                 </div>
 
-                <p className="mt-5 text-[0.98rem] leading-relaxed text-white/90 md:text-[1.05rem]">
+                <p className="mt-5 text-base leading-relaxed text-white/90 md:text-[1.02rem]">
                   {category.summary}
                 </p>
 

@@ -138,7 +138,7 @@ export default function Experience() {
 
                   <div>
                     <p className="text-sm text-white/65">Featured role</p>
-                    <h3 className="text-3xl font-semibold text-white md:text-4xl">
+                    <h3 className="text-[1.7rem] font-semibold text-white md:text-[1.85rem]">
                       {featuredExperience.company}
                     </h3>
                     <p className="mt-1 text-base font-medium text-cyber-blue">{featuredExperience.title}</p>
@@ -151,7 +151,7 @@ export default function Experience() {
 
                 <div className="max-w-4xl">
                   {featuredExperience.intro ? (
-                    <p className="text-base leading-relaxed text-white/88 md:text-lg">
+                    <p className="text-base leading-relaxed text-white/88 md:text-[1.05rem]">
                       {featuredExperience.intro}
                     </p>
                   ) : null}
@@ -163,7 +163,7 @@ export default function Experience() {
                         {featuredExperience.impact.map((item) => (
                           <li key={item} className="flex items-start text-white/86">
                             <span className="mr-3 mt-0.5 flex-shrink-0 text-cyber-blue">•</span>
-                            <span className="leading-relaxed">{item}</span>
+                            <span className="text-base leading-relaxed md:text-[1.02rem]">{item}</span>
                           </li>
                         ))}
                       </ul>
@@ -195,7 +195,7 @@ export default function Experience() {
                     </div>
 
                     <div>
-                      <h3 className="text-2xl font-semibold text-white">
+                      <h3 className="text-[1.65rem] font-semibold text-white md:text-[1.8rem]">
                         {exp.company}
                       </h3>
                       <p className="mt-1 text-base font-medium text-cyber-blue">{exp.title}</p>
@@ -207,7 +207,7 @@ export default function Experience() {
                   </div>
 
                   {exp.summary ? (
-                    <p className="mt-5 leading-relaxed text-white/86">
+                    <p className="mt-5 text-base leading-relaxed text-white/86 md:text-[1.02rem]">
                       {exp.summary}
                     </p>
                   ) : null}
@@ -246,13 +246,13 @@ export default function Experience() {
                     )}
 
                     <div className="min-w-0">
-                      <h3 className="text-lg font-semibold text-white">{item.title}</h3>
+                      <h3 className="text-[1.35rem] font-semibold text-white md:text-[1.45rem]">{item.title}</h3>
                       <p className="mt-1 text-base font-medium text-cyber-blue">{item.subtitle}</p>
                       <p className="mt-2 text-sm text-white/68">{item.period}</p>
                     </div>
                   </div>
 
-                  <p className="mt-5 leading-relaxed text-white/86">{item.description}</p>
+                  <p className="mt-5 text-base leading-relaxed text-white/86 md:text-[1.02rem]">{item.description}</p>
 
                   {item.photos ? (
                     <div className="mt-4 grid grid-cols-3 gap-2">

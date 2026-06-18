@@ -130,7 +130,7 @@ export default function Projects() {
                   )}
 
                   <div className="min-w-0">
-                    <h3 className="text-xl font-semibold text-white md:text-2xl">
+                    <h3 className="text-[1.55rem] font-semibold text-white md:text-[1.8rem]">
                       {project.title}
                     </h3>
                     <p className="mt-1 text-base font-medium text-cyber-blue">{project.subtitle}</p>
@@ -138,7 +138,7 @@ export default function Projects() {
                 </div>
 
                 <div className="flex h-full flex-col justify-between gap-6">
-                  <p className="leading-relaxed text-white/88">
+                  <p className="text-base leading-relaxed text-white/88 md:text-[1.02rem]">
                     {project.description}
                   </p>
 

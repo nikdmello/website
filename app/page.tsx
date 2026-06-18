@@ -49,10 +49,10 @@ export default function Home() {
                 <div className="relative grid gap-10 px-6 py-8 lg:grid-cols-[minmax(0,1.2fr)_minmax(360px,0.8fr)] lg:gap-12 lg:px-10 lg:py-10 xl:px-12 xl:py-12">
                   <div className="max-w-3xl">
                     <p className="text-sm font-medium text-white/65">Direct Contact</p>
-                    <h3 className="mt-4 text-3xl font-semibold tracking-tight text-white md:text-4xl xl:text-[2.6rem]">
+                    <h3 className="mt-4 text-[2rem] font-semibold tracking-tight text-white md:text-[2.2rem] xl:text-[2.35rem]">
                       Let&apos;s connect.
                     </h3>
-                    <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/88 md:text-lg">
+                    <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/88 md:text-[1.05rem]">
                       I&apos;m always interested in thoughtful products, useful systems, and teams building things that matter.
                     </p>
                   </div>
