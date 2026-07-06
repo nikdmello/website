@@ -179,7 +179,7 @@ export default function Hero() {
 
             <div className="mt-7 hidden flex-wrap items-center justify-center gap-x-4 gap-y-3 text-sm text-white/85 sm:mt-8 sm:flex sm:gap-x-5 lg:justify-start">
               <a
-                href="/Resume.pdf"
+                href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 transition-colors hover:text-white"
@@ -216,7 +216,7 @@ export default function Hero() {
 
             <div className="mx-auto mt-7 grid max-w-[24rem] grid-cols-2 gap-3 text-sm text-white/85 sm:hidden">
               <a
-                href="/Resume.pdf"
+                href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full border border-white/12 bg-white/[0.04] px-3 py-2 text-center transition-colors hover:bg-white/[0.08] hover:text-white"
