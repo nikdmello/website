@@ -18,6 +18,15 @@ type Project = {
 
 const projects: Project[] = [
   {
+    title: 'Zenesis Website',
+    subtitle: 'Dubai Business Setup Site',
+    description: 'A client-facing website for a Dubai business setup and advisory firm, focused on making complex services feel clear, credible, and easy to navigate.',
+    logo: '/logos/zenesis-logo-mark.webp',
+    githubUrl: 'https://github.com/nikdmello/zenesis-website',
+    websiteUrl: 'https://www.zenesiscorp.com',
+    tags: ['TypeScript', 'Website', 'Business']
+  },
+  {
     title: 'Upside',
     subtitle: 'Creator <> Brand Marketplace',
     description: 'An iOS marketplace concept for connecting creators and brands in the GCC, built from curiosity about how modern creator partnerships could feel simpler and more direct.',
@@ -32,15 +41,6 @@ const projects: Project[] = [
     logo: '/logos/strongly_logo.png',
     githubUrl: 'https://github.com/nikdmello/strongly',
     tags: ['Swift', 'iOS', 'Fitness']
-  },
-  {
-    title: 'Zenesis Website',
-    subtitle: 'Dubai Business Setup Site',
-    description: 'A client-facing website for a Dubai business setup and advisory firm, focused on making complex services feel clear, credible, and easy to navigate.',
-    logo: '/logos/zenesis-logo-mark.webp',
-    githubUrl: 'https://github.com/nikdmello/zenesis-website',
-    websiteUrl: 'https://www.zenesiscorp.com',
-    tags: ['TypeScript', 'Website', 'Business']
   },
   {
     title: 'Source of Truth',
