@@ -109,7 +109,6 @@ export default function Home() {
           <div className="portrait-frame">
             <Image src="/images/PFP.webp" alt="Nikhil D'Mello" fill priority sizes="(max-width: 800px) 88vw, 430px" />
           </div>
-          <div className="quote-card"><span>“</span><p>Curiosity is usually where the best work starts.</p></div>
         </div>
       </section>
 
