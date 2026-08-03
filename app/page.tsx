@@ -1,8 +1,6 @@
-'use client'
-
 import Image from 'next/image'
-import { ArrowDown, ArrowUpRight, Check, Github, Linkedin, Mail } from 'lucide-react'
-import { useState } from 'react'
+import { ArrowDown, ArrowUpRight, Github, Linkedin } from 'lucide-react'
+import { CopyEmailButton, ScrollButton } from '@/components/PortfolioActions'
 
 const roles = [
   {
@@ -66,29 +64,17 @@ const photographs = [
 ]
 
 export default function Home() {
-  const [copied, setCopied] = useState(false)
-
-  const scrollTo = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-  }
-
-  const copyEmail = async () => {
-    await navigator.clipboard.writeText('nik.dmello@gmail.com')
-    setCopied(true)
-    window.setTimeout(() => setCopied(false), 1800)
-  }
-
   return (
     <main id="main-content" tabIndex={-1}>
       <header className="nav shell">
-        <button className="brand" type="button" onClick={() => scrollTo('top')} aria-label="Nikhil D'Mello home">
+        <ScrollButton className="brand" targetId="top" ariaLabel="Nikhil D'Mello home">
           <span>ND</span><strong>Nikhil D&apos;Mello</strong>
-        </button>
+        </ScrollButton>
         <nav aria-label="Main navigation">
-          <button type="button" onClick={() => scrollTo('experience')}>Experience</button>
-          <button type="button" onClick={() => scrollTo('work')}>Work</button>
-          <button type="button" onClick={() => scrollTo('beyond')}>Beyond</button>
-          <button type="button" onClick={() => scrollTo('about')}>About</button>
+          <ScrollButton targetId="experience">Experience</ScrollButton>
+          <ScrollButton targetId="work">Work</ScrollButton>
+          <ScrollButton targetId="beyond">Beyond</ScrollButton>
+          <ScrollButton targetId="about">About</ScrollButton>
         </nav>
         <a className="nav-cta" href="/resume.pdf" target="_blank">Résumé <ArrowUpRight /></a>
       </header>
@@ -99,7 +85,7 @@ export default function Home() {
           <h1>I turn messy problems into <em>systems that work.</em></h1>
           <p className="intro">I&apos;m Nikhil, a software engineer drawn to backend systems, thoughtful products, and the small details that make technology feel reliable.</p>
           <div className="actions">
-            <button className="primary" type="button" onClick={() => scrollTo('work')}>Explore my work <ArrowDown /></button>
+            <ScrollButton className="primary" targetId="work">Explore my work <ArrowDown /></ScrollButton>
             <a className="text-link" href="https://github.com/nikdmello" target="_blank" rel="noreferrer">GitHub <ArrowUpRight /></a>
           </div>
           <p className="credentials">Backend systems · Cloud architecture · Product engineering</p>
@@ -187,7 +173,14 @@ export default function Home() {
         <div className="photo-grid">
           {photographs.map((photo, index) => (
             <figure className={photo.className} key={photo.src}>
-              <Image src={photo.src} alt={`${photo.location}, photographed by Nikhil D'Mello`} fill sizes={index === 0 ? '(max-width: 800px) 100vw, 70vw' : '(max-width: 800px) 100vw, 36vw'} />
+              <Image
+                src={photo.src}
+                alt={`${photo.location}, photographed by Nikhil D'Mello`}
+                fill
+                sizes={index < 3
+                  ? '(max-width: 480px) calc(100vw - 32px), (max-width: 800px) calc(50vw - 24px), (max-width: 1230px) 33vw, 393px'
+                  : '(max-width: 480px) calc(100vw - 32px), (max-width: 800px) calc(50vw - 24px), (max-width: 1230px) 50vw, 590px'}
+              />
               <figcaption><span>{photo.location}</span><time>{photo.date}</time></figcaption>
             </figure>
           ))}
@@ -212,7 +205,7 @@ export default function Home() {
           <h2>Have a hard problem<br />worth <em>solving?</em></h2>
           <p>I&apos;m always happy to meet thoughtful people building useful things.</p>
           <div className="contact-actions">
-            <button className="primary" onClick={copyEmail}>{copied ? <Check /> : <Mail />}{copied ? 'Email copied' : 'Copy my email'}</button>
+            <CopyEmailButton />
             <a className="social" href="https://linkedin.com/in/nikdmello" target="_blank" rel="noreferrer"><Linkedin /> LinkedIn</a>
             <a className="social" href="https://github.com/nikdmello" target="_blank" rel="noreferrer"><Github /> GitHub</a>
           </div>
