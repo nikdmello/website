@@ -1,11 +1,10 @@
 import type { Metadata } from 'next'
-import { IBM_Plex_Mono, Instrument_Sans, Space_Grotesk } from 'next/font/google'
+import { Instrument_Sans, Playfair_Display } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import SkipLink from '@/components/SkipLink'
-import BackgroundSlideshow from '@/components/BackgroundSlideshow'
 import './globals.css'
 
-const spaceGrotesk = Space_Grotesk({
+const playfairDisplay = Playfair_Display({
   subsets: ['latin'],
   variable: '--font-display'
 })
@@ -13,12 +12,6 @@ const spaceGrotesk = Space_Grotesk({
 const instrumentSans = Instrument_Sans({
   subsets: ['latin'],
   variable: '--font-body'
-})
-
-const ibmPlexMono = IBM_Plex_Mono({
-  subsets: ['latin'],
-  variable: '--font-mono',
-  weight: ['400', '500']
 })
 
 export const metadata: Metadata = {
@@ -66,12 +59,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`scroll-smooth ${spaceGrotesk.variable} ${instrumentSans.variable} ${ibmPlexMono.variable}`}
-      style={{ background: '#000000' }}
+      className={`scroll-smooth ${playfairDisplay.variable} ${instrumentSans.variable}`}
+      style={{ background: '#f4f1e8' }}
     >
-      <body suppressHydrationWarning className="font-sans" style={{ background: '#000000' }}>
-        <BackgroundSlideshow />
-        <div className="relative" style={{ zIndex: 10 }}>
+      <body suppressHydrationWarning className="font-sans">
+        <div>
           <SkipLink />
           {children}
         </div>

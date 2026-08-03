@@ -1,136 +1,230 @@
 'use client'
 
-import { type MouseEvent } from 'react'
-import Hero from '@/components/Hero'
-import Experience from '@/components/Experience'
-import OpenSource from '@/components/OpenSource'
-import Projects from '@/components/Projects'
-import Skills from '@/components/Skills'
-import ScrollArrow from '@/components/ScrollArrow'
-import Footer from '@/components/Footer'
-import TopNav from '@/components/TopNav'
-import CursorToast from '@/components/CursorToast'
-import SectionHeader from '@/components/SectionHeader'
-import { useCursorToast } from '@/hooks/useCursorToast'
-import { copyTextToClipboard } from '@/lib/copyTextToClipboard'
-import { ArrowUpRight, Github, Linkedin, Mail, MapPin } from 'lucide-react'
+import Image from 'next/image'
+import { ArrowDown, ArrowUpRight, Check, Github, Linkedin, Mail } from 'lucide-react'
+import { useState } from 'react'
+
+const roles = [
+  {
+    period: '2023–2026',
+    company: 'Associa',
+    title: 'Software Developer',
+    copy: 'Built and operated backend systems for TownSq, from deployment automation and authentication to event-driven processing in AWS.',
+    impact: 'Re-architected synchronous workflows to process 10,000+ records per hour while eliminating timeout failures.'
+  },
+  {
+    period: '2022',
+    company: 'ASICS Digital',
+    title: 'BI Developer',
+    copy: 'Built analytics pipelines and dashboards for e-commerce reporting, reducing manual work and contributing to revenue growth.'
+  },
+  {
+    period: '2021',
+    company: 'PanAgora Asset Management',
+    title: 'DevOps Engineer',
+    copy: 'Automated CI/CD for data science workflows, cutting deployment time by 80% and making releases safer.'
+  }
+]
+
+const projects = [
+  {
+    number: '01',
+    title: 'Zenesis',
+    kicker: 'Business website · TypeScript',
+    copy: 'A client-facing platform that makes complex business setup and advisory services feel clear, credible, and easy to navigate.',
+    href: 'https://www.zenesiscorp.com',
+    image: '/images/project-zenesis.webp',
+    visual: 'image'
+  },
+  {
+    number: '02',
+    title: 'Upside',
+    kicker: 'iOS marketplace · Swift',
+    copy: 'A marketplace concept designed to make partnerships between creators and brands in the GCC simpler and more direct.',
+    href: 'https://github.com/nikdmello/upside',
+    image: '/logos/upside_logo.png',
+    visual: 'upside'
+  },
+  {
+    number: '03',
+    title: 'Source of Truth',
+    kicker: 'Workflow system · TypeScript',
+    copy: 'A structured workspace for turning scattered claim files into reliable records that teams can review, validate, and trust.',
+    href: 'https://source-of-truth-lovat.vercel.app/',
+    visual: 'source'
+  }
+]
+
+const stack = ['TypeScript', 'JavaScript', 'Java', 'C# / .NET', 'Python', 'SQL', 'AWS', 'Node.js', 'React', 'Next.js', 'DynamoDB', 'Docker']
+
+const photographs = [
+  { src: '/images/IMG_0673.webp', location: 'Lower Antelope Canyon', date: 'Jun 2025', className: 'photo-feature' },
+  { src: '/images/IMG_6650.webp', location: 'Chicago, IL', date: 'Apr 2025', className: 'photo-tall' },
+  { src: '/images/IMG_8864.webp', location: 'Amman Citadel, Jordan', date: 'Oct 2025', className: 'photo-amman' },
+  { src: '/images/IMG_7280.webp', location: 'Horseshoe Canyon', date: 'Jun 2025', className: 'photo-horseshoe' },
+  { src: '/images/IMG_8807.webp', location: 'Petra, Jordan', date: 'Oct 2025', className: 'photo-petra' }
+]
 
 export default function Home() {
-  const { toast, showToast } = useCursorToast()
+  const [copied, setCopied] = useState(false)
 
-  const copyEmail = async (event: MouseEvent<HTMLButtonElement>) => {
-    const target = event.currentTarget
-    const clientX = event.clientX
-    const clientY = event.clientY
+  const scrollTo = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
 
-    await copyTextToClipboard('nik.dmello@gmail.com')
-    showToast({ target, clientX, clientY }, 'Email copied')
+  const copyEmail = async () => {
+    await navigator.clipboard.writeText('nik.dmello@gmail.com')
+    setCopied(true)
+    window.setTimeout(() => setCopied(false), 1800)
   }
 
   return (
-    <main id="main-content" tabIndex={-1} className="min-h-screen text-white relative overflow-hidden outline-none">
-      <TopNav />
-      <div className="relative z-10">
-        <Hero />
-        <Experience />
-        <OpenSource />
-        <Skills />
-        <Projects />
+    <main id="main-content" tabIndex={-1}>
+      <header className="nav shell">
+        <button className="brand" type="button" onClick={() => scrollTo('top')} aria-label="Nikhil D'Mello home">
+          <span>ND</span><strong>Nikhil D&apos;Mello</strong>
+        </button>
+        <nav aria-label="Main navigation">
+          <button type="button" onClick={() => scrollTo('experience')}>Experience</button>
+          <button type="button" onClick={() => scrollTo('work')}>Work</button>
+          <button type="button" onClick={() => scrollTo('beyond')}>Beyond</button>
+          <button type="button" onClick={() => scrollTo('about')}>About</button>
+        </nav>
+        <a className="nav-cta" href="/resume.pdf" target="_blank">Résumé <ArrowUpRight /></a>
+      </header>
 
-        <section id="contact" className="px-0 pb-8 pt-8 md:pt-12">
-          <div className="site-shell">
-            <SectionHeader
-              title="Contact"
-              description="If there’s something thoughtful, useful, or ambitious worth building, I’d be happy to hear about it."
-            />
-
-            <div className="relative rounded-[2rem] rainbow-glow transition-all duration-300">
-              <div className="relative overflow-hidden rounded-[2rem] cyber-border panel-sheen bg-card-bg">
-                <div className="relative grid gap-10 px-6 py-8 lg:grid-cols-[minmax(0,1.2fr)_minmax(360px,0.8fr)] lg:gap-12 lg:px-10 lg:py-10 xl:px-12 xl:py-12">
-                  <div className="max-w-3xl">
-                    <p className="text-sm font-medium text-white/65">Direct Contact</p>
-                    <h3 className="mt-4 text-[2rem] font-semibold tracking-tight text-white md:text-[2.2rem] xl:text-[2.35rem]">
-                      Let&apos;s connect.
-                    </h3>
-                    <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/88 md:text-[1.05rem]">
-                      I&apos;m always interested in thoughtful products, useful systems, and teams building things that matter.
-                    </p>
-                  </div>
-
-                  <div className="grid gap-8 border-t border-white/10 pt-8 lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0">
-                    <div className="grid gap-8 md:grid-cols-2 md:gap-10">
-                      <div>
-                        <p className="text-sm font-medium text-white/65">Links</p>
-                        <div className="mt-4 grid gap-3 text-sm">
-                          <button
-                            type="button"
-                            onClick={copyEmail}
-                            className="inline-flex items-center justify-between gap-3 border-b border-white/10 pb-3 text-left text-gray-200 transition-colors hover:text-white"
-                          >
-                            <span className="inline-flex items-center gap-2">
-                              <Mail className="h-4 w-4" />
-                              Email
-                            </span>
-                            <ArrowUpRight className="h-4 w-4" />
-                          </button>
-                          <a
-                            href="https://linkedin.com/in/nikdmello"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center justify-between gap-3 border-b border-white/10 pb-3 text-gray-200 transition-colors hover:text-white"
-                          >
-                            <span className="inline-flex items-center gap-2">
-                              <Linkedin className="h-4 w-4" />
-                              LinkedIn
-                            </span>
-                            <ArrowUpRight className="h-4 w-4" />
-                          </a>
-                          <a
-                            href="https://github.com/nikdmello"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center justify-between gap-3 pb-1 text-gray-200 transition-colors hover:text-white"
-                          >
-                            <span className="inline-flex items-center gap-2">
-                              <Github className="h-4 w-4" />
-                              GitHub
-                            </span>
-                            <ArrowUpRight className="h-4 w-4" />
-                          </a>
-                        </div>
-                      </div>
-
-                      <div>
-                        <p className="text-sm font-medium text-white/65">Location</p>
-                        <div className="mt-4 flex items-start gap-4 text-sm text-white/86">
-                          <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/[0.05] text-white">
-                            <MapPin className="h-4 w-4" />
-                          </div>
-                          <div>
-                            <p className="text-base text-white">Dubai, UAE</p>
-                            <p className="mt-1 text-sm leading-relaxed text-white/68">
-                              Available across time zones for remote collaboration.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <section className="hero shell" id="top">
+        <div className="hero-copy">
+          <p className="eyebrow"><span /> Software engineer · Dubai, UAE</p>
+          <h1>I turn messy problems into <em>systems that work.</em></h1>
+          <p className="intro">I&apos;m Nikhil, a software engineer drawn to backend systems, thoughtful products, and the small details that make technology feel reliable.</p>
+          <div className="actions">
+            <button className="primary" type="button" onClick={() => scrollTo('work')}>Explore my work <ArrowDown /></button>
+            <a className="text-link" href="https://github.com/nikdmello" target="_blank" rel="noreferrer">GitHub <ArrowUpRight /></a>
           </div>
-        </section>
-        
-        <div className="site-shell flex justify-center py-12">
-          <ScrollArrow
-            direction="up"
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          />
+          <p className="credentials">Backend systems · Cloud architecture · Product engineering</p>
         </div>
-      </div>
-      <Footer />
-      <CursorToast toast={toast} />
+
+        <div className="portrait-wrap">
+          <div className="portrait-frame">
+            <Image src="/images/PFP.webp" alt="Nikhil D'Mello" fill priority sizes="(max-width: 800px) 88vw, 430px" />
+          </div>
+          <div className="quote-card"><span>“</span><p>Curiosity is usually where the best work starts.</p></div>
+        </div>
+      </section>
+
+      <section className="proof" aria-label="Career highlights">
+        <div className="shell stats">
+          <div><strong>Production</strong><span>Backend systems that stay reliable</span></div>
+          <div><strong>Cloud</strong><span>AWS and event-driven architecture</span></div>
+          <div><strong>Open source</strong><span>Contributing to VS Code</span></div>
+          <div><strong>Product</strong><span>Building across web and iOS</span></div>
+        </div>
+      </section>
+
+      <section className="experience shell" id="experience">
+        <div className="section-intro">
+          <p className="section-tag">01 / Experience</p>
+          <h2>Engineering for the moments when <em>reliability matters.</em></h2>
+        </div>
+        <div className="timeline">
+          {roles.map((role) => (
+            <article key={role.company}>
+              <time>{role.period}</time>
+              <div>
+                <p className="role-company">{role.company}</p>
+                <h3>{role.title}</h3>
+                <p>{role.copy}</p>
+                {role.impact && <p className="impact"><span>Impact</span>{role.impact}</p>}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="work" id="work">
+        <div className="shell">
+          <p className="section-tag light">02 / Selected work</p>
+          <div className="work-head">
+            <h2>Ideas made <em>useful.</em></h2>
+            <p>I learn by making things: client platforms, mobile products, open-source fixes, and experiments that sharpen how I think.</p>
+          </div>
+          <div className="project-grid">
+            {projects.map((project) => (
+              <a href={project.href} target="_blank" rel="noreferrer" key={project.title} className="project-card">
+                <span className="project-number">{project.number}</span>
+                <div className={`project-visual project-visual-${project.visual}`}>
+                  {project.image ? (
+                    <Image src={project.image} alt={`${project.title} project`} fill sizes="(max-width: 800px) 100vw, 33vw" />
+                  ) : (
+                    <div className="source-preview" aria-hidden="true">
+                      <span className="source-file">CSV</span>
+                      <div><strong>Source of Truth</strong><small>12 claims ready to review</small></div>
+                      <span className="source-status">Validated</span>
+                    </div>
+                  )}
+                </div>
+                <div><p>{project.kicker}</p><h3>{project.title}</h3><p>{project.copy}</p></div>
+                <ArrowUpRight className="project-arrow" />
+              </a>
+            ))}
+          </div>
+          <div className="open-source-callout">
+            <div><p className="section-tag light">Open source</p><h3>Small fixes. Real users.</h3></div>
+            <p>Two contributions to VS Code, both merged and released, including fixes to screencast mode and Markdown preview parsing.</p>
+            <a className="text-link light-link" href="https://github.com/microsoft/vscode/pulls?q=is%3Apr+author%3Anikdmello" target="_blank" rel="noreferrer">View contributions <ArrowUpRight /></a>
+          </div>
+        </div>
+      </section>
+
+      <section className="beyond shell" id="beyond">
+        <div className="beyond-head">
+          <div>
+            <p className="section-tag">03 / Beyond the code</p>
+            <h2>Collecting moments,<br /><em>wherever curiosity leads.</em></h2>
+          </div>
+          <p>Travel has a way of resetting how I see things. These are a few places that made me stop, look twice, and remember there is always more to explore.</p>
+        </div>
+        <div className="photo-grid">
+          {photographs.map((photo, index) => (
+            <figure className={photo.className} key={photo.src}>
+              <Image src={photo.src} alt={`${photo.location}, photographed by Nikhil D'Mello`} fill sizes={index === 0 ? '(max-width: 800px) 100vw, 70vw' : '(max-width: 800px) 100vw, 36vw'} />
+              <figcaption><span>{photo.location}</span><time>{photo.date}</time></figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
+      <section className="about shell" id="about">
+        <div>
+          <p className="section-tag">04 / About</p>
+          <h2>A curious mind, with a bias toward <em>building.</em></h2>
+        </div>
+        <div className="about-copy">
+          <p>I&apos;m happiest somewhere between understanding a complicated system and making it simpler. My work spans cloud infrastructure, backend services, data, and product interfaces. The through-line is always the same: ask better questions, then build something useful.</p>
+          <p>I&apos;m drawn to anything that helps me understand more of the world and what I&apos;m capable of within it.</p>
+          <div className="stack" aria-label="Technical skills">{stack.map((item) => <span key={item}>{item}</span>)}</div>
+        </div>
+      </section>
+
+      <section className="contact">
+        <div className="shell contact-inner">
+          <p className="section-tag">Let&apos;s connect</p>
+          <h2>Have a hard problem<br />worth <em>solving?</em></h2>
+          <p>I&apos;m always happy to meet thoughtful people building useful things.</p>
+          <div className="contact-actions">
+            <button className="primary" onClick={copyEmail}>{copied ? <Check /> : <Mail />}{copied ? 'Email copied' : 'Copy my email'}</button>
+            <a className="social" href="https://linkedin.com/in/nikdmello" target="_blank" rel="noreferrer"><Linkedin /> LinkedIn</a>
+            <a className="social" href="https://github.com/nikdmello" target="_blank" rel="noreferrer"><Github /> GitHub</a>
+          </div>
+        </div>
+      </section>
+
+      <footer className="shell">
+        <div className="brand"><span>ND</span><strong>Nikhil D&apos;Mello</strong></div>
+        <p>Software engineer</p>
+        <p>© {new Date().getFullYear()} Nikhil D&apos;Mello</p>
+      </footer>
     </main>
   )
 }
