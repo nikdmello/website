@@ -49,10 +49,11 @@ export default function CinematicIntro() {
         <div className="cinematic-frame">
           <Image
             className="cinematic-image"
-            src="/images/IMG_0673.webp"
+            src="/images/intro-antelope-small.webp"
             alt="Looking up through Lower Antelope Canyon"
             fill
             priority
+            unoptimized
             sizes="100vw"
           />
           <div className="cinematic-shade" />
