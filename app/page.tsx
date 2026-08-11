@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { ArrowDown, ArrowUpRight, Github, Linkedin } from 'lucide-react'
 import { CopyEmailButton, ScrollButton } from '@/components/PortfolioActions'
+import CinematicIntro from '@/components/CinematicIntro'
 
 const roles = [
   {
@@ -66,8 +67,9 @@ const photographs = [
 export default function Home() {
   return (
     <main id="main-content" tabIndex={-1}>
+      <CinematicIntro />
       <header className="nav shell">
-        <ScrollButton className="brand" targetId="top" ariaLabel="Nikhil D'Mello home">
+        <ScrollButton className="brand" targetId="landing" ariaLabel="Nikhil D'Mello home">
           <span>ND</span><strong>Nikhil D&apos;Mello</strong>
         </ScrollButton>
         <nav aria-label="Main navigation">
@@ -93,7 +95,7 @@ export default function Home() {
 
         <div className="portrait-wrap">
           <div className="portrait-frame">
-            <Image src="/images/PFP.webp" alt="Nikhil D'Mello" fill priority sizes="(max-width: 800px) 88vw, 430px" />
+            <Image src="/images/PFP.webp" alt="Nikhil D'Mello" fill sizes="(max-width: 800px) 88vw, 430px" />
           </div>
         </div>
       </section>
