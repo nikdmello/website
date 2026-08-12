@@ -84,8 +84,8 @@ export default function Home() {
       <section className="hero shell" id="top">
         <div className="hero-copy">
           <p className="eyebrow"><span /> The person behind the work</p>
-          <h2>I turn messy problems into <em>systems that work.</em></h2>
-          <p className="intro">I&apos;m Nikhil, a software engineer drawn to backend systems, thoughtful products, and the small details that make technology feel reliable.</p>
+          <h2>Building reliable systems from <em>complicated problems.</em></h2>
+          <p className="intro">I&apos;m Nikhil, a software engineer working across backend systems, cloud architecture, and thoughtful products. I care about the details that make technology feel clear and dependable.</p>
           <div className="actions">
             <ScrollButton className="primary" targetId="work">Explore my work <ArrowDown /></ScrollButton>
             <a className="text-link" href="https://github.com/nikdmello" target="_blank" rel="noreferrer">GitHub <ArrowUpRight /></a>
@@ -137,9 +137,8 @@ export default function Home() {
             <p>I learn by making things: client platforms, mobile products, open-source fixes, and experiments that sharpen how I think.</p>
           </div>
           <div className="project-grid">
-            {projects.map((project) => (
-              <a href={project.href} target="_blank" rel="noreferrer" key={project.title} className="project-card">
-                <span className="project-number">{project.number}</span>
+            {projects.map((project, index) => (
+              <a href={project.href} target="_blank" rel="noreferrer" key={project.title} className={`project-card project-story project-story-${index + 1}`}>
                 <div className={`project-visual project-visual-${project.visual}`}>
                   {project.image ? (
                     <Image src={project.image} alt={`${project.title} project`} fill sizes="(max-width: 800px) 100vw, 33vw" />
@@ -151,8 +150,12 @@ export default function Home() {
                     </div>
                   )}
                 </div>
-                <div><p>{project.kicker}</p><h3>{project.title}</h3><p>{project.copy}</p></div>
-                <ArrowUpRight className="project-arrow" />
+                <div className="project-story-copy">
+                  <div className="project-story-meta"><span>{project.number}</span><p>{project.kicker}</p></div>
+                  <h3>{project.title}</h3>
+                  <p>{project.copy}</p>
+                  <span className="project-story-link">View project <ArrowUpRight /></span>
+                </div>
               </a>
             ))}
           </div>
