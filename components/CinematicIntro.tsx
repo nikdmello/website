@@ -64,16 +64,8 @@ export default function CinematicIntro() {
             sizes="100vw"
           />
           <div className="cinematic-shade" />
-          <div className="cinematic-meta cinematic-meta-top">
-            <span>Nikhil D&apos;Mello</span>
-            <span>Software engineer</span>
-          </div>
           <div className="cinematic-prompt">
             <p>Look closer</p>
-          </div>
-          <div className="cinematic-meta cinematic-meta-bottom">
-            <span>Lower Antelope Canyon</span>
-            <span className="cinematic-scroll">Scroll to explore <i /></span>
           </div>
         </div>
         <div className="cinematic-sky" aria-hidden="true" />
