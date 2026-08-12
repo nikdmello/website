@@ -68,19 +68,6 @@ export default function Home() {
   return (
     <main id="main-content" tabIndex={-1}>
       <CinematicIntro />
-      <header className="nav shell">
-        <ScrollButton className="brand" targetId="landing" ariaLabel="Nikhil D'Mello home">
-          <span>ND</span><strong>Nikhil D&apos;Mello</strong>
-        </ScrollButton>
-        <nav aria-label="Main navigation">
-          <ScrollButton targetId="experience">Experience</ScrollButton>
-          <ScrollButton targetId="work">Work</ScrollButton>
-          <ScrollButton targetId="beyond">Beyond</ScrollButton>
-          <ScrollButton targetId="about">About</ScrollButton>
-        </nav>
-        <a className="nav-cta" href="/resume.pdf" target="_blank">Résumé <ArrowUpRight /></a>
-      </header>
-
       <section className="hero shell" id="top">
         <div className="hero-copy">
           <p className="eyebrow"><span /> The person behind the work</p>
