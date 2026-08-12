@@ -83,14 +83,14 @@ export default function Home() {
 
       <section className="hero shell" id="top">
         <div className="hero-copy">
-          <p className="eyebrow"><span /> Software engineer · Dubai, UAE</p>
-          <h1>I turn messy problems into <em>systems that work.</em></h1>
+          <p className="eyebrow"><span /> The person behind the work</p>
+          <h2>I turn messy problems into <em>systems that work.</em></h2>
           <p className="intro">I&apos;m Nikhil, a software engineer drawn to backend systems, thoughtful products, and the small details that make technology feel reliable.</p>
           <div className="actions">
             <ScrollButton className="primary" targetId="work">Explore my work <ArrowDown /></ScrollButton>
             <a className="text-link" href="https://github.com/nikdmello" target="_blank" rel="noreferrer">GitHub <ArrowUpRight /></a>
           </div>
-          <p className="credentials">Backend systems · Cloud architecture · Product engineering</p>
+          <p className="credentials">Dubai, UAE · Backend systems · Cloud architecture · Product engineering</p>
         </div>
 
         <div className="portrait-wrap">
