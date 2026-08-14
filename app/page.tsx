@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { ArrowDown, ArrowUpRight, Github, Linkedin } from 'lucide-react'
 import { CopyEmailButton, ScrollButton } from '@/components/PortfolioActions'
 import CinematicIntro from '@/components/CinematicIntro'
+import ScrollScenes from '@/components/ScrollScenes'
 
 const roles = [
   {
@@ -67,7 +68,9 @@ const photographs = [
 export default function Home() {
   return (
     <main id="main-content" tabIndex={-1}>
+      <ScrollScenes />
       <CinematicIntro />
+      <div className="profile-scene scroll-scene" data-scroll-scene="profile">
       <section className="hero shell" id="top">
         <div className="hero-copy">
           <p className="eyebrow"><span /> The person behind the work</p>
@@ -86,17 +89,10 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </div>
 
-      <section className="proof" aria-label="Career highlights">
-        <div className="shell stats">
-          <div><strong>Production</strong><span>Backend systems that stay reliable</span></div>
-          <div><strong>Cloud</strong><span>AWS and event-driven architecture</span></div>
-          <div><strong>Open source</strong><span>Contributing to VS Code</span></div>
-          <div><strong>Product</strong><span>Building across web and iOS</span></div>
-        </div>
-      </section>
-
-      <section className="experience shell" id="experience">
+      <div className="scene-track" data-scroll-track="experience">
+      <section className="experience shell scene-stage" id="experience" data-scroll-stage>
         <div className="section-intro">
           <p className="section-tag">01 / Experience</p>
           <h2>Engineering for the moments when <em>reliability matters.</em></h2>
@@ -115,8 +111,10 @@ export default function Home() {
           ))}
         </div>
       </section>
+      </div>
 
-      <section className="work" id="work">
+      <div className="scene-track scene-track-long" data-scroll-track="work">
+      <section className="work scene-stage" id="work" data-scroll-stage>
         <div className="shell">
           <p className="section-tag light">02 / Selected work</p>
           <div className="work-head">
@@ -153,8 +151,10 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </div>
 
-      <section className="beyond shell" id="beyond">
+      <div className="scene-track scene-track-long" data-scroll-track="beyond">
+      <section className="beyond shell scene-stage" id="beyond" data-scroll-stage>
         <div className="beyond-head">
           <div>
             <p className="section-tag">03 / Beyond the code</p>
@@ -178,8 +178,10 @@ export default function Home() {
           ))}
         </div>
       </section>
+      </div>
 
-      <section className="about shell" id="about">
+      <div className="scene-track" data-scroll-track="about">
+      <section className="about shell scene-stage" id="about" data-scroll-stage>
         <div>
           <p className="section-tag">04 / About</p>
           <h2>A curious mind, with a bias toward <em>building.</em></h2>
@@ -190,8 +192,10 @@ export default function Home() {
           <div className="stack" aria-label="Technical skills">{stack.map((item) => <span key={item}>{item}</span>)}</div>
         </div>
       </section>
+      </div>
 
-      <section className="contact">
+      <div className="scene-track" data-scroll-track="contact">
+      <section className="contact scene-stage" data-scroll-stage>
         <div className="shell contact-inner">
           <p className="section-tag">Let&apos;s connect</p>
           <h2>Have a hard problem<br />worth <em>solving?</em></h2>
@@ -203,12 +207,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </div>
 
-      <footer className="shell">
-        <div className="brand"><span>ND</span><strong>Nikhil D&apos;Mello</strong></div>
-        <p>Software engineer</p>
-        <p>© {new Date().getFullYear()} Nikhil D&apos;Mello</p>
-      </footer>
     </main>
   )
 }

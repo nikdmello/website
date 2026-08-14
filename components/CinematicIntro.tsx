@@ -16,16 +16,19 @@ export default function CinematicIntro() {
       frame = 0
       const distance = section.offsetHeight - window.innerHeight
       const progress = distance > 0 ? Math.min(1, Math.max(0, -section.getBoundingClientRect().top / distance)) : 0
-      const zoomProgress = Math.min(1, progress / 0.68)
-      const skyProgress = Math.min(1, Math.max(0, (progress - 0.58) / 0.2))
-      const messageProgress = Math.min(1, Math.max(0, (progress - 0.7) / 0.16))
-      const exitProgress = Math.min(1, Math.max(0, (progress - 0.86) / 0.14))
+      const smoothstep = (value: number) => value * value * (3 - 2 * value)
+      const zoomProgress = smoothstep(Math.min(1, progress / 0.64))
+      const skyProgress = smoothstep(Math.min(1, Math.max(0, (progress - 0.58) / 0.14)))
+      const messageProgress = smoothstep(Math.min(1, Math.max(0, (progress - 0.7) / 0.1)))
+      const exitProgress = smoothstep(Math.min(1, Math.max(0, (progress - 0.84) / 0.08)))
+      const heroProgress = smoothstep(Math.min(1, Math.max(0, (progress - 0.92) / 0.08)))
       section.style.setProperty('--reveal', progress.toFixed(3))
       section.style.setProperty('--zoom', zoomProgress.toFixed(3))
       section.style.setProperty('--sky', skyProgress.toFixed(3))
       section.style.setProperty('--message', (messageProgress * (1 - exitProgress)).toFixed(3))
       section.style.setProperty('--exit', exitProgress.toFixed(3))
-      document.documentElement.style.setProperty('--intro-exit', exitProgress.toFixed(3))
+      document.documentElement.style.setProperty('--intro-progress', progress.toFixed(3))
+      document.documentElement.style.setProperty('--intro-exit', heroProgress.toFixed(3))
     }
 
     const onScroll = () => {
@@ -48,6 +51,7 @@ export default function CinematicIntro() {
       window.removeEventListener('scroll', onScroll)
       window.removeEventListener('resize', onScroll)
       window.removeEventListener('pointermove', onPointerMove)
+      document.documentElement.style.removeProperty('--intro-progress')
       document.documentElement.style.removeProperty('--intro-exit')
       if (frame) window.cancelAnimationFrame(frame)
     }
