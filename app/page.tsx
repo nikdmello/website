@@ -69,8 +69,7 @@ export default function Home() {
   return (
     <main id="main-content" tabIndex={-1}>
       <ScrollScenes />
-      <CinematicIntro />
-      <div className="profile-scene scroll-scene" data-scroll-scene="profile">
+      <CinematicIntro>
       <section className="hero shell" id="top">
         <div className="hero-copy">
           <p className="eyebrow"><span /> The person behind the work</p>
@@ -89,7 +88,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      </div>
+      </CinematicIntro>
 
       <div className="scene-track" data-scroll-track="experience">
       <section className="experience shell scene-stage" id="experience" data-scroll-stage>
