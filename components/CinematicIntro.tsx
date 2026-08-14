@@ -14,26 +14,31 @@ export default function CinematicIntro({ children }: CinematicIntroProps) {
   useEffect(() => {
     const section = sectionRef.current
     if (!section) return
+    const image = section.querySelector<HTMLElement>('.cinematic-image')
 
     let frame = 0
     let touchStart = 0
     let zoomStarted = false
     let zoomComplete = false
-    let zoomTimer = 0
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+    const completeZoom = () => {
+      zoomComplete = true
+      section.dataset.zoom = 'complete'
+    }
+
+    const onZoomEnd = (event: AnimationEvent) => {
+      if (event.animationName === 'canyon-dive') completeZoom()
+    }
 
     const startZoom = () => {
       if (zoomStarted || window.scrollY > 2) return
       zoomStarted = true
       section.dataset.zoom = reducedMotion ? 'complete' : 'running'
       if (reducedMotion) {
-        zoomComplete = true
+        completeZoom()
         return
       }
-      zoomTimer = window.setTimeout(() => {
-        zoomComplete = true
-        section.dataset.zoom = 'complete'
-      }, 1500)
     }
 
     const updateProgress = () => {
@@ -91,6 +96,7 @@ export default function CinematicIntro({ children }: CinematicIntroProps) {
     window.addEventListener('keydown', onKeyDown)
     window.addEventListener('touchstart', onTouchStart, { passive: true })
     window.addEventListener('touchmove', onTouchMove, { passive: false })
+    image?.addEventListener('animationend', onZoomEnd)
 
     return () => {
       window.removeEventListener('scroll', schedule)
@@ -99,7 +105,7 @@ export default function CinematicIntro({ children }: CinematicIntroProps) {
       window.removeEventListener('keydown', onKeyDown)
       window.removeEventListener('touchstart', onTouchStart)
       window.removeEventListener('touchmove', onTouchMove)
-      window.clearTimeout(zoomTimer)
+      image?.removeEventListener('animationend', onZoomEnd)
       if (frame) window.cancelAnimationFrame(frame)
     }
   }, [])
