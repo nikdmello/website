@@ -44,12 +44,13 @@ export default function CinematicIntro({ children }: CinematicIntroProps) {
       const profileCrossfade = ease(clamp((progress - 0.26) / 0.2))
       const clarityOut = 1 - profileCrossfade
       const profileIn = profileCrossfade
-      const profileOut = 1 - ease(clamp((progress - 0.76) / 0.1))
-      const light = ease(clamp((progress - 0.9) / 0.08))
+      const light = ease(clamp((progress - 0.58) / 0.4))
+      const profileOut = 1 - light
 
       section.style.setProperty('--clarity', (clarityIn * clarityOut).toFixed(3))
       section.style.setProperty('--profile', (profileIn * profileOut).toFixed(3))
       section.style.setProperty('--light', light.toFixed(3))
+      section.style.setProperty('--light-y', `${((1 - light) * 100).toFixed(2)}%`)
     }
 
     const schedule = () => {

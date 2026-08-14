@@ -72,7 +72,6 @@ export default function Home() {
       <CinematicIntro>
       <section className="hero shell" id="top">
         <div className="hero-copy">
-          <p className="eyebrow"><span /> The person behind the work</p>
           <h2>Building reliable systems from <em>complicated problems.</em></h2>
           <p className="intro">I&apos;m Nikhil, a software engineer working across backend systems, cloud architecture, and thoughtful products. I care about the details that make technology feel clear and dependable.</p>
           <div className="actions">
