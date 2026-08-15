@@ -153,4 +153,5 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--amber);outline-offs
 .cinematic-intro+.scene-track{margin-top:0}
 @keyframes canyon-dive{from{transform:scale(1.05)}to{transform:scale(18)}}
 @media(max-width:600px){.cinematic-intro{height:410vh}.cinematic-intro .cinematic-image{object-position:center 42%;transform-origin:center;transform:scale(1.03)}.cinematic-intro[data-zoom="complete"] .cinematic-image{transform:scale(110)}.opening-profile>.hero{width:min(100% - 32px,1180px);height:100vh;min-height:100vh;padding:0}@keyframes canyon-dive{from{transform:scale(1.03)}to{transform:scale(110)}}}
+@media(max-width:800px){main{touch-action:none}}
 @media(prefers-reduced-motion:reduce){.cinematic-intro{height:320vh}.cinematic-intro .cinematic-image,.cinematic-intro[data-zoom="running"] .cinematic-image,.cinematic-intro[data-zoom="complete"] .cinematic-image{animation:none;transform:scale(110)}}
