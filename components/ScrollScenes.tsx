@@ -38,7 +38,7 @@ export default function ScrollScenes() {
       const start = window.scrollY
       const distance = top - start
       const startedAt = performance.now()
-      const duration = 900
+      const duration = window.matchMedia('(max-width: 800px)').matches ? 560 : 900
       const previousScrollBehavior = document.documentElement.style.scrollBehavior
       document.documentElement.style.scrollBehavior = 'auto'
 
@@ -68,7 +68,8 @@ export default function ScrollScenes() {
       animateTo(top)
       snapLocked = true
       window.clearTimeout(snapTimer)
-      snapTimer = window.setTimeout(() => { snapLocked = false }, 1000)
+      const lockDuration = window.matchMedia('(max-width: 800px)').matches ? 650 : 1000
+      snapTimer = window.setTimeout(() => { snapLocked = false }, lockDuration)
       return true
     }
 
